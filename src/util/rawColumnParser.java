@@ -59,18 +59,27 @@ public class rawColumnParser {
                         i++;
                     }
                 }else {
+                    //先把nullbitmap祭出
+                    b = nullBitMap[(int) Math.floor(i/8)];
+                    int bit = i%8;
                     //以下是变长字段解析
-                    if (variableHasParase<=variableColumns){     //如果还没有到可变长度的头
+                    //如果还没有到可变长度的头
+                    if (variableHasParase<=variableColumns){
                         //去除地址的大端
                         if (variableEndOffsetPointer>8192){
                             variableEndOffsetPointer = record[endOffsetPointer];
                         }
                         Object value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)==1){
+                            value = "NULL";
+                        }else if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)!=1){
+                            value = "";
+                        }
                         recordmap.put(ischema.name(), String.valueOf(value));
                         startOffsetOfVariableColumn = variableEndOffsetPointer;
                         variableEndOffsetPointer = hexUtil.int2(record,endOffsetPointer+2);
                         if (variableEndOffsetPointer>8192){
-                            variableEndOffsetPointer = record[endOffsetPointer];
+                            variableEndOffsetPointer = record[endOffsetPointer+2];
                         }
                         endOffsetPointer+=2;
                         variableHasParase++;

@@ -181,9 +181,17 @@ public class test {
                 if (header.getIndexId()==256&&header.getIdObj()==192&&header.getType()==1){
                     byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                    System.out.printf("%16s","firstColumn");
+                    System.out.printf("%16s","secondColumn");
+                    System.out.printf("%16s","thirdColum");
+                    System.out.printf("%16s","forthColum");
+                    System.out.println();
                     for (Map<String, String> map : maps) {
-                        System.out.println("firstColumn:"+map.get("firstColumn")+","+"secondColumn:"+map.get("secondColumn")
-                                +"thirdColum:"+map.get("thirdColum")+"forthColum:"+map.get("forthColum"));
+                        System.out.printf("%12s",map.get("firstColumn"));
+                        System.out.printf("%20s",map.get("secondColumn"));
+                        System.out.printf("%16s",map.get("thirdColum"));
+                        System.out.printf("%16s",map.get("forthColum"));
+                        System.out.println();
                     }
                 }
             }
