@@ -153,4 +153,7 @@ public class hexUtil {
         }
         return sb.toString();
     }
+    public static void recordIndexParser(){
+
+    }
 }
