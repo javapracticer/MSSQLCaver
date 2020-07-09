@@ -186,8 +186,16 @@ public class test {
                     System.out.println();
                     for (Map<String, String> map : maps) {
                         System.out.printf("%12s",map.get("firstColumn"));
-                        System.out.printf("%20s",map.get("secondColumn"));
-                        System.out.printf("%16s",map.get("thirdColum"));
+                        if (map.get("secondColumn").length()>10){
+                            System.out.printf("%20s","aaaa...+"+map.get("secondColumn").length());
+                        }else {
+                            System.out.printf("%20s",map.get("secondColumn"));
+                        }
+                        if (map.get("thirdColum").length()>10){
+                            System.out.printf("%16s","aaaa...+"+map.get("thirdColum").length());
+                        }else {
+                            System.out.printf("%16s",map.get("thirdColum"));
+                        }
                         System.out.printf("%16s",map.get("forthColum"));
                         System.out.println();
                     }

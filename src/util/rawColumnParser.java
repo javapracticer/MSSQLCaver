@@ -65,7 +65,7 @@ public class rawColumnParser {
                     int bit = i%8;
                     //以下是变长字段解析
                     //如果还没有到可变长度的头
-                    if (variableHasParase<=variableColumns){
+                    if (variableHasParase<variableColumns){
                         //去除地址的大端
                         if (variableEndOffsetPointer>8192){
                             variableEndOffsetPointer = record[endOffsetPointer];
