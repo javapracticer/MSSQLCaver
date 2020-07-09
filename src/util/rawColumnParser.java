@@ -2,13 +2,14 @@ package util;
 
 import domain.Ischema;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class rawColumnParser {
-    public static List<Map<String,String>> prserRecord(byte[][] records, List<Ischema> list, byte[][] read){
+    public static List<Map<String,String>> prserRecord(byte[][] records, List<Ischema> list, byte[][] read) throws IOException {
         List<Map<String,String>> recordList = new ArrayList<>();
         int j = 0;
         for (byte[] record : records) {

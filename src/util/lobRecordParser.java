@@ -5,10 +5,10 @@ import java.io.IOException;
 public class lobRecordParser {
     /**
      * lob记录一般有一个固定头，固定头之后再根据其类型判断有没有类型头
-     * @param page
-     * @param slot
-     * @return
-     * @throws IOException
+     * @param page 储存lob数据的页面
+     * @param slot 储存的槽位
+     * @return 返回lob数据
+     * @throws IOException 错误
      */
     public static Object parserLobRecord(byte[] page,int slot) throws IOException {
         //找到记录地址的初始偏移量
@@ -24,7 +24,7 @@ public class lobRecordParser {
         }
         return result;
     }
-    public static Object parserType5(byte[] page,int startOffset) throws IOException {
+    private static Object parserType5(byte[] page,int startOffset) throws IOException {
         int curLinks = hexUtil.int2(page,startOffset+2);  //找出数据内部存了几条数据
         StringBuilder lobrecord = new StringBuilder("");//新建String类储存数据
         int prerecord = startOffset+10;//跳过固定头，进入type头
@@ -37,17 +37,17 @@ public class lobRecordParser {
         }
         return lobrecord.toString();
     }
-    public static Object parserType3(byte[] page, int startOffset){
+    private static Object parserType3(byte[] page, int startOffset){
         int length = hexUtil.int2(page,startOffset+2);
-        String resultpart = hexUtil.parseRecordString(page, startOffset + 14, startOffset + length - 1);
-        return resultpart;
+        String result = hexUtil.parseRecordString(page, startOffset + 14, startOffset + length - 1);
+        return result;
     }
     public static void parserType2(){
 
     }
-    public static Object parserType0(byte[] page, int startOffset){
+    private static Object parserType0(byte[] page, int startOffset){
         int length = hexUtil.int2(page,startOffset);
-        String resulptPart = hexUtil.parseRecordString(page, startOffset + 6, startOffset + length - 1);
+        String resulptPart = hexUtil.parseRecordString(page, startOffset + 6, startOffset +6 + length - 1);
         return resulptPart;
     }
 }
