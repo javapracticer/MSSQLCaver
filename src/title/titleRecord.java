@@ -7,13 +7,11 @@ public class titleRecord {
     String tablename;
     int type;
     int unknown;
-    int mightBeType;
     public titleRecord(byte[] page, int preRecord, int size) {
         this.tableId = hexUtil.int4(page,preRecord+4);
         this.tablename = hexUtil.parseString(page,preRecord+56,preRecord+size);
         this.type = hexUtil.int2(page,preRecord+17);
         this.unknown = hexUtil.int2(page,preRecord+15);
-        this.mightBeType = hexUtil.int2(page,preRecord+41);
     }
 
     public Long getTableId() {
@@ -48,13 +46,6 @@ public class titleRecord {
         this.unknown = unknown;
     }
 
-    public int getMightBeType() {
-        return mightBeType;
-    }
-
-    public void setMightBeType(int mightBeType) {
-        this.mightBeType = mightBeType;
-    }
 
     @Override
     public String toString() {
@@ -63,7 +54,6 @@ public class titleRecord {
                 ", tablename='" + tablename + '\'' +
                 ", type=" + type +
                 ", unknown=" + unknown +
-                ", mightBeType=" + mightBeType +
                 '}';
     }
 }

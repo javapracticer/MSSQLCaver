@@ -50,7 +50,7 @@ public class test {
         for (title.titlePage titlePage : list) {
             List<titleRecord> list1 = titlePage.getList();
             for (title.titleRecord titleRecord : list1) {
-                if (titleRecord.getType()==8277&&titleRecord.getUnknown()==14){
+                if (titleRecord.getType()==8277){
                     System.out.println(titleRecord);
                     i++;
                 }
