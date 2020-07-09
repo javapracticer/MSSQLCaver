@@ -7,9 +7,10 @@ public class rawText implements Ischema {
     public rawText(String name1){
         this.name = name1;
     }
+
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) {
-        return bytes;
+        return null;
     }
 
     @Override

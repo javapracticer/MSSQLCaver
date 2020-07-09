@@ -7,9 +7,7 @@ import title.titleRecord;
 import util.pageCuter;
 import schema.schemeaPage;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -111,7 +109,7 @@ public class test {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==7&&header.getType()==1){
                 byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals("72057594043957248")){
                         System.out.println(map);
@@ -151,7 +149,7 @@ public class test {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==5&&header.getType()==1){
                 byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
                     if (map.get("idmajor").equals("1298103665")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
@@ -180,7 +178,7 @@ public class test {
                 pageHeader header = new pageHeader(bytes);
                 if (header.getIndexId()==256&&header.getIdObj()==192&&header.getType()==1){
                     byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
                     System.out.printf("%16s","firstColumn");
                     System.out.printf("%16s","secondColumn");
                     System.out.printf("%16s","thirdColum");

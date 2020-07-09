@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class rawColumnParser {
-    public static List<Map<String,String>> prserRecord(byte[][] records, List<Ischema> list){
+    public static List<Map<String,String>> prserRecord(byte[][] records, List<Ischema> list, byte[][] read){
         List<Map<String,String>> recordList = new ArrayList<>();
         int j = 0;
         for (byte[] record : records) {

@@ -1,5 +1,8 @@
 package util;
 
+import domain.pageHeader;
+
+import java.io.IOException;
 import java.math.BigInteger;
 
 /**
@@ -153,7 +156,10 @@ public class hexUtil {
         }
         return sb.toString();
     }
-    public static void recordIndexParser(){
-
+    public static void recordIndexParser(byte[] record,int startoffset,int endoffset) throws IOException {
+        long pageId = hexUtil.int6(record, startoffset + 8);
+        int slot = hexUtil.int2(record, startoffset + 14);
+        byte[] page = pageSelecter.pageSelecterByid(pageId);
+        lobRecordParser.parserLobRecord(page,slot);
+        }
     }
-}
