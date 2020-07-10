@@ -74,7 +74,7 @@ public class rawColumnParser {
                         if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)==1){
                             value = "NULL";
                         }else if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)!=1){
-                            value = "";
+                            value = "NULL";
                         }
                         recordmap.put(ischema.name(), String.valueOf(value));
                         startOffsetOfVariableColumn = variableEndOffsetPointer;

@@ -2,6 +2,8 @@ package util;
 
 import domain.pageHeader;
 
+
+import java.beans.Encoder;
 import java.io.IOException;
 import java.math.BigInteger;
 
@@ -120,9 +122,9 @@ public class hexUtil {
      * @return
      */
     public static String parseString(byte[] page, int start, int end) {
-        String hex = "";
+        StringBuilder hex = new StringBuilder("");
         for (int i = start; i < end; i = i + 2) {
-            hex += hexUtil.hex2(page, i);
+            hex.append(hexUtil.hex2(page, i));
         }
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < hex.length() - 1; i += 2) {
@@ -162,4 +164,4 @@ public class hexUtil {
         byte[] page = pageSelecter.pageSelecterByid(pageId);
         lobRecordParser.parserLobRecord(page,slot);
         }
-    }
+}

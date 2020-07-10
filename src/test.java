@@ -172,31 +172,35 @@ public class test {
             List<Ischema> list = new ArrayList<>();
             list.add(new rawInt("firstColumn"));
             list.add(new rawText("secondColumn"));
-            list.add(new rawText("thirdColum"));
-            list.add(new rawChar("forthColum",10));
+            list.add(new rawText("thirdColumn"));
+            list.add(new rawText("forthColumn"));
+
+            System.out.printf("%-16s","firstColumn");
+            System.out.printf("%-20s","secondColumn");
+            System.out.printf("%-20s","thirdColumn");
+            System.out.printf("%-20s","forthColumn");
+            System.out.println();
+
             for (byte[] bytes : read) {
                 pageHeader header = new pageHeader(bytes);
                 if (header.getIndexId()==256&&header.getIdObj()==192&&header.getType()==1){
                     byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
-                    System.out.printf("%16s","firstColumn");
-                    System.out.printf("%16s","secondColumn");
-                    System.out.printf("%16s","thirdColum");
-                    System.out.printf("%16s","forthColum");
-                    System.out.println();
                     for (Map<String, String> map : maps) {
-                        System.out.printf("%12s",map.get("firstColumn"));
+                        System.out.printf("%-15s",map.get("firstColumn"));
                         if (map.get("secondColumn").length()>10){
-                            System.out.printf("%20s","aaaa...+"+map.get("secondColumn").length());
+                            String secondColumn = map.get("secondColumn");
+                            System.out.printf("%-20s",secondColumn.substring(0,6)+"....");
                         }else {
-                            System.out.printf("%20s",map.get("secondColumn"));
+                            System.out.printf("%-20s",map.get("secondColumn"));
                         }
-                        if (map.get("thirdColum").length()>10){
-                            System.out.printf("%16s","aaaa...+"+map.get("thirdColum").length());
+                        if (map.get("thirdColumn").length()>10){
+                            String secondColumn = map.get("thirdColumn");
+                            System.out.printf("%-15s",secondColumn.substring(0,6)+"....");
                         }else {
-                            System.out.printf("%16s",map.get("thirdColum"));
+                            System.out.printf("%-15s",map.get("thirdColumn"));
                         }
-                        System.out.printf("%16s",map.get("forthColum"));
+                        System.out.printf("%-15s",map.get("forthColumn"));
                         System.out.println();
                     }
                 }
@@ -209,6 +213,5 @@ public class test {
             System.out.println((byte) ((b >> 6) & 0x1));
             System.out.println(7/8);
         }
-
     }
 
