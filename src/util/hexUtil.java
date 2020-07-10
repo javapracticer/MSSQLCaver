@@ -5,6 +5,7 @@ import domain.pageHeader;
 
 import java.beans.Encoder;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 
 /**
@@ -142,21 +143,29 @@ public class hexUtil {
      * @param end
      * @return
      */
-    public static String parseRecordString(byte[] page, int start, int end) {
-        String hex = "";
-        for (int i = start; i <=end; i=i+2) {
-            hex += hexUtil.recordHex2(page, i);
+    public static String parseRecordString(byte[] page, int start, int end) throws UnsupportedEncodingException {
+        byte[] baKeyword = new byte[end-start+1];
+        int j = 0;
+        for (int i = start; i <=end; i++) {
+          baKeyword[j]= page[i];
+          j++;
         }
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < hex.length() - 1; i += 2) {
-            String h = hex.substring(i, (i + 2));
-            if (h.equals("20")){
-                continue;
-            }
-            int decimal = Integer.parseInt(h, 16);
-            sb.append((char) decimal);
-        }
-        return sb.toString();
+        String result = new String(baKeyword,"GBK");
+        return result;
+//        StringBuilder hex = new StringBuilder("");
+//        for (int i = start; i <=end; i=i+2) {
+//            hex.append(hexUtil.recordHex2(page, i));
+//        }
+//        StringBuilder sb = new StringBuilder();
+//        for (int i = 0; i < hex.length() - 1; i += 2) {
+//            String h = hex.substring(i, (i + 2));
+//            if (h.equals("20")){
+//                continue;
+//            }
+//            int decimal = Integer.parseInt(h, 16);
+//            sb.append((char) decimal);
+//        }
+//        return sb.toString();
     }
     public static void recordIndexParser(byte[] record,int startoffset,int endoffset) throws IOException {
         long pageId = hexUtil.int6(record, startoffset + 8);

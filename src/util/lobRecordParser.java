@@ -1,6 +1,7 @@
 package util;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class lobRecordParser {
     /**
@@ -37,7 +38,7 @@ public class lobRecordParser {
         }
         return lobrecord.toString();
     }
-    private static Object parserType3(byte[] page, int startOffset){
+    private static Object parserType3(byte[] page, int startOffset) throws UnsupportedEncodingException {
         int length = hexUtil.int2(page,startOffset+2);
         String result = hexUtil.parseRecordString(page, startOffset + 14, startOffset + length - 1);
         return result;
@@ -45,7 +46,7 @@ public class lobRecordParser {
     public static void parserType2(){
 
     }
-    private static Object parserType0(byte[] page, int startOffset){
+    private static Object parserType0(byte[] page, int startOffset) throws UnsupportedEncodingException {
         int length = hexUtil.int2(page,startOffset);
         String resulptPart = hexUtil.parseRecordString(page, startOffset + 6, startOffset +6 + length - 1);
         return resulptPart;

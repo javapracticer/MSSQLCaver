@@ -173,7 +173,7 @@ public class test {
             list.add(new rawInt("firstColumn"));
             list.add(new rawText("secondColumn"));
             list.add(new rawText("thirdColumn"));
-            list.add(new rawText("forthColumn"));
+            list.add(new rawChar("forthColumn",10));
 
             System.out.printf("%-16s","firstColumn");
             System.out.printf("%-20s","secondColumn");

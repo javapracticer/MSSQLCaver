@@ -1,5 +1,8 @@
 package domain;
 import util.hexUtil;
+
+import java.io.UnsupportedEncodingException;
+
 public class rawChar implements Ischema {
     private String name;
     int length = 0;
@@ -9,7 +12,7 @@ public class rawChar implements Ischema {
         this.length = length1;
     }
     @Override
-    public Object getValue(byte[] bytes, int offset, int endoffset) {
+    public Object getValue(byte[] bytes, int offset, int endoffset) throws UnsupportedEncodingException {
         return hexUtil.parseRecordString(bytes,offset,endoffset);
     }
 
