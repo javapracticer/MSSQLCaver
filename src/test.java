@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import util.pageSelecter;
 import util.rawColumnParser;
 import util.recordCuter;
 
@@ -37,7 +38,7 @@ public class test {
      */
     @Test
     public void testTitleName() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         List<titlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -168,17 +169,19 @@ public class test {
         }
         @Test
         public void testParseRecord() throws IOException {
-            byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+            byte[][] read = pageSelecter.getPages();
             List<Ischema> list = new ArrayList<>();
             list.add(new rawInt("firstColumn"));
             list.add(new rawText("secondColumn"));
             list.add(new rawText("thirdColumn"));
             list.add(new rawChar("forthColumn",10));
+            list.add(new rawDateTime("thirdColum"));
 
-            System.out.printf("%-16s","firstColumn");
+            System.out.printf("%-20s","firstColumn");
             System.out.printf("%-20s","secondColumn");
             System.out.printf("%-20s","thirdColumn");
             System.out.printf("%-20s","forthColumn");
+            System.out.printf("%-20s","thirdColum");
             System.out.println();
 
             for (byte[] bytes : read) {
@@ -187,20 +190,21 @@ public class test {
                     byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
                     for (Map<String, String> map : maps) {
-                        System.out.printf("%-15s",map.get("firstColumn"));
-                        if (map.get("secondColumn").length()>10){
+                        System.out.printf("%-20s",map.get("firstColumn"));
+                        if (map.get("secondColumn").length()>5){
                             String secondColumn = map.get("secondColumn");
-                            System.out.printf("%-20s",secondColumn.substring(0,6)+"....");
+                            System.out.printf("%-20s",secondColumn.substring(0,3)+"....");
                         }else {
                             System.out.printf("%-20s",map.get("secondColumn"));
                         }
-                        if (map.get("thirdColumn").length()>10){
+                        if (map.get("thirdColumn").length()>5){
                             String secondColumn = map.get("thirdColumn");
-                            System.out.printf("%-15s",secondColumn.substring(0,6)+"....");
+                            System.out.printf("%-15s",secondColumn.substring(0,3)+"....");
                         }else {
                             System.out.printf("%-15s",map.get("thirdColumn"));
                         }
                         System.out.printf("%-15s",map.get("forthColumn"));
+                        System.out.printf("%-15s",map.get("thirdColum"));
                         System.out.println();
                     }
                 }
@@ -212,6 +216,13 @@ public class test {
             System.out.println(b);
             System.out.println((byte) ((b >> 6) & 0x1));
             System.out.println(7/8);
+        }
+        @Test
+        public void caculate(){
+            Long l = 11990400L;
+            int ll = (int) (l/300);
+            int lll = ll%60;
+            System.out.println(lll);
         }
     }
 

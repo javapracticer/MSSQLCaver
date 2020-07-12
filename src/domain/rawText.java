@@ -10,6 +10,7 @@ public class rawText implements Ischema {
     private String name;
     int length = 16;
     private int fixed = 0;
+    private boolean isLOB = true;
     public rawText(String name1){
         this.name = name1;
     }
@@ -35,5 +36,14 @@ public class rawText implements Ischema {
     @Override
     public int fixd() {
         return fixed;
+    }
+
+    public boolean isLOB() {
+        return isLOB;
+    }
+
+    @Override
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+        return null;
     }
 }

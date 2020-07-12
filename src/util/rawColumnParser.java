@@ -45,6 +45,7 @@ public class rawColumnParser {
              * 接下来就是激动人心的记录解析部分
              */
             for (Ischema ischema : list) {
+                boolean overFlowOrLob = false;
                 //以是否是变长字段为分界点
                 if (ischema.fixd()==1){
                     b = nullBitMap[(int) Math.floor(i/8)];
@@ -60,6 +61,7 @@ public class rawColumnParser {
                         i++;
                     }
                 }else {
+                    Object value = null;
                     //先把nullbitmap祭出
                     b = nullBitMap[(int) Math.floor(i/8)];
                     int bit = i%8;
@@ -69,8 +71,19 @@ public class rawColumnParser {
                         //去除地址的大端
                         if (variableEndOffsetPointer>8192){
                             variableEndOffsetPointer = record[endOffsetPointer];
+                            overFlowOrLob = true;
                         }
-                        Object value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        if (ischema.isLOB()){
+                            //如果是LOB
+                            value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        }else if (overFlowOrLob){
+                            //如果不是LOB但是是overFlow
+                            value  = ischema.getOverFlowValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        }else {
+                            //既不是LOB也不是overFlow
+                            value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        }
+
                         if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)==1){
                             value = "NULL";
                         }else if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)!=1){

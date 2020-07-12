@@ -26,4 +26,14 @@ public class rawTinyint implements Ischema {
     public int fixd() {
         return fixed;
     }
+
+    @Override
+    public boolean isLOB() {
+        return false;
+    }
+
+    @Override
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+        return null;
+    }
 }

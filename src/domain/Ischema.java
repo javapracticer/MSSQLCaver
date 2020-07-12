@@ -7,4 +7,6 @@ public interface Ischema {
     String name();
     int getLength();
     int fixd();
+    boolean isLOB();
+    Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException;
 }
