@@ -38,7 +38,7 @@ public class test {
      */
     @Test
     public void testTitleName() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<titlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -78,7 +78,7 @@ public class test {
         for (schemeaPage schemeaPage : list) {
             List<schemaRecord> records = schemeaPage.getRecords();
             for (schemaRecord record : records) {
-                long tableid = 1298103665L;
+                long tableid = 430624577L;
                 if (record.getTableId()== tableid){
                     System.out.println("Type:"+schemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
                 }
@@ -112,7 +112,7 @@ public class test {
                 byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594043957248")){
+                    if (map.get("ownerid").equals("72057594044350464")){
                         System.out.println(map);
                     }
                 }
@@ -152,7 +152,7 @@ public class test {
                 byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("1298103665")){
+                    if (map.get("idmajor").equals("430624577")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -161,7 +161,7 @@ public class test {
         }
         @Test
         public void testBinaryShift(){
-        Long allocationUnitID = 72057594050510848L;
+        Long allocationUnitID = 72057594051231744L;
         Long indexID= allocationUnitID>>48;
         Long idObj = (allocationUnitID - (indexID << 48)) >> 16;
             System.out.println("indxeID="+indexID);
@@ -171,40 +171,47 @@ public class test {
         public void testParseRecord() throws IOException {
             byte[][] read = pageSelecter.getPages();
             List<Ischema> list = new ArrayList<>();
-            list.add(new rawInt("firstColumn"));
-            list.add(new rawText("secondColumn"));
-            list.add(new rawText("thirdColumn"));
-            list.add(new rawChar("forthColumn",10));
-            list.add(new rawDateTime("thirdColum"));
+            list.add(new rawVarchar("a",3000));
+            list.add(new rawVarchar("b",8000));
+            list.add(new rawVarchar("c",8000));
+            list.add(new rawVarchar("d",8000));
 
-            System.out.printf("%-20s","firstColumn");
-            System.out.printf("%-20s","secondColumn");
-            System.out.printf("%-20s","thirdColumn");
-            System.out.printf("%-20s","forthColumn");
-            System.out.printf("%-20s","thirdColum");
+            System.out.printf("%-20s","a");
+            System.out.printf("%-20s","b");
+            System.out.printf("%-20s","c");
+            System.out.printf("%-20s","d");
             System.out.println();
 
             for (byte[] bytes : read) {
                 pageHeader header = new pageHeader(bytes);
-                if (header.getIndexId()==256&&header.getIdObj()==192&&header.getType()==1){
+                if (header.getIndexId()==256&&header.getIdObj()==203&&header.getType()==1){
                     byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
                     for (Map<String, String> map : maps) {
-                        System.out.printf("%-20s",map.get("firstColumn"));
-                        if (map.get("secondColumn").length()>5){
-                            String secondColumn = map.get("secondColumn");
-                            System.out.printf("%-20s",secondColumn.substring(0,3)+"....");
+                        if (map.get("a").length()>5){
+                            String secondColumn = map.get("a");
+                            System.out.printf("%-20s",secondColumn.substring(0,3)+"...."+secondColumn.length());
                         }else {
-                            System.out.printf("%-20s",map.get("secondColumn"));
+                            System.out.printf("%-20s",map.get("a"));
                         }
-                        if (map.get("thirdColumn").length()>5){
-                            String secondColumn = map.get("thirdColumn");
-                            System.out.printf("%-15s",secondColumn.substring(0,3)+"....");
+                        if (map.get("b").length()>5){
+                            String secondColumn = map.get("b");
+                            System.out.printf("%-20s",secondColumn.substring(0,3)+"...."+secondColumn.length());
                         }else {
-                            System.out.printf("%-15s",map.get("thirdColumn"));
+                            System.out.printf("%-20s",map.get("b"));
                         }
-                        System.out.printf("%-15s",map.get("forthColumn"));
-                        System.out.printf("%-15s",map.get("thirdColum"));
+                        if (map.get("c").length()>5){
+                            String secondColumn = map.get("c");
+                            System.out.printf("%-15s",secondColumn.substring(0,3)+"...."+secondColumn.length());
+                        }else {
+                            System.out.printf("%-15s",map.get("c"));
+                        }
+                        if (map.get("d").length()>5){
+                            String secondColumn = map.get("d");
+                            System.out.printf("%-20s",secondColumn.substring(0,3)+"...."+secondColumn.length());
+                        }else {
+                            System.out.printf("%-20s",map.get("d"));
+                        }
                         System.out.println();
                     }
                 }

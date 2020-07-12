@@ -17,7 +17,7 @@ public class rawVarchar implements Ischema {
     }
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
-        return hexUtil.parseString(bytes,offset,endoffset);
+        return hexUtil.parseRecordString(bytes,offset,endoffset);
     }
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = hexUtil.int6(bytes, offset + 16);

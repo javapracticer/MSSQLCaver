@@ -26,9 +26,18 @@ public class recordCuter {
                 for (int k = numOfVariable; k >0 ; k--) {
                     int temp = hexUtil.int2(page,variableOffset+2);
                     if (temp>8192){
-                        endOffset = page[variableOffset+2];
+                        temp = page[variableOffset+2]& 0xff;
+                        if (temp>endOffset){
+                            endOffset =temp;
+                        }else {
+                            endOffset+=24;
+                        }
                     }else {
-                        endOffset=temp;
+                        if (temp>endOffset){
+                            endOffset = temp;
+                        }else {
+                            endOffset+=24;
+                        }
                     }
                     variableOffset+=2;
                 }
