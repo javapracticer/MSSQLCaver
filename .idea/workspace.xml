@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/schema/schemaRecord.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/schema/schemaRecord.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/test.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/rawVarchar.java" afterPath="$PROJECT_DIR$/src/domain/rawVarchar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/schema/schemaRecord.java" afterPath="$PROJECT_DIR$/src/schema/schemaRecord.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/overFlowRecordParser.java" afterPath="$PROJECT_DIR$/src/util/overFlowRecordParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/rawColumnParser.java" afterPath="$PROJECT_DIR$/src/util/rawColumnParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/recordCuter.java" afterPath="$PROJECT_DIR$/src/util/recordCuter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1232">
-              <caret line="212" column="64" lean-forward="false" selection-start-line="212" selection-start-column="64" selection-end-line="212" selection-end-column="64" />
+            <state relative-caret-position="1389">
+              <caret line="219" column="60" lean-forward="false" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,16 +56,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
               <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitattributes" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitattributes">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,10 +96,26 @@
       <file leaf-file-name="rawColumnParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+            <state relative-caret-position="125">
+              <caret line="93" column="60" lean-forward="true" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rawInt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="e#338#339#0" expanded="true" />
+                <element signature="e#380#381#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -400,13 +404,13 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="test.testTableSchema" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test.testTitleName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="testTableSchema" />
+      <option name="METHOD_NAME" value="testTitleName" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -458,11 +462,11 @@
       <patterns />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testid5" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testid7" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testBinaryShift" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testParseRecord" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.test.testid5" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testid7" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testBinaryShift" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testParseRecord" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -470,7 +474,7 @@
         <item index="1" class="java.lang.String" itemvalue="JUnit.test.testBinaryShift" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.test.testid7" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.test.testid5" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
       </list>
     </recent_temporary>
   </component>
@@ -478,35 +482,35 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 32m 02s.xml">
+    <history-entry file="test_testBinaryShift - 2020.07.12 at 21h 28m 12s.xml">
+      <configuration name="test.testBinaryShift" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testParseRecord - 2020.07.12 at 21h 14m 13s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 33m 42s.xml">
+    <history-entry file="test_testParseRecord - 2020.07.12 at 21h 28m 25s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 34m 07s.xml">
+    <history-entry file="test_testParseRecord - 2020.07.12 at 21h 28m 45s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 36m 36s.xml">
+    <history-entry file="test_testParseRecord - 2020.07.12 at 21h 32m 34s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 39m 29s.xml">
+    <history-entry file="test_testParseRecord - 2020.07.12 at 21h 33m 03s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 41m 05s.xml">
+    <history-entry file="test_testParseRecord - 2020.07.12 at 21h 41m 55s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 45m 59s.xml">
-      <configuration name="test.testParseRecord" configurationId="JUnit" />
+    <history-entry file="test_testTitleName - 2020.07.12 at 21h 27m 08s.xml">
+      <configuration name="test.testTitleName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 49m 41s.xml">
-      <configuration name="test.testParseRecord" configurationId="JUnit" />
+    <history-entry file="test_testid5 - 2020.07.12 at 21h 27m 34s.xml">
+      <configuration name="test.testid5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 52m 44s.xml">
-      <configuration name="test.testParseRecord" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testParseRecord - 2020.07.12 at 19h 53m 49s.xml">
-      <configuration name="test.testParseRecord" configurationId="JUnit" />
+    <history-entry file="test_testid7 - 2020.07.12 at 21h 27m 49s.xml">
+      <configuration name="test.testid7" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
@@ -528,7 +532,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.50215983" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32336017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32336017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3234341" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
@@ -576,7 +580,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test.java</url>
-          <line>228</line>
+          <line>234</line>
           <properties />
           <option name="timeStamp" value="98" />
         </line-breakpoint>
@@ -587,7 +591,7 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="105" />
+      <option name="time" value="106" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -824,19 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/rawNVarchar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -1010,16 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -1028,10 +1009,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="93" column="60" lean-forward="true" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="212" column="64" lean-forward="false" selection-start-line="212" selection-start-column="64" selection-end-line="212" selection-end-column="64" />
+        <state relative-caret-position="1389">
+          <caret line="219" column="60" lean-forward="false" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
