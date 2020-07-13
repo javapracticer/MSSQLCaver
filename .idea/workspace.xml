@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/schema/schemaRecord.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/schema/schemaRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/test.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" />
+    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="优化了寻指定">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/rawColumnParser.java" afterPath="$PROJECT_DIR$/src/util/rawColumnParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/recordCuter.java" afterPath="$PROJECT_DIR$/src/util/recordCuter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1389">
+            <state relative-caret-position="3078">
               <caret line="219" column="60" lean-forward="false" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -31,21 +28,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/System.java">
+      <file leaf-file-name="pageSelecter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/pageSelecter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#370#371#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="titleRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/title/titleRecord.java">
+      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/System.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="79" />
+            <state relative-caret-position="486">
+              <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -54,8 +55,8 @@
       <file leaf-file-name="recordCuter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="351">
+              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -64,7 +65,7 @@
       <file leaf-file-name="pageCuter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/pageCuter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
+            <state relative-caret-position="27">
               <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
@@ -74,7 +75,7 @@
       <file leaf-file-name="rawVarchar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/rawVarchar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="594">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,8 +97,8 @@
       <file leaf-file-name="rawColumnParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="93" column="60" lean-forward="true" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+            <state relative-caret-position="163">
+              <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +109,7 @@
       <file leaf-file-name="rawInt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="270">
               <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#338#339#0" expanded="true" />
@@ -124,7 +125,7 @@
       <file leaf-file-name="hexUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="3861">
               <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -196,10 +197,10 @@
         <option value="$PROJECT_DIR$/src/util/pageSelecter.java" />
         <option value="$PROJECT_DIR$/src/schema/schemaRecord.java" />
         <option value="$PROJECT_DIR$/src/domain/rawVarchar.java" />
-        <option value="$PROJECT_DIR$/src/util/recordCuter.java" />
         <option value="$PROJECT_DIR$/src/util/overFlowRecordParser.java" />
-        <option value="$PROJECT_DIR$/src/util/rawColumnParser.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
+        <option value="$PROJECT_DIR$/src/util/rawColumnParser.java" />
+        <option value="$PROJECT_DIR$/src/util/recordCuter.java" />
       </list>
     </option>
   </component>
@@ -223,10 +224,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2372" />
-    <option name="y" value="237" />
-    <option name="width" value="1291" />
-    <option name="height" value="704" />
+    <option name="x" value="-8" />
+    <option name="y" value="-1088" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -246,7 +247,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,12 +290,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -482,9 +483,6 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testBinaryShift - 2020.07.12 at 21h 28m 12s.xml">
-      <configuration name="test.testBinaryShift" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="test_testParseRecord - 2020.07.12 at 21h 14m 13s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
@@ -501,6 +499,9 @@
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
     <history-entry file="test_testParseRecord - 2020.07.12 at 21h 41m 55s.xml">
+      <configuration name="test.testParseRecord" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testParseRecord - 2020.07.13 at 11h 08m 41s.xml">
       <configuration name="test.testParseRecord" configurationId="JUnit" />
     </history-entry>
     <history-entry file="test_testTitleName - 2020.07.12 at 21h 27m 08s.xml">
@@ -523,7 +524,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -534,7 +535,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32336017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3234341" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288337" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -552,6 +553,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -561,7 +572,8 @@
     <MESSAGE value="write the LOBreader" />
     <MESSAGE value="write the LOBreader(支持中文了)&#10;支持数据{text}" />
     <MESSAGE value="write the LOBreader(支持中文了)&#10;支持数据{text，varchar}&#10;新增支持数据varchar" />
-    <option name="LAST_COMMIT_MESSAGE" value="write the LOBreader(支持中文了)&#10;支持数据{text，varchar}&#10;新增支持数据varchar" />
+    <MESSAGE value="write the LOBreader(支持中文了)&#10;支持数据{text，varchar}/2020-7-12" />
+    <option name="LAST_COMMIT_MESSAGE" value="write the LOBreader(支持中文了)&#10;支持数据{text，varchar}/2020-7-12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -749,10 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4131">
           <caret line="193" column="64" lean-forward="false" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="64" />
-          <folding>
-            <element signature="e#6467#6468#0" expanded="false" />
-            <element signature="e#6515#6516#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,10 +842,10 @@
           <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="false" />
+            <element signature="e#724#725#0" expanded="false" />
+            <element signature="e#831#832#0" expanded="false" />
+            <element signature="e#858#859#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -900,18 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/pageSelecter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/rawTinyint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -945,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,25 +952,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/pageCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="3861">
           <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -993,7 +972,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/rawVarchar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="594">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1003,7 +982,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="486">
           <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
           <folding />
         </state>
@@ -1011,7 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="270">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#338#339#0" expanded="true" />
@@ -1023,22 +1002,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
+    <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="93" column="60" lean-forward="true" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+        <state relative-caret-position="3078">
+          <caret line="219" column="60" lean-forward="false" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
+    <entry file="file://$PROJECT_DIR$/src/util/pageCuter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1389">
-          <caret line="219" column="60" lean-forward="false" selection-start-line="219" selection-start-column="60" selection-end-line="219" selection-end-column="60" />
+        <state relative-caret-position="27">
+          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/pageSelecter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
           </folding>
         </state>
       </provider>

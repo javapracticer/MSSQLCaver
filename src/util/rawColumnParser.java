@@ -70,7 +70,7 @@ public class rawColumnParser {
                     if (variableHasParase<variableColumns){
                         //去除地址的大端
                         if (variableEndOffsetPointer>8192){
-                            variableEndOffsetPointer = record[endOffsetPointer] & 0xff;
+                            variableEndOffsetPointer -= 32768;
                             overFlowOrLob = true;
                         }
                         if (ischema.isLOB()){
@@ -90,11 +90,8 @@ public class rawColumnParser {
                             value = "NULL";
                         }
                         recordmap.put(ischema.name(), String.valueOf(value));
-                        if (overFlowOrLob&&!ischema.isLOB()){
-                            startOffsetOfVariableColumn+=24;
-                        }else {
-                            startOffsetOfVariableColumn = variableEndOffsetPointer;
-                        }
+
+                        startOffsetOfVariableColumn = variableEndOffsetPointer;
                         variableEndOffsetPointer = hexUtil.int2(record,endOffsetPointer+2);
                         endOffsetPointer+=2;
                         variableHasParase++;
