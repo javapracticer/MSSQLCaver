@@ -112,7 +112,7 @@ public class test {
                 byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594044416000")){
+                    if (map.get("ownerid").equals("72057594043760640")){
                         System.out.println(map);
                     }
                 }
@@ -152,7 +152,7 @@ public class test {
                 byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("750625717")){
+                    if (map.get("idmajor").equals("658101385")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -161,7 +161,7 @@ public class test {
         }
         @Test
         public void testBinaryShift(){
-        Long allocationUnitID = 72057594051362816L;
+        Long allocationUnitID = 72057594050248704L;
         Long indexID= allocationUnitID>>48;
         Long idObj = (allocationUnitID - (indexID << 48)) >> 16;
             System.out.println("indxeID="+indexID);
@@ -171,53 +171,23 @@ public class test {
         public void testParseRecord() throws IOException {
             byte[][] read = pageSelecter.getPages();
             List<Ischema> list = new ArrayList<>();
-            list.add(new rawInt("q"));
-            list.add(new rawChar("w",10));
-            list.add(new rawText("e"));
-            list.add(new rawVarchar("r",3000));
-            list.add(new rawInt("t"));
-            list.add(new rawVarchar("y",3000));
-
-            System.out.printf("%-20s","q");
-            System.out.printf("%-20s","w");
-            System.out.printf("%-20s","e");
-            System.out.printf("%-20s","r");
-            System.out.printf("%-20s","t");
-            System.out.printf("%-20s","y");
+            list.add(new rawInt("dog"));
+            list.add(new rawChar("cat",10));
+            list.add(new rawText("butterfly"));
+            System.out.printf("%-20s","dog");
+            System.out.printf("%-20s","cat");
+            System.out.printf("%-20s","butterfly");
             System.out.println();
 
             for (byte[] bytes : read) {
                 pageHeader header = new pageHeader(bytes);
-                if (header.getIndexId()==256&&header.getIdObj()==205&&header.getType()==1){
+                if (header.getIndexId()==256&&header.getIdObj()==188&&header.getType()==1){
                     byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
                     for (Map<String, String> map : maps) {
-                        if (map.get("q").length()>5){
-                            String secondColumn = map.get("q");
-                            System.out.printf("%-20s",secondColumn.substring(0,3)+"...."+secondColumn.length());
-                        }else {
-                            System.out.printf("%-20s",map.get("q"));
-                        }
-                        if (map.get("w").length()>5){
-                            String secondColumn = map.get("w");
-                            System.out.printf("%-20s",secondColumn.substring(0,3)+"...."+secondColumn.length());
-                        }else {
-                            System.out.printf("%-20s",map.get("w"));
-                        }
-                        if (map.get("e").length()>5){
-                            String secondColumn = map.get("e");
-                            System.out.printf("%-15s",secondColumn.substring(0,3)+"...."+secondColumn.length());
-                        }else {
-                            System.out.printf("%-15s",map.get("e"));
-                        }
-                        if (map.get("r").length()>5){
-                            String secondColumn = map.get("r");
-                            System.out.printf("%-20s",secondColumn.substring(0,3)+"...."+secondColumn.length());
-                        }else {
-                            System.out.printf("%-20s",map.get("r"));
-                        }
-                        System.out.printf("%-20s",map.get("t"));
-                        System.out.printf("%-20s",map.get("y"));
+                        System.out.printf("%-20s",map.get("dog"));
+                        System.out.printf("%-20s",map.get("cat"));
+                        System.out.printf("%-20s",map.get("butterfly"));
                         System.out.println();
                     }
                 }

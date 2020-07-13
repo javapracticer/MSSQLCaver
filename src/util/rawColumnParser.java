@@ -13,7 +13,7 @@ public class rawColumnParser {
         List<Map<String,String>> recordList = new ArrayList<>();
         int j = 0;
         for (byte[] record : records) {
-            if (j==records.length){
+            if (j==records.length||record==null){
                 break;
             }
             int fixdOffset = 4;

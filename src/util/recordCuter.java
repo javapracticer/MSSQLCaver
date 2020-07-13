@@ -11,6 +11,9 @@ public class recordCuter {
             if (startOffset>8192){
                 continue;
             }
+            if (startOffset==0){
+                continue;
+            }
             int offsetNumOfColum = hexUtil.int2(page,startOffset+2);
             int numOfColumn = hexUtil.int2(page,startOffset+offsetNumOfColum);
             byte status = page[startOffset];
