@@ -27,13 +27,15 @@ public class  deletedRecordCuter{
                     numOfVariable = hexUtil.int2(page,variableOffset);//可变长列的数量
                     for (int k = numOfVariable; k >0 ; k--) {
                         int temp = hexUtil.int2(page,variableOffset+2);
-                        if (temp>8192){
+                        if (temp>8192) {
                             temp -= 32768;
-                            temp+=startOffset;
-                            if (temp>endOffset){
-                                endOffset =temp;
-                            }
+
                         }
+                        temp += startOffset;
+                        if (temp>endOffset){
+                            endOffset =temp;
+                        }
+
                         variableOffset+=2;
                     }
                     length = endOffset - startOffset;

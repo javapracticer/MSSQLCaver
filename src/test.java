@@ -110,7 +110,7 @@ public class test {
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==7&&header.getType()==1){
-                byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+                List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals("72057594043760640")){
@@ -150,7 +150,7 @@ public class test {
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==5&&header.getType()==1){
-                byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+                List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
                     if (map.get("idmajor").equals("658101385")){
@@ -183,7 +183,8 @@ public class test {
             for (byte[] bytes : read) {
                 pageHeader header = new pageHeader(bytes);
                 if (header.getIndexId()==256&&header.getIdObj()==188&&header.getType()==1){
-                    byte[][] records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+//                    List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+                    List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
                     for (Map<String, String> map : maps) {
                         System.out.printf("%-20s",map.get("dog"));
@@ -206,7 +207,7 @@ public class test {
             byte[][] pages = pageSelecter.getPages();
             for (byte[] page : pages) {
                 pageHeader header = new pageHeader(page);
-                if (header.getPageId()==368){
+                if (header.getPageId()==464){
                     List<byte[]> list = deletedRecordCuter.cutRrcord(page, header.getFreeData());
                     for (byte[] bytes : list) {
                         System.out.println(bytes);

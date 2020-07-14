@@ -15,6 +15,9 @@ public class lobRecordParser {
         //找到记录地址的初始偏移量
         Object result = null;
         int preRecord = hexUtil.int2(page,8190-slot*2);
+        if (preRecord ==0){
+            return "lob数据暂时无法解析";
+        }
         int recordType = hexUtil.int2(page,preRecord+12);
         if (recordType==5){
             result = parserType5(page, preRecord + 14); //直接从跳过固定记录头，从记录开始
