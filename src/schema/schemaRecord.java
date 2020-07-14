@@ -52,6 +52,14 @@ public class schemaRecord {
         this.length = length;
     }
 
+    public Long getColumnid() {
+        return columnid;
+    }
+
+    public void setColumnid(Long columnid) {
+        this.columnid = columnid;
+    }
+
     @Override
     public String toString() {
         return "schemaRecord{" +

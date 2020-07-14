@@ -153,7 +153,7 @@ public class test {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("658101385")){
+                    if (map.get("idmajor").equals("430624577")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
