@@ -17,7 +17,7 @@ public class rawText implements Ischema {
 
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
-        long pageid = hexUtil.int6(bytes, offset + 8);
+        long pageid = hexUtil.int4(bytes, offset + 8);
         int slot = hexUtil.int2(bytes,offset+14);
         byte[] aimpage = pageSelecter.pageSelecterByid(pageid);
         Object textResult = lobRecordParser.parserLobRecord(aimpage, slot);

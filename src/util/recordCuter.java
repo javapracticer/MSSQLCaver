@@ -30,21 +30,13 @@ public class recordCuter {
                     int temp = hexUtil.int2(page,variableOffset+2);
                     if (temp>8192){
                         temp -= 32768;
+                        temp+=startOffset;
                         if (temp>endOffset){
                             endOffset =temp;
-                        }else {
-                            endOffset+=24;
-                        }
-                    }else {
-                        if (temp>endOffset){
-                            endOffset = temp;
-                        }else {
-                            endOffset+=24;
                         }
                     }
                     variableOffset+=2;
                 }
-                endOffset+=startOffset;
                 length = endOffset - startOffset;
                 records[j] = new byte[length];
                 System.arraycopy(page, startOffset, records[j], 0, length);

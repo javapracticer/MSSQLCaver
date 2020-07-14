@@ -26,6 +26,7 @@ public class pageHeader {
     private long xdesId;
     private int ghostRecnt;
     private Long tornBits;
+    private int fileId;
     public pageHeader(byte[] page){
         this.headerVersion = page[0];
         this.type = page[1];
@@ -40,7 +41,8 @@ public class pageHeader {
         this.idObj = hexUtil.int4(page,24);
         this.freeCnt = hexUtil.int2(page,28);
         this.freeData = hexUtil.int2(page,30);
-        this.pageId = hexUtil.int6(page,32);
+        this.pageId = hexUtil.int4(page,32);
+        this.fileId = hexUtil.int2(page,34);
         this.reservedCnt = hexUtil.int2(page,38);
         this.lsn = hexUtil.int4(page,40)+":"+hexUtil.int4(page,44)+":"+hexUtil.int2(page,48);
         this.xactReserved = hexUtil.int2(page,50);
@@ -233,9 +235,17 @@ public class pageHeader {
         this.tornBits = tornBits;
     }
 
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
+    }
+
     @Override
     public String toString() {
-        return "domain.pageHeader{" +
+        return "pageHeader{" +
                 "headerVersion=" + headerVersion +
                 ", type=" + type +
                 ", typeFlagBits=" + typeFlagBits +
@@ -259,6 +269,7 @@ public class pageHeader {
                 ", xdesId=" + xdesId +
                 ", ghostRecnt=" + ghostRecnt +
                 ", tornBits=" + tornBits +
+                ", fileId=" + fileId +
                 '}';
     }
 }

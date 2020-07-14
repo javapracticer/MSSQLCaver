@@ -14,6 +14,7 @@ import java.util.Map;
 import util.pageSelecter;
 import util.rawColumnParser;
 import util.recordCuter;
+import util.deletedRecordCuter;
 
 public class test {
     /**
@@ -201,11 +202,17 @@ public class test {
             System.out.println(7/8);
         }
         @Test
-        public void caculate(){
-            Long l = 11990400L;
-            int ll = (int) (l/300);
-            int lll = ll%60;
-            System.out.println(lll);
+        public void deletedRecordCut(){
+            byte[][] pages = pageSelecter.getPages();
+            for (byte[] page : pages) {
+                pageHeader header = new pageHeader(page);
+                if (header.getPageId()==368){
+                    List<byte[]> list = deletedRecordCuter.cutRrcord(page, header.getFreeData());
+                    for (byte[] bytes : list) {
+                        System.out.println(bytes);
+                    }
+                }
+            }
         }
     }
 
