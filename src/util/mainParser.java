@@ -17,12 +17,26 @@ public class mainParser {
     static byte[][] read = pageSelecter.getPages();
     public static List<Map<String, String>> parsetTable(String tableid) throws IOException {
         Map<Long, schemaRecord> schemaMap = tableSchema(tableid);
+        List<Ischema> schemaList = new ArrayList<>();
         String rowSetId = idobj5Page(tableid);
         String allocationUnitID = id7objPage(rowSetId);
         Long aLong = Long.valueOf(allocationUnitID);
-        Long indexID= aLong>>48;
+        Long indexID = aLong >> 48;
         Long idObj = (aLong - (indexID << 48)) >> 16;
-        return null;
+        for (int i = 1; i <= schemaMap.size(); i++) {
+            schemaRecord schemaRecord = schemaMap.get((long)i);
+            schemaList.add(schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
+        }
+        for (byte[] bytes : read) {
+            pageHeader header = new pageHeader(bytes);
+            if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
+                List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+//                List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, schemaList, read);
+                return maps;
+            }
+        }
+        throw new RuntimeException("并未找到相关数据");
     }
 
     /**
@@ -126,5 +140,27 @@ public class mainParser {
             }
         }
         return recordMap;
+    }
+
+    /**
+     * 通过code生成schema类
+     * @param code
+     * @param length
+     * @return
+     */
+    public static Ischema schemaBuilder(int code,int length,String name){
+        switch (code){
+            case 56:
+                return new rawInt(name);
+            case 175:
+                return new rawChar(name,length);
+            case 35:
+                return new rawText(name);
+            case 167:
+                return new rawVarchar(name,length);
+            case 61:
+                return new rawDateTime(name);
+        }
+        throw new RuntimeException("并未找到对应的schema类");
     }
 }

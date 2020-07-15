@@ -20,7 +20,7 @@ public enum schemaType {
     TimeStamp(189,"timeStamp"),
     TimyInt(48,"timtint"),
     UniqueIdentifier(36,"uniqueidentifier"),
-    Binary(167,"varchar"),
+    Varchar(167,"varchar"),
     Ntext(99,"ntext"),
     Nvarchar(231,"nvarchar"),
     Varbinary(165,"varbinary"),

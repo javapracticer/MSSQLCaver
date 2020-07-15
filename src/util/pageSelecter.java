@@ -9,7 +9,7 @@ public class pageSelecter {
 
     static {
         try {
-            read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+            read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         } catch (IOException e) {
             e.printStackTrace();
         }

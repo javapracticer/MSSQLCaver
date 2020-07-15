@@ -4,17 +4,12 @@ import org.junit.jupiter.api.Test;
 import schema.schemaRecord;
 import title.titlePage;
 import title.titleRecord;
-import util.pageCuter;
+import util.*;
 import schema.schemeaPage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import util.pageSelecter;
-import util.rawColumnParser;
-import util.recordCuter;
-import util.deletedRecordCuter;
 
 public class test {
     /**
@@ -39,7 +34,7 @@ public class test {
      */
     @Test
     public void testTitleName() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         List<titlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -67,7 +62,7 @@ public class test {
      */
     @Test
     public void testTableSchema() throws IOException {
-        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         List<schemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             pageHeader header = new pageHeader(page);
@@ -79,7 +74,7 @@ public class test {
         for (schemeaPage schemeaPage : list) {
             List<schemaRecord> records = schemeaPage.getRecords();
             for (schemaRecord record : records) {
-                long tableid = 658101385L;
+                long tableid = 53575229L;
                 if (record.getTableId()== tableid){
                     System.out.println("Type:"+schemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
                 }
@@ -93,7 +88,7 @@ public class test {
      */
     @Test
     public void testid7() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new rawBigInt("auid"));
         list.add(new rawTinyint("type"));
@@ -113,7 +108,7 @@ public class test {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594043760640")){
+                    if (map.get("ownerid").equals("72057594039238656")){
                         System.out.println(map);
                     }
                 }
@@ -127,7 +122,7 @@ public class test {
      */
     @Test
     public void testid5() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new rawBigInt("rowsetid"));
         list.add(new rawTinyint("ownertype"));
@@ -153,7 +148,7 @@ public class test {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("430624577")){
+                    if (map.get("idmajor").equals("53575229")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -162,7 +157,7 @@ public class test {
         }
         @Test
         public void testBinaryShift(){
-        Long allocationUnitID = 72057594050248704L;
+        Long allocationUnitID = 72057594040287232L;
         Long indexID= allocationUnitID>>48;
         Long idObj = (allocationUnitID - (indexID << 48)) >> 16;
             System.out.println("indxeID="+indexID);
@@ -182,9 +177,9 @@ public class test {
 
             for (byte[] bytes : read) {
                 pageHeader header = new pageHeader(bytes);
-                if (header.getIndexId()==256&&header.getIdObj()==188&&header.getType()==1){
-//                    List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                    List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
+                if (header.getIndexId()==256&&header.getIdObj()==36&&header.getType()==1){
+                    List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+//                    List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
                     for (Map<String, String> map : maps) {
                         System.out.printf("%-20s",map.get("dog"));
@@ -213,6 +208,13 @@ public class test {
                         System.out.println(bytes);
                     }
                 }
+            }
+        }
+        @Test
+        public void testmainPaarser() throws IOException {
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(437576597));
+            for (Map<String, String> map : maps) {
+                System.out.println(map);
             }
         }
     }
