@@ -20,7 +20,7 @@ public class rawVarchar implements Ischema {
         return hexUtil.parseRecordString(bytes,offset,endoffset);
     }
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
-        long pageid = hexUtil.int6(bytes, offset + 16);
+        long pageid = hexUtil.int4(bytes, offset + 16);
         int slot = hexUtil.int2(bytes,offset+22);
         byte[] aimpage = pageSelecter.pageSelecterByid(pageid);
         Object result = overFlowRecordParser.parserOverFlowRecord(aimpage, slot);

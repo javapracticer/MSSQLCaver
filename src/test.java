@@ -88,7 +88,7 @@ public class test {
      */
     @Test
     public void testid7() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new rawBigInt("auid"));
         list.add(new rawTinyint("type"));
@@ -108,7 +108,7 @@ public class test {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594039238656")){
+                    if (map.get("ownerid").equals("72057594043760640")){
                         System.out.println(map);
                     }
                 }
@@ -122,7 +122,7 @@ public class test {
      */
     @Test
     public void testid5() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new rawBigInt("rowsetid"));
         list.add(new rawTinyint("ownertype"));
@@ -148,7 +148,7 @@ public class test {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("53575229")){
+                    if (map.get("idmajor").equals("658101385")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -157,7 +157,7 @@ public class test {
         }
         @Test
         public void testBinaryShift(){
-        Long allocationUnitID = 72057594040287232L;
+        Long allocationUnitID = 72057594050314240L;
         Long indexID= allocationUnitID>>48;
         Long idObj = (allocationUnitID - (indexID << 48)) >> 16;
             System.out.println("indxeID="+indexID);
@@ -177,7 +177,7 @@ public class test {
 
             for (byte[] bytes : read) {
                 pageHeader header = new pageHeader(bytes);
-                if (header.getIndexId()==256&&header.getIdObj()==36&&header.getType()==1){
+                if (header.getIndexId()==256&&header.getIdObj()==135&&header.getType()==1){
                     List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
 //                    List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
@@ -212,10 +212,13 @@ public class test {
         }
         @Test
         public void testmainPaarser() throws IOException {
+            long startTime = System.currentTimeMillis();
             List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(437576597));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }
+            long endTime = System.currentTimeMillis();
+            System.out.println(endTime-startTime);
         }
     }
 
