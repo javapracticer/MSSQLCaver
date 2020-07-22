@@ -34,7 +34,7 @@ public class test {
      */
     @Test
     public void testTitleName() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
         List<titlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -62,7 +62,7 @@ public class test {
      */
     @Test
     public void testTableSchema() throws IOException {
-        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
+        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<schemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             pageHeader header = new pageHeader(page);
@@ -74,7 +74,7 @@ public class test {
         for (schemeaPage schemeaPage : list) {
             List<schemaRecord> records = schemeaPage.getRecords();
             for (schemaRecord record : records) {
-                long tableid = 53575229L;
+                long tableid = 1954106002L;
                 if (record.getTableId()== tableid){
                     System.out.println("Type:"+schemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
                 }
@@ -106,7 +106,7 @@ public class test {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==7&&header.getType()==1){
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals("72057594043760640")){
                         System.out.println(map);
@@ -122,7 +122,7 @@ public class test {
      */
     @Test
     public void testid5() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new rawBigInt("rowsetid"));
         list.add(new rawTinyint("ownertype"));
@@ -146,9 +146,9 @@ public class test {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==5&&header.getType()==1){
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("658101385")){
+                    if (map.get("idmajor").equals("1525580473")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -180,7 +180,7 @@ public class test {
                 if (header.getIndexId()==256&&header.getIdObj()==135&&header.getType()==1){
                     List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
 //                    List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
-                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
+                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                     for (Map<String, String> map : maps) {
                         System.out.printf("%-20s",map.get("dog"));
                         System.out.printf("%-20s",map.get("cat"));
@@ -192,10 +192,9 @@ public class test {
         }
         @Test
         public void testBinary(){
-            byte b = Byte.parseByte(String.valueOf(30),16);
-            System.out.println(b);
-            System.out.println((byte) ((b >> 6) & 0x1));
-            System.out.println(7/8);
+            int x = -401;
+            String s = Integer.toHexString(x);
+            System.out.println(s);
         }
         @Test
         public void deletedRecordCut(){
@@ -213,12 +212,36 @@ public class test {
         @Test
         public void testmainPaarser() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(437576597));
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(978102525));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }
             long endTime = System.currentTimeMillis();
             System.out.println(endTime-startTime);
+        }
+        @Test
+        public void keyTest() throws IOException {
+            List<Ischema> list = new ArrayList<>();
+            list.add(new rawInt("object_id"));
+            list.add(new rawInt("index_id"));
+            list.add(new rawInt("index_column_id"));
+            list.add(new rawInt("column_id"));
+            list.add(new rawTinyint("key_ordinal"));
+            list.add(new rawTinyint("partition_ordinal"));
+            list.add(new rawBit("is_descending_key"));
+            list.add(new rawBit("is_included_column"));
+            byte[][] pages = pageSelecter.getPages();
+            for (byte[] page : pages) {
+                pageHeader header = new pageHeader(page);
+                System.out.println(header.getIdObj());
+//                if (header.getIdObj()==111){
+//                    List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
+//                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+//                    for (Map<String, String> map : maps) {
+//                            System.out.println(map);
+//                    }
+//                }
+            }
         }
     }
 

@@ -1,0 +1,1234 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 60e59272eeb992934b5392b899ad890ff613baa8)
++++ .idea/workspace.xml	(revision )
+@@ -1,11 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
++    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="尝试解析主键和系统视图(目前失败了)">
++      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/rawBit.java" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/test.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/test.class" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/rawVarchar.java" afterPath="$PROJECT_DIR$/src/domain/rawVarchar.java" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/mainParser.java" afterPath="$PROJECT_DIR$/src/util/mainParser.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/pageSelecter.java" afterPath="$PROJECT_DIR$/src/util/pageSelecter.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/rawColumnParser.java" afterPath="$PROJECT_DIR$/src/util/rawColumnParser.java" />
+     </list>
+     <ignored path="$PROJECT_DIR$/out/" />
+     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+@@ -17,11 +21,11 @@
+   </component>
+   <component name="FileEditorManager">
+     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
++      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/src/test.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="352">
+-              <caret line="214" column="54" lean-forward="true" selection-start-line="214" selection-start-column="54" selection-end-line="214" selection-end-column="54" />
++            <state relative-caret-position="27">
++              <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+               <folding>
+                 <element signature="imports" expanded="true" />
+               </folding>
+@@ -29,52 +33,73 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="hexUtil.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
++      <file leaf-file-name="pageHeader.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/domain/pageHeader.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="175">
+-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+-              <folding />
++            <state relative-caret-position="1080">
++              <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
++              <folding>
++                <element signature="e#3055#3056#0" expanded="true" />
++                <element signature="e#3085#3086#0" expanded="true" />
++              </folding>
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="lobRecordParser.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/util/lobRecordParser.java">
++      <file leaf-file-name="recordCuter.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="378">
+-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
++            <state relative-caret-position="1107">
++              <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="rawText.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/domain/rawText.java">
++      <file leaf-file-name="rawBit.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/domain/rawBit.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="459">
+-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+-              <folding />
++            <state relative-caret-position="756">
++              <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
++              <folding>
++                <element signature="e#182#183#0" expanded="true" />
++                <element signature="e#215#216#0" expanded="true" />
++                <element signature="e#392#393#0" expanded="true" />
++                <element signature="e#419#420#0" expanded="true" />
++                <element signature="e#463#464#0" expanded="true" />
++                <element signature="e#487#488#0" expanded="true" />
++                <element signature="e#526#527#0" expanded="true" />
++                <element signature="e#550#551#0" expanded="true" />
++                <element signature="e#594#595#0" expanded="true" />
++                <element signature="e#622#623#0" expanded="true" />
++              </folding>
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="recordCuter.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
++      <file leaf-file-name="rawInt.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="702">
+-              <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+-              <folding />
++            <state relative-caret-position="270">
++              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
++              <folding>
++                <element signature="e#172#173#0" expanded="true" />
++                <element signature="e#204#205#0" expanded="true" />
++                <element signature="e#338#339#0" expanded="true" />
++              </folding>
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="overFlowRecordParser.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/util/overFlowRecordParser.java">
++      <file leaf-file-name="rawChar.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/domain/rawChar.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="6">
+-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+-              <folding />
++            <state relative-caret-position="108">
++              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="18" />
++              <folding>
++                <element signature="e#878#879#0" expanded="true" />
++                <element signature="e#905#906#0" expanded="true" />
++              </folding>
+             </state>
+           </provider>
+         </entry>
+@@ -82,8 +107,8 @@
+       <file leaf-file-name="mainParser.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/util/mainParser.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="207">
+-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
++            <state relative-caret-position="1944">
++              <caret line="72" column="54" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
+               <folding>
+                 <element signature="imports" expanded="true" />
+               </folding>
+@@ -91,11 +116,21 @@
+           </provider>
+         </entry>
+       </file>
++      <file leaf-file-name="hexUtil.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="513">
++              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="31" />
++              <folding />
++            </state>
++          </provider>
++        </entry>
++      </file>
+       <file leaf-file-name="pageSelecter.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/util/pageSelecter.java">
+           <provider selected="true" editor-type-id="text-editor">
+             <state relative-caret-position="243">
+-              <caret line="11" column="77" lean-forward="false" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
++              <caret line="11" column="82" lean-forward="false" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
+               <folding />
+             </state>
+           </provider>
+@@ -104,8 +139,8 @@
+       <file leaf-file-name="rawColumnParser.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="342">
+-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
++            <state relative-caret-position="135">
++              <caret line="11" column="95" lean-forward="false" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+               <folding>
+                 <element signature="imports" expanded="true" />
+               </folding>
+@@ -113,16 +148,6 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="rawVarchar.java" pinned="false" current-in-tab="true">
+-        <entry file="file://$PROJECT_DIR$/src/domain/rawVarchar.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="324">
+-              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+     </leaf>
+   </component>
+   <component name="FileTemplateManagerImpl">
+@@ -184,15 +209,16 @@
+         <option value="$PROJECT_DIR$/src/domain/rawText.java" />
+         <option value="$PROJECT_DIR$/src/util/deletedRecordParser.java" />
+         <option value="$PROJECT_DIR$/src/util/overFlowRecordParser.java" />
+-        <option value="$PROJECT_DIR$/src/util/rawColumnParser.java" />
+         <option value="$PROJECT_DIR$/src/util/deletedRecordCuter.java" />
+         <option value="$PROJECT_DIR$/src/schema/schemaRecord.java" />
+         <option value="$PROJECT_DIR$/src/domain/schemaType.java" />
+-        <option value="$PROJECT_DIR$/src/util/mainParser.java" />
+         <option value="$PROJECT_DIR$/src/util/recordCuter.java" />
+         <option value="$PROJECT_DIR$/src/util/lobRecordParser.java" />
+         <option value="$PROJECT_DIR$/src/domain/rawVarchar.java" />
++        <option value="$PROJECT_DIR$/src/domain/rawBit.java" />
+         <option value="$PROJECT_DIR$/src/util/pageSelecter.java" />
++        <option value="$PROJECT_DIR$/src/util/rawColumnParser.java" />
++        <option value="$PROJECT_DIR$/src/util/mainParser.java" />
+         <option value="$PROJECT_DIR$/src/test.java" />
+       </list>
+     </option>
+@@ -217,8 +243,8 @@
+     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+   </component>
+   <component name="ProjectFrameBounds" extendedState="6">
+-    <option name="x" value="-8" />
+-    <option name="y" value="-1088" />
++    <option name="x" value="1912" />
++    <option name="y" value="-8" />
+     <option name="width" value="1936" />
+     <option name="height" value="1056" />
+   </component>
+@@ -240,8 +266,6 @@
+       <foldersAlwaysOnTop value="true" />
+     </navigator>
+     <panes>
+-      <pane id="Scratches" />
+-      <pane id="Scope" />
+       <pane id="ProjectPane">
+         <subPane>
+           <expand>
+@@ -270,6 +294,12 @@
+               <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
+               <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
+               <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="title" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
++              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
+               <item name="util" type="462c0819:PsiDirectoryNode" />
+             </path>
+           </expand>
+@@ -277,10 +307,12 @@
+         </subPane>
+       </pane>
+       <pane id="PackagesPane" />
++      <pane id="Scope" />
++      <pane id="Scratches" />
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+-    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
++    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+   </component>
+   <component name="RunDashboard">
+@@ -295,7 +327,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="RunManager" selected="JUnit.test.testmainPaarser">
++  <component name="RunManager" selected="JUnit.test.testid5">
+     <configuration default="true" type="Applet" factoryName="Applet">
+       <option name="HTML_USED" value="false" />
+       <option name="WIDTH" value="400" />
+@@ -354,13 +386,13 @@
+       <option name="PARAMETERS" />
+       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+     </configuration>
+-    <configuration name="test.testBinaryShift" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="test.keyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="mdfreader" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+       <option name="ALTERNATIVE_JRE_PATH" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="test" />
+-      <option name="METHOD_NAME" value="testBinaryShift" />
++      <option name="METHOD_NAME" value="keyTest" />
+       <option name="TEST_OBJECT" value="method" />
+       <option name="VM_PARAMETERS" value="-ea" />
+       <option name="PARAMETERS" />
+@@ -373,13 +405,13 @@
+       <envs />
+       <patterns />
+     </configuration>
+-    <configuration name="test.testTitleName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="test.testBinary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="mdfreader" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+       <option name="ALTERNATIVE_JRE_PATH" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="test" />
+-      <option name="METHOD_NAME" value="testTitleName" />
++      <option name="METHOD_NAME" value="testBinary" />
+       <option name="TEST_OBJECT" value="method" />
+       <option name="VM_PARAMETERS" value="-ea" />
+       <option name="PARAMETERS" />
+@@ -392,13 +424,13 @@
+       <envs />
+       <patterns />
+     </configuration>
+-    <configuration name="test.testid5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="test.testTableSchema" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="mdfreader" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+       <option name="ALTERNATIVE_JRE_PATH" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="test" />
+-      <option name="METHOD_NAME" value="testid5" />
++      <option name="METHOD_NAME" value="testTableSchema" />
+       <option name="TEST_OBJECT" value="method" />
+       <option name="VM_PARAMETERS" value="-ea" />
+       <option name="PARAMETERS" />
+@@ -411,13 +443,13 @@
+       <envs />
+       <patterns />
+     </configuration>
+-    <configuration name="test.testid7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="test.testTitleName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="mdfreader" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+       <option name="ALTERNATIVE_JRE_PATH" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="test" />
+-      <option name="METHOD_NAME" value="testid7" />
++      <option name="METHOD_NAME" value="testTitleName" />
+       <option name="TEST_OBJECT" value="method" />
+       <option name="VM_PARAMETERS" value="-ea" />
+       <option name="PARAMETERS" />
+@@ -430,13 +462,13 @@
+       <envs />
+       <patterns />
+     </configuration>
+-    <configuration name="test.testmainPaarser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="test.testid5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="mdfreader" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+       <option name="ALTERNATIVE_JRE_PATH" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="test" />
+-      <option name="METHOD_NAME" value="testmainPaarser" />
++      <option name="METHOD_NAME" value="testid5" />
+       <option name="TEST_OBJECT" value="method" />
+       <option name="VM_PARAMETERS" value="-ea" />
+       <option name="PARAMETERS" />
+@@ -451,18 +483,18 @@
+     </configuration>
+     <list size="5">
+       <item index="0" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
+-      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testid5" />
+-      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testid7" />
+-      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testBinaryShift" />
+-      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testmainPaarser" />
++      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
++      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
++      <item index="3" class="java.lang.String" itemvalue="JUnit.test.keyTest" />
++      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testid5" />
+     </list>
+     <recent_temporary>
+       <list size="5">
+-        <item index="0" class="java.lang.String" itemvalue="JUnit.test.testmainPaarser" />
++        <item index="0" class="java.lang.String" itemvalue="JUnit.test.testid5" />
+         <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
+-        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testBinaryShift" />
+-        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testid7" />
+-        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testid5" />
++        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
++        <item index="3" class="java.lang.String" itemvalue="JUnit.test.keyTest" />
++        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -470,35 +502,35 @@
+     <option name="remove_strategy" value="false" />
+   </component>
+   <component name="TestHistory">
+-    <history-entry file="test_testTitleName - 2020.07.21 at 15h 10m 16s.xml">
+-      <configuration name="test.testTitleName" configurationId="JUnit" />
++    <history-entry file="test_keyTest - 2020.07.22 at 23h 15m 39s.xml">
++      <configuration name="test.keyTest" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 14h 55m 56s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testBinary - 2020.07.22 at 23h 06m 39s.xml">
++      <configuration name="test.testBinary" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 14h 58m 16s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testTableSchema - 2020.07.22 at 23h 25m 57s.xml">
++      <configuration name="test.testTableSchema" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 14h 59m 26s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testTitleName - 2020.07.22 at 23h 23m 30s.xml">
++      <configuration name="test.testTitleName" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 15h 01m 17s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testTitleName - 2020.07.22 at 23h 26m 17s.xml">
++      <configuration name="test.testTitleName" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 15h 03m 24s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testTitleName - 2020.07.22 at 23h 27m 09s.xml">
++      <configuration name="test.testTitleName" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 15h 05m 36s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testid5 - 2020.07.22 at 23h 24m 59s.xml">
++      <configuration name="test.testid5" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 15h 07m 00s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testid5 - 2020.07.22 at 23h 25m 31s.xml">
++      <configuration name="test.testid5" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 15h 07m 12s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testid5 - 2020.07.22 at 23h 26m 45s.xml">
++      <configuration name="test.testid5" configurationId="JUnit" />
+     </history-entry>
+-    <history-entry file="test_testmainPaarser - 2020.07.21 at 15h 10m 48s.xml">
+-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
++    <history-entry file="test_testid5 - 2020.07.22 at 23h 27m 36s.xml">
++      <configuration name="test.testid5" configurationId="JUnit" />
+     </history-entry>
+   </component>
+   <component name="TodoView" selected-index="3">
+@@ -511,24 +543,23 @@
+     </todo-panel>
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
+-    <editor active="true" />
++    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+     <layout>
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256617" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.50215983" order="7" side_tool="true" content_ui="tabs" />
+       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32220945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46144995" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35259178" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37149027" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3981588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
++      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+@@ -566,7 +597,10 @@
+     <MESSAGE value="可以恢复被删除的数据了（LOB和行溢出数据除外）" />
+     <MESSAGE value="写了个一键打印表数据类（只写了一部分）" />
+     <MESSAGE value="写了一个输入表id就可以打印表的的类，并修复了一些bug（预感还有很多bug没有发现）" />
+-    <option name="LAST_COMMIT_MESSAGE" value="写了一个输入表id就可以打印表的的类，并修复了一些bug（预感还有很多bug没有发现）" />
++    <MESSAGE value="修复了varchar类里遗留的一个bug（以前解析id是六位，现在解析id是4位加2位的文件id）" />
++    <MESSAGE value="尝试解析主键和系统视图（目前失败了）" />
++    <MESSAGE value="尝试解析主键和系统视图(目前失败了)" />
++    <option name="LAST_COMMIT_MESSAGE" value="尝试解析主键和系统视图(目前失败了)" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -597,7 +631,7 @@
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-line">
+           <url>file://$PROJECT_DIR$/src/test.java</url>
+-          <line>215</line>
++          <line>214</line>
+           <properties />
+           <option name="timeStamp" value="127" />
+         </line-breakpoint>
+@@ -625,8 +659,14 @@
+           <properties />
+           <option name="timeStamp" value="137" />
+         </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/test.java</url>
++          <line>237</line>
++          <properties />
++          <option name="timeStamp" value="142" />
++        </line-breakpoint>
+       </breakpoints>
+-      <option name="time" value="139" />
++      <option name="time" value="144" />
+     </breakpoint-manager>
+     <watches-manager>
+       <configuration name="JUnit">
+@@ -635,22 +675,13 @@
+     </watches-manager>
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="567">
+-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/page.java" />
+     <entry file="file://$PROJECT_DIR$/src/domain/pageHeader.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="1863">
+           <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+           <folding>
+-            <element signature="e#2471#2472#0" expanded="true" />
+-            <element signature="e#2501#2502#0" expanded="true" />
++            <element signature="e#3055#3056#0" expanded="true" />
+             <element signature="e#3085#3086#0" expanded="true" />
+           </folding>
+         </state>
+@@ -689,8 +720,7 @@
+         <state relative-caret-position="432">
+           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+           <folding>
+-            <element signature="e#2471#2472#0" expanded="true" />
+-            <element signature="e#2501#2502#0" expanded="true" />
++            <element signature="e#3055#3056#0" expanded="true" />
+             <element signature="e#3085#3086#0" expanded="true" />
+           </folding>
+         </state>
+@@ -725,13 +755,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/title/titlePage.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="297">
+-          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Date.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="4131">
+@@ -800,30 +823,10 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/title/titleRecord.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="162">
+-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/schema/schemeaPage.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="567">
+-          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/domain/rawNVarchar.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="756">
+           <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="20" />
+-          <folding>
+-            <element signature="e#831#832#0" expanded="false" />
+-            <element signature="e#858#859#0" expanded="false" />
+-          </folding>
+         </state>
+       </provider>
+     </entry>
+@@ -839,10 +842,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="470">
+           <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="20" />
+-          <folding>
+-            <element signature="e#704#705#0" expanded="true" />
+-            <element signature="e#731#732#0" expanded="true" />
+-          </folding>
+         </state>
+       </provider>
+     </entry>
+@@ -850,47 +849,54 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="189">
+           <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/rawChar.java">
++    <entry file="file://$PROJECT_DIR$/src/schema/schemaRecord.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="810">
+-          <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="20" />
+-          <folding>
+-            <element signature="e#878#879#0" expanded="true" />
+-            <element signature="e#905#906#0" expanded="true" />
+-          </folding>
++        <state relative-caret-position="243">
++          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
++    <entry file="file://$PROJECT_DIR$/src/domain/schemaType.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="270">
+-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
++        <state relative-caret-position="-297">
++          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/domain/rawDateTime.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="918">
++          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+           <folding>
+-            <element signature="e#338#339#0" expanded="true" />
++            <element signature="imports" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/schema/schemaRecord.java">
++    <entry file="file://$PROJECT_DIR$/src/domain/rawText.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="243">
+-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
++        <state relative-caret-position="459">
++          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/schemaType.java">
++    <entry file="file://$PROJECT_DIR$/src/domain/rawVarchar.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="-297">
+-          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+-          <folding>
+-            <element signature="e#1243#1244#0" expanded="true" />
+-            <element signature="e#1312#1313#0" expanded="true" />
+-          </folding>
++        <state relative-caret-position="486">
++          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/util/overFlowRecordParser.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="162">
++          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
++          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -902,32 +908,26 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/pageHeader.java">
++    <entry file="file://$PROJECT_DIR$/src/schema/schemeaPage.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="153">
+-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+-          <folding>
+-            <element signature="e#2471#2472#0" expanded="true" />
+-            <element signature="e#2501#2502#0" expanded="true" />
+-            <element signature="e#3085#3086#0" expanded="true" />
+-          </folding>
++        <state relative-caret-position="189">
++          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
++          <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/rawDateTime.java">
++    <entry file="file://$PROJECT_DIR$/src/title/titlePage.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="918">
+-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
++        <state relative-caret-position="297">
++          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
++          <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/rawText.java">
++    <entry file="file://$PROJECT_DIR$/src/title/titleRecord.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="459">
+-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
++        <state relative-caret-position="324">
++          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+           <folding />
+         </state>
+       </provider>
+@@ -940,73 +940,110 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
++    <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="702">
+-          <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
++        <state relative-caret-position="513">
++          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="31" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
++    <entry file="file://$PROJECT_DIR$/src/domain/rawChar.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="175">
+-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+-          <folding />
++        <state relative-caret-position="108">
++          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="18" />
++          <folding>
++            <element signature="e#878#879#0" expanded="true" />
++            <element signature="e#905#906#0" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/util/overFlowRecordParser.java">
++    <entry file="file://$PROJECT_DIR$/src/domain/rawInt.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="6">
+-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+-          <folding />
++        <state relative-caret-position="270">
++          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
++          <folding>
++            <element signature="e#172#173#0" expanded="true" />
++            <element signature="e#204#205#0" expanded="true" />
++            <element signature="e#338#339#0" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/util/mainParser.java">
++    <entry file="file://$PROJECT_DIR$/src/domain/rawBit.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="207">
+-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
++        <state relative-caret-position="756">
++          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+           <folding>
+-            <element signature="imports" expanded="true" />
++            <element signature="e#182#183#0" expanded="true" />
++            <element signature="e#215#216#0" expanded="true" />
++            <element signature="e#392#393#0" expanded="true" />
++            <element signature="e#419#420#0" expanded="true" />
++            <element signature="e#463#464#0" expanded="true" />
++            <element signature="e#487#488#0" expanded="true" />
++            <element signature="e#526#527#0" expanded="true" />
++            <element signature="e#550#551#0" expanded="true" />
++            <element signature="e#594#595#0" expanded="true" />
++            <element signature="e#622#623#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
++    <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="342">
+-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
++        <state relative-caret-position="1107">
++          <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
++          <folding />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/util/pageSelecter.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="243">
+-          <caret line="11" column="77" lean-forward="false" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
++          <caret line="11" column="82" lean-forward="false" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/test.java">
++    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="352">
+-          <caret line="214" column="54" lean-forward="true" selection-start-line="214" selection-start-column="54" selection-end-line="214" selection-end-column="54" />
++        <state relative-caret-position="135">
++          <caret line="11" column="95" lean-forward="false" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+           <folding>
+             <element signature="imports" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/domain/rawVarchar.java">
++    <entry file="file://$PROJECT_DIR$/src/util/mainParser.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="324">
+-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+-          <folding />
++        <state relative-caret-position="1944">
++          <caret line="72" column="54" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/domain/pageHeader.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="1080">
++          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
++          <folding>
++            <element signature="e#3055#3056#0" expanded="true" />
++            <element signature="e#3085#3086#0" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="27">
++          <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+Index: src/domain/rawBit.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/domain/rawBit.java	(revision )
++++ src/domain/rawBit.java	(revision )
+@@ -0,0 +1,41 @@
++package domain;
++
++import java.io.IOException;
++
++public class rawBit implements Ischema {
++    private String name;
++    int length = 1;
++    int fixed = 1;
++    public rawBit(String name1){
++        this.name = name1;
++    }
++    @Override
++    public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
++        return "暂不支持bit";
++    }
++
++    @Override
++    public String name() {
++        return name;
++    }
++
++    @Override
++    public int getLength() {
++        return 1;
++    }
++
++    @Override
++    public int fixd() {
++        return 1;
++    }
++
++    @Override
++    public boolean isLOB() {
++        return false;
++    }
++
++    @Override
++    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
++        return null;
++    }
++}
+Index: src/util/pageSelecter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/util/pageSelecter.java	(revision 60e59272eeb992934b5392b899ad890ff613baa8)
++++ src/util/pageSelecter.java	(revision )
+@@ -9,7 +9,7 @@
+ 
+     static {
+         try {
+-            read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
++            read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+Index: src/test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test.java	(revision 60e59272eeb992934b5392b899ad890ff613baa8)
++++ src/test.java	(revision )
+@@ -34,7 +34,7 @@
+      */
+     @Test
+     public void testTitleName() throws IOException {
+-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
++        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+         List<titlePage> list = new ArrayList<>();
+         for (byte[] bytes : read) {
+             pageHeader header = new pageHeader(bytes);
+@@ -62,7 +62,7 @@
+      */
+     @Test
+     public void testTableSchema() throws IOException {
+-        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
++        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+         List<schemeaPage> list = new ArrayList<>();
+         for (byte[] page : pages) {
+             pageHeader header = new pageHeader(page);
+@@ -74,7 +74,7 @@
+         for (schemeaPage schemeaPage : list) {
+             List<schemaRecord> records = schemeaPage.getRecords();
+             for (schemaRecord record : records) {
+-                long tableid = 53575229L;
++                long tableid = 1954106002L;
+                 if (record.getTableId()== tableid){
+                     System.out.println("Type:"+schemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
+                 }
+@@ -106,7 +106,7 @@
+             pageHeader header = new pageHeader(bytes);
+             if (header.getIdObj()==7&&header.getType()==1){
+                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
++                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                 for (Map<String, String> map : maps) {
+                     if (map.get("ownerid").equals("72057594043760640")){
+                         System.out.println(map);
+@@ -122,7 +122,7 @@
+      */
+     @Test
+     public void testid5() throws IOException {
+-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
++        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+         List<Ischema> list = new ArrayList<>();
+         list.add(new rawBigInt("rowsetid"));
+         list.add(new rawTinyint("ownertype"));
+@@ -146,9 +146,9 @@
+             pageHeader header = new pageHeader(bytes);
+             if (header.getIdObj()==5&&header.getType()==1){
+                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
++                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                 for (Map<String, String> map : maps) {
+-                    if (map.get("idmajor").equals("658101385")){
++                    if (map.get("idmajor").equals("1525580473")){
+                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
+                     }
+                     }
+@@ -180,7 +180,7 @@
+                 if (header.getIndexId()==256&&header.getIdObj()==135&&header.getType()==1){
+                     List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+ //                    List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
+-                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list,read);
++                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                     for (Map<String, String> map : maps) {
+                         System.out.printf("%-20s",map.get("dog"));
+                         System.out.printf("%-20s",map.get("cat"));
+@@ -192,10 +192,9 @@
+         }
+         @Test
+         public void testBinary(){
+-            byte b = Byte.parseByte(String.valueOf(30),16);
+-            System.out.println(b);
+-            System.out.println((byte) ((b >> 6) & 0x1));
+-            System.out.println(7/8);
++            int x = -401;
++            String s = Integer.toHexString(x);
++            System.out.println(s);
+         }
+         @Test
+         public void deletedRecordCut(){
+@@ -213,12 +212,36 @@
+         @Test
+         public void testmainPaarser() throws IOException {
+             long startTime = System.currentTimeMillis();
+-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(437576597));
++            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(978102525));
+             for (Map<String, String> map : maps) {
+                 System.out.println(map);
+             }
+             long endTime = System.currentTimeMillis();
+             System.out.println(endTime-startTime);
+         }
++        @Test
++        public void keyTest() throws IOException {
++            List<Ischema> list = new ArrayList<>();
++            list.add(new rawInt("object_id"));
++            list.add(new rawInt("index_id"));
++            list.add(new rawInt("index_column_id"));
++            list.add(new rawInt("column_id"));
++            list.add(new rawTinyint("key_ordinal"));
++            list.add(new rawTinyint("partition_ordinal"));
++            list.add(new rawBit("is_descending_key"));
++            list.add(new rawBit("is_included_column"));
++            byte[][] pages = pageSelecter.getPages();
++            for (byte[] page : pages) {
++                pageHeader header = new pageHeader(page);
++                System.out.println(header.getIdObj());
++//                if (header.getIdObj()==111){
++//                    List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
++//                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
++//                    for (Map<String, String> map : maps) {
++//                            System.out.println(map);
++//                    }
++//                }
++            }
++        }
+     }
+ 
+Index: src/util/rawColumnParser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/util/rawColumnParser.java	(revision 60e59272eeb992934b5392b899ad890ff613baa8)
++++ src/util/rawColumnParser.java	(revision )
+@@ -9,7 +9,7 @@
+ import java.util.Map;
+ 
+ public class rawColumnParser {
+-    public static List<Map<String,String>> prserRecord(List<byte[]> records, List<Ischema> list, byte[][] read) throws IOException {
++    public static List<Map<String,String>> prserRecord(List<byte[]> records, List<Ischema> list) throws IOException {
+         List<Map<String,String>> recordList = new ArrayList<>();
+         int j = 0;
+ 
+Index: src/util/mainParser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/util/mainParser.java	(revision 60e59272eeb992934b5392b899ad890ff613baa8)
++++ src/util/mainParser.java	(revision )
+@@ -32,7 +32,7 @@
+             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
+                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+ //                List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
+-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, schemaList, read);
++                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, schemaList);
+                 return maps;
+             }
+         }
+@@ -69,7 +69,7 @@
+             pageHeader header = new pageHeader(bytes);
+             if (header.getIdObj()==5&&header.getType()==1){
+                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
++                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                 for (Map<String, String> map : maps) {
+                     if (map.get("idmajor").equals(tableid)&&(map.get("idminor").equals("1")||map.get("idminor").equals("0"))){
+                         return map.get("rowsetid");
+@@ -104,7 +104,7 @@
+             pageHeader header = new pageHeader(bytes);
+             if (header.getIdObj()==7&&header.getType()==1){
+                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
+-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
++                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                 for (Map<String, String> map : maps) {
+                     if (map.get("ownerid").equals(rowsetId)&&map.get("type").equals("1")){
+                         return map.get("auid");
+diff --git out/production/mdfreader/util/rawColumnParser.class out/production/mdfreader/util/rawColumnParser.class
+index 7b57edf3a6304bdbfc7213aee15e1d6521477116..c60d010a0a32ba362ad9b428744a2143d9266b1d
+GIT binary patch
+literal 3335
+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
+V3E&xf+!>M>vRC&o(J7lc`#(tU`Ro7y
+
+diff --git out/production/mdfreader/test.class out/production/mdfreader/test.class
+index 14e1f376184cf1f1ad253b181496cd2510dcd450..e8047524539bf2030fe2457413f310a30ffa7a84
+GIT binary patch
+literal 9926
+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
+

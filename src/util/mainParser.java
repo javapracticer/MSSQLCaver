@@ -32,7 +32,7 @@ public class mainParser {
             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
 //                List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, schemaList, read);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, schemaList);
                 return maps;
             }
         }
@@ -69,7 +69,7 @@ public class mainParser {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==5&&header.getType()==1){
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("idmajor").equals(tableid)&&(map.get("idminor").equals("1")||map.get("idminor").equals("0"))){
                         return map.get("rowsetid");
@@ -104,7 +104,7 @@ public class mainParser {
             pageHeader header = new pageHeader(bytes);
             if (header.getIdObj()==7&&header.getType()==1){
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list, read);
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals(rowsetId)&&map.get("type").equals("1")){
                         return map.get("auid");

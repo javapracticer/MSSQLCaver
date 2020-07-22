@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class rawColumnParser {
-    public static List<Map<String,String>> prserRecord(List<byte[]> records, List<Ischema> list, byte[][] read) throws IOException {
+    public static List<Map<String,String>> prserRecord(List<byte[]> records, List<Ischema> list) throws IOException {
         List<Map<String,String>> recordList = new ArrayList<>();
         int j = 0;
 
