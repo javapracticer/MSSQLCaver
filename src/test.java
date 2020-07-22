@@ -234,13 +234,13 @@ public class test {
             for (byte[] page : pages) {
                 pageHeader header = new pageHeader(page);
                 System.out.println(header.getIdObj());
-//                if (header.getIdObj()==111){
-//                    List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
-//                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
-//                    for (Map<String, String> map : maps) {
-//                            System.out.println(map);
-//                    }
-//                }
+                if (header.getIdObj()==111){
+                    List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
+                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                    for (Map<String, String> map : maps) {
+                            System.out.println(map);
+                    }
+                }
             }
         }
     }
