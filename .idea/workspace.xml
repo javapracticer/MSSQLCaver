@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="尝试解析主键和系统视图1">
+    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,8 +17,8 @@
       <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="244" column="9" lean-forward="false" selection-start-line="244" selection-start-column="9" selection-end-line="244" selection-end-column="9" />
+            <state relative-caret-position="27">
+              <caret line="233" column="13" lean-forward="true" selection-start-line="233" selection-start-column="13" selection-end-line="243" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1056,8 +1056,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="244" column="9" lean-forward="false" selection-start-line="244" selection-start-column="9" selection-end-line="244" selection-end-column="9" />
+        <state relative-caret-position="27">
+          <caret line="233" column="13" lean-forward="true" selection-start-line="233" selection-start-column="13" selection-end-line="243" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
