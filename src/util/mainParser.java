@@ -20,6 +20,7 @@ public class mainParser {
         List<Ischema> schemaList = new ArrayList<>();
         String rowSetId = idobj5Page(tableid);
         String allocationUnitID = id7objPage(rowSetId);
+        Map<Integer, Integer> colmap = id3objPage(rowSetId);
         Long aLong = Long.valueOf(allocationUnitID);
         Long indexID = aLong >> 48;
         Long idObj = (aLong - (indexID << 48)) >> 16;
@@ -27,6 +28,7 @@ public class mainParser {
             schemaRecord schemaRecord = schemaMap.get((long)i);
             schemaList.add(schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
         }
+        schemaSorter(schemaList,colmap);
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
@@ -62,8 +64,8 @@ public class mainParser {
         list.add(new rawSmallInt("maxint"));
         list.add(new rawSmallInt("minleaf"));
         list.add(new rawSmallInt("minint"));
-        list.add(new rawVarBinary("rsguid"));
-        list.add(new rawVarBinary("lockres"));
+        list.add(new rawVarBinary("rsguid",0));
+        list.add(new rawVarBinary("lockres",0));
         list.add(new rawInt("dbfragid"));
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -116,6 +118,42 @@ public class mainParser {
     }
 
     /**
+     * 查找id为3的页面里的行的物理顺序
+     * @throws IOException
+     */
+    public static Map<Integer,Integer> id3objPage(String rowsetid) throws IOException {
+        Map<Integer,Integer> colMap = new HashMap<>();
+        List<Ischema> list = new ArrayList<>();
+        list.add(new rawBigInt("rsid"));
+        list.add(new rawInt("resolid"));
+        list.add(new rawInt("hbcolid"));
+        list.add(new rawBigInt("rcmodified"));
+        list.add(new rawInt("ti"));
+        list.add(new rawInt("cid"));
+        list.add(new rawSmallInt("ordkey"));
+        list.add(new rawSmallInt("maxinrowlen"));
+        list.add(new rawInt("status"));
+        list.add(new rawInt("offset"));
+        list.add(new rawInt("nullbit"));
+        list.add(new rawSmallInt("bitpos"));
+        list.add(new rawVarBinary("colguid",16));
+        byte[][] pages = pageSelecter.getPages();
+        for (byte[] page : pages) {
+            pageHeader header = new pageHeader(page);
+            if (header.getIdObj()==3&&header.getType()==1){
+                List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
+                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
+                for (Map<String, String> map : maps) {
+                    if (map.get("rsid").equals(rowsetid)){
+                        colMap.put(Integer.valueOf(map.get("resolid")),Integer.valueOf(map.get("hbcolid")));
+                    }
+                }
+            }
+        }
+        return colMap;
+    }
+
+    /**
      * 找到表的schema
      * @param tableId
      * @return
@@ -143,6 +181,22 @@ public class mainParser {
     }
 
     /**
+     * 将schema列表的逻辑顺序调整为物理顺序
+     * @param ischemaList
+     * @param sortmap
+     */
+    public static void schemaSorter(List<Ischema> ischemaList, Map<Integer, Integer> sortmap) {
+        Ischema[] ischemas = new Ischema[ischemaList.size()];
+        for (int i = 1; i <= sortmap.size(); i++) {
+            ischemas[sortmap.get(i) - 1] = ischemaList.get(i - 1);
+        }
+        ischemaList.clear();
+        for (Ischema ischema : ischemas) {
+            ischemaList.add(ischema);
+        }
+    }
+
+    /**
      * 通过code生成schema类
      * @param code
      * @param length
@@ -163,4 +217,5 @@ public class mainParser {
         }
         throw new RuntimeException("并未找到对应的schema类");
     }
+
 }

@@ -34,7 +34,7 @@ public class test {
      */
     @Test
     public void testTitleName() throws IOException {
-        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+        byte[][] read = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<titlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -62,7 +62,7 @@ public class test {
      */
     @Test
     public void testTableSchema() throws IOException {
-        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
         List<schemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             pageHeader header = new pageHeader(page);
@@ -74,7 +74,7 @@ public class test {
         for (schemeaPage schemeaPage : list) {
             List<schemaRecord> records = schemeaPage.getRecords();
             for (schemaRecord record : records) {
-                long tableid = 1954106002L;
+                long tableid = 919674324L;
                 if (record.getTableId()== tableid){
                     System.out.println("Type:"+schemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
                 }
@@ -139,8 +139,8 @@ public class test {
         list.add(new rawSmallInt("maxint"));
         list.add(new rawSmallInt("minleaf"));
         list.add(new rawSmallInt("minint"));
-        list.add(new rawVarBinary("rsguid"));
-        list.add(new rawVarBinary("lockres"));
+        list.add(new rawVarBinary("rsguid",0));
+        list.add(new rawVarBinary("lockres",0));
         list.add(new rawInt("dbfragid"));
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
@@ -148,7 +148,7 @@ public class test {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("1525580473")){
+                    if (map.get("idmajor").equals("1221579390")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -157,7 +157,7 @@ public class test {
         }
         @Test
         public void testBinaryShift(){
-        Long allocationUnitID = 72057594050314240L;
+        Long allocationUnitID = 72057594043170816L;
         Long indexID= allocationUnitID>>48;
         Long idObj = (allocationUnitID - (indexID << 48)) >> 16;
             System.out.println("indxeID="+indexID);
@@ -212,7 +212,7 @@ public class test {
         @Test
         public void testmainPaarser() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(978102525));
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1070626857));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }
@@ -222,23 +222,29 @@ public class test {
         @Test
         public void keyTest() throws IOException {
             List<Ischema> list = new ArrayList<>();
-            list.add(new rawInt("object_id"));
-            list.add(new rawInt("index_id"));
-            list.add(new rawInt("index_column_id"));
-            list.add(new rawInt("column_id"));
-            list.add(new rawTinyint("key_ordinal"));
-            list.add(new rawTinyint("partition_ordinal"));
-            list.add(new rawBit("is_descending_key"));
-            list.add(new rawBit("is_included_column"));
+            list.add(new rawBigInt("rsid"));
+            list.add(new rawInt("resolid"));
+            list.add(new rawInt("hbcolid"));
+            list.add(new rawBigInt("rcmodified"));
+            list.add(new rawInt("ti"));
+            list.add(new rawInt("cid"));
+            list.add(new rawSmallInt("ordkey"));
+            list.add(new rawSmallInt("maxinrowlen"));
+            list.add(new rawInt("status"));
+            list.add(new rawInt("offset"));
+            list.add(new rawInt("nullbit"));
+            list.add(new rawSmallInt("bitpos"));
+            list.add(new rawVarBinary("colguid",16));
             byte[][] pages = pageSelecter.getPages();
             for (byte[] page : pages) {
                 pageHeader header = new pageHeader(page);
-                System.out.println(header.getIdObj());
-                if (header.getIdObj()==111){
+                if (header.getIdObj()==3&&header.getType()==1){
                     List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
                     List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
                     for (Map<String, String> map : maps) {
-                            System.out.println(map);
+                            if (map.get("rsid").equals("72057594043301888")){
+                                System.out.println(map);
+                            }
                     }
                 }
             }

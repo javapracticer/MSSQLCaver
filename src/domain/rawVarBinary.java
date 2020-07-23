@@ -5,12 +5,13 @@ public class rawVarBinary implements Ischema {
     int length = 0;
     int fixed = 0;
     private boolean isLOB = false;
-    public rawVarBinary(String name1){
+    public rawVarBinary(String name1,int length1){
         this.name = name1;
+        this.length = length1;
     }
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) {
-        return bytes;
+        return "暂不支持";
     }
 
     @Override
@@ -20,7 +21,7 @@ public class rawVarBinary implements Ischema {
 
     @Override
     public int getLength() {
-        return 0;
+        return length;
     }
 
     @Override
