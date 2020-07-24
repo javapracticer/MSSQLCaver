@@ -13,7 +13,9 @@ public class rawChar implements Ischema {
     }
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) throws UnsupportedEncodingException {
-        return hexUtil.parseRecordString(bytes,offset,endoffset);
+        String s = hexUtil.parseRecordString(bytes, offset, endoffset);
+        s=s.replaceAll("     ","");
+        return s;
     }
 
     @Override

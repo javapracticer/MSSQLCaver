@@ -187,7 +187,7 @@ public class hexUtil {
 
     public static String getHex(byte[] record, int start, int end) {
         StringBuilder hex = new StringBuilder("");
-        for (int i = end - 1; i >= start; i--) {
+        for (int i = end; i >= start; i--) {
             String s = Integer.toHexString(record[i] & 0xff);
             if ((record[i] & 0xff) <= 16) {
                 s = "0" + s;
