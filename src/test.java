@@ -193,6 +193,7 @@ public class test {
         @Test
         public void testBinary(){
             System.out.println((byte)((0xf0 >>1 ) & 0x1)==1);
+            System.out.println(":");
         }
         @Test
         public void deletedRecordCut(){
