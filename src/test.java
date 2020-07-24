@@ -62,7 +62,7 @@ public class test {
      */
     @Test
     public void testTableSchema() throws IOException {
-        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+        byte[][] pages = pageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<schemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             pageHeader header = new pageHeader(page);
@@ -74,7 +74,7 @@ public class test {
         for (schemeaPage schemeaPage : list) {
             List<schemaRecord> records = schemeaPage.getRecords();
             for (schemaRecord record : records) {
-                long tableid = 919674324L;
+                long tableid = 1954106002L;
                 if (record.getTableId()== tableid){
                     System.out.println("Type:"+schemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
                 }
@@ -192,7 +192,9 @@ public class test {
         }
         @Test
         public void testBinary(){
-            System.out.println(((1 >> 1) & 0x1)==1);
+            Long aLong = Long.parseLong("4008000000000000", 16);
+            double v = Double.longBitsToDouble(aLong);
+            System.out.println(v);
         }
         @Test
         public void deletedRecordCut(){
@@ -210,7 +212,7 @@ public class test {
         @Test
         public void testmainPaarser() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1298103665));
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1954106002));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }

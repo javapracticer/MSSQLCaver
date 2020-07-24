@@ -214,6 +214,10 @@ public class mainParser {
                 return new rawVarchar(name,length);
             case 61:
                 return new rawDateTime(name);
+            case 62:
+                return new rawFloat(name,length);
+            case 239:
+                return new rawNChar(name,length);
         }
         throw new RuntimeException("并未找到对应的schema类");
     }

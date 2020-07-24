@@ -27,20 +27,25 @@ public class rawColumnParser {
             byte b = 0x00;
             int variableHasParase = 0;
             if (((record[0] >> 5) & 0x1)==1){
-                variableColumns = hexUtil.int2(record, columnsOffset +3+numOfColumns/8);//可变长列数
+                //可变长列数
+                variableColumns = hexUtil.int2(record, columnsOffset +3+(numOfColumns-1)/8);
                 //判断可变长列是否为0
-                endOffsetPointer = columnsOffset +5+numOfColumns/8; //指向可变长结尾的偏移量的偏移量
-                variableEndOffsetPointer = hexUtil.int2(record,endOffsetPointer);//可变长结束的点
-                startOffsetOfVariableColumn = endOffsetPointer + variableColumns * 2;//可变长度的开始节点
+                // 指向可变长结尾的偏移量的偏移量
+                endOffsetPointer = columnsOffset +5+(numOfColumns-1)/8;
+                //可变长结束的点
+                variableEndOffsetPointer = hexUtil.int2(record,endOffsetPointer);
+                //可变长度的开始节点
+                startOffsetOfVariableColumn = endOffsetPointer + variableColumns * 2;
             }
             //读取零位图
-            byte[]  nullBitMap = new byte[1+numOfColumns/8];
+            byte[]  nullBitMap = new byte[1+(numOfColumns-1)/8];
             int counter = 0;
-            for (int i = columnsOffset +2; i <columnsOffset+3+(numOfColumns/8); i++) {
+            for (int i = columnsOffset +2; i <columnsOffset+3+(numOfColumns-1)/8; i++) {
                 nullBitMap[counter] = record[i];
                 counter++;
             }
-            Map<String,String> recordmap = new HashMap<>();  //用于存放记录的map
+            //用于存放记录的map
+            Map<String,String> recordmap = new HashMap<>();
             int i = 0;
             /**
              * 接下来就是激动人心的记录解析部分

@@ -15,6 +15,7 @@ public class hexUtil {
     /**
      * 处理两个字节的数据，将其转为int，由于数据有大小端的问题
      * 所以需要倒着拼接
+     *
      * @param head
      * @param offset
      * @return
@@ -30,9 +31,11 @@ public class hexUtil {
         }
         return Integer.valueOf(int2, 16);
     }
+
     /**
      * 处理四个字节的数据，将其转为int，由于数据有大小端的问题
      * 所以需要倒着拼接
+     *
      * @param head
      * @param offset
      * @return
@@ -48,9 +51,11 @@ public class hexUtil {
         }
         return Long.valueOf(int4, 16);
     }
+
     /**
      * 处理六个字节的数据，将其转为int，由于数据有大小端的问题
      * 所以需要倒着拼接，且由于其是6字节，要用long类型储存
+     *
      * @param head
      * @param offset
      * @return
@@ -69,6 +74,7 @@ public class hexUtil {
 
     /**
      * 处理8字节的数据，转为int
+     *
      * @param head
      * @param offset
      * @return
@@ -82,12 +88,13 @@ public class hexUtil {
             }
             int8 += s;
         }
-        BigInteger bigInteger = new BigInteger(int8,16);
+        BigInteger bigInteger = new BigInteger(int8, 16);
         return bigInteger;
     }
 
     /**
      * 读取两个字节的内容，将其转为16进制，并且补齐0
+     *
      * @param head
      * @param offset
      * @return
@@ -103,9 +110,10 @@ public class hexUtil {
         }
         return hex2;
     }
+
     public static String recordHex2(byte[] head, int offset) {
         String hex2 = "";
-        for (int i = offset; i <= offset+1; i++) {
+        for (int i = offset; i <= offset + 1; i++) {
             String s = Integer.toHexString(head[i] & 0xff);
             if ((head[i] & 0xff) <= 16) {
                 s = "0" + s;
@@ -117,9 +125,10 @@ public class hexUtil {
 
     /**
      * 解析ascii码
+     *
      * @param page
      * @param start ascii开始
-     * @param end ascii 结束
+     * @param end   ascii 结束
      * @return
      */
     public static String parseString(byte[] page, int start, int end) {
@@ -138,19 +147,20 @@ public class hexUtil {
 
     /**
      * 解析记录当中的字符
+     *
      * @param page
      * @param start
      * @param end
      * @return
      */
     public static String parseRecordString(byte[] page, int start, int end) throws UnsupportedEncodingException {
-        byte[] baKeyword = new byte[end-start+1];
+        byte[] baKeyword = new byte[end - start + 1];
         int j = 0;
-        for (int i = start; i <=end; i++) {
-          baKeyword[j]= page[i];
-          j++;
+        for (int i = start; i <= end; i++) {
+            baKeyword[j] = page[i];
+            j++;
         }
-        String result = new String(baKeyword,"GBK");
+        String result = new String(baKeyword, "GBK");
         return result;
 //        StringBuilder hex = new StringBuilder("");
 //        for (int i = start; i <=end; i=i+2) {
@@ -167,10 +177,23 @@ public class hexUtil {
 //        }
 //        return sb.toString();
     }
-    public static void recordIndexParser(byte[] record,int startoffset,int endoffset) throws IOException {
+
+    public static void recordIndexParser(byte[] record, int startoffset, int endoffset) throws IOException {
         long pageId = hexUtil.int6(record, startoffset + 8);
         int slot = hexUtil.int2(record, startoffset + 14);
         byte[] page = pageSelecter.pageSelecterByid(pageId);
-        lobRecordParser.parserLobRecord(page,slot);
+        lobRecordParser.parserLobRecord(page, slot);
+    }
+
+    public static String getHex(byte[] record, int start, int end) {
+        StringBuilder hex = new StringBuilder("");
+        for (int i = end - 1; i >= start; i--) {
+            String s = Integer.toHexString(record[i] & 0xff);
+            if ((record[i] & 0xff) <= 16) {
+                s = "0" + s;
+            }
+            hex.append(s);
         }
+        return hex.toString();
+    }
 }

@@ -25,10 +25,12 @@ public class recordCuter {
             if (((status >> 5) & 0x1)==0){
                 length = offsetNumOfColum+(numOfColumn/8)+3;
                byte[] record = new byte[length];
-                System.arraycopy(page, startOffset, record, 0, length);//将record的字节数组拷贝出来
+               //将record的字节数组拷贝出来
+                System.arraycopy(page, startOffset, record, 0, length);
                 records.add(record);
             }else {
-                int variableOffset = startOffset+offsetNumOfColum+1+(1+numOfColumn/8)+1; //可变长列的偏移位置开始点
+                //可变长列的偏移位置开始点
+                int variableOffset = startOffset+offsetNumOfColum+1+(1+(numOfColumn-1)/8)+1;
                 numOfVariable = hexUtil.int2(page,variableOffset);
                 for (int k = numOfVariable; k >0 ; k--) {
                     int temp = hexUtil.int2(page,variableOffset+2);
