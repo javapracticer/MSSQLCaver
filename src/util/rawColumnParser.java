@@ -46,6 +46,11 @@ public class rawColumnParser {
              * 接下来就是激动人心的记录解析部分
              */
             for (Ischema ischema : list) {
+                //这一个if语句是专门针对
+                if (i+1>numOfColumns){
+                    recordmap.put(ischema.name(), "NULL");
+                    continue;
+                }
                 boolean overFlowOrLob = false;
                 //以是否是变长字段为分界点
                 if (ischema.fixd()==1){

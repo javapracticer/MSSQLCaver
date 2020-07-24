@@ -192,9 +192,7 @@ public class test {
         }
         @Test
         public void testBinary(){
-            int x = -401;
-            String s = Integer.toHexString(x);
-            System.out.println(s);
+            System.out.println(((1 >> 1) & 0x1)==1);
         }
         @Test
         public void deletedRecordCut(){
@@ -212,7 +210,7 @@ public class test {
         @Test
         public void testmainPaarser() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1070626857));
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1298103665));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }
