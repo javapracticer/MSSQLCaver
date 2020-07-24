@@ -192,9 +192,7 @@ public class test {
         }
         @Test
         public void testBinary(){
-            Long aLong = Long.parseLong("4008000000000000", 16);
-            double v = Double.longBitsToDouble(aLong);
-            System.out.println(v);
+            System.out.println((byte)((0xf0 >>1 ) & 0x1)==1);
         }
         @Test
         public void deletedRecordCut(){
@@ -212,7 +210,7 @@ public class test {
         @Test
         public void testmainPaarser() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1954106002));
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1390627997));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }

@@ -63,7 +63,7 @@ public class rawColumnParser {
                     int bit = i%8;
                     //通过零位图来判断是否是null
                     if ((byte) ((b >> bit) & 0x1)==1){
-                        recordmap.put(ischema.name(),"null");
+                        recordmap.put(ischema.name(),"NULL");
                         fixdOffset=fixdOffset+ischema.getLength();
                          i++;
                     }else {
