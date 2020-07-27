@@ -22,6 +22,7 @@ public class rawBigInt implements Ischema {
     public int getLength() {
         return length;
     }
+    @Override
     public int fixd(){
         return fixd;
     }

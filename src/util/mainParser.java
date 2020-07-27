@@ -220,6 +220,8 @@ public class mainParser {
                 return new rawFloat(name,length);
             case 239:
                 return new rawNChar(name,length);
+            case 127:
+                return new rawBigInt(name);
         }
         throw new RuntimeException("并未找到对应的schema类");
     }

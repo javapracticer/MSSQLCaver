@@ -4,11 +4,15 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="修复只能恢复单个页面的bug">
+    <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="把sample1跑了一遍，全部通过">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/domain/rawBigInt.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/domain/rawBigInt.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/test.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/hexUtil.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/hexUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/mainParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/mainParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/rawNVarchar.java" afterPath="$PROJECT_DIR$/src/domain/rawNVarchar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/rawBigInt.java" afterPath="$PROJECT_DIR$/src/domain/rawBigInt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/hexUtil.java" afterPath="$PROJECT_DIR$/src/util/hexUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/mainParser.java" afterPath="$PROJECT_DIR$/src/util/mainParser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="213" column="59" lean-forward="true" selection-start-line="213" selection-start-column="59" selection-end-line="213" selection-end-column="59" />
+              <caret line="213" column="93" lean-forward="false" selection-start-line="213" selection-start-column="93" selection-end-line="213" selection-end-column="93" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,73 +37,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rawVarBinary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/rawVarBinary.java">
+      <file leaf-file-name="rawBigInt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/rawBigInt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overFlowRecordParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/overFlowRecordParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recordCuter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/recordCuter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="32" column="85" lean-forward="false" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rawColumnParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1593">
-              <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+            <state relative-caret-position="153">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#333#334#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#475#476#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#745#746#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageSelecter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/pageSelecter.java">
+      <file leaf-file-name="hexUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="11" column="81" lean-forward="false" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
+            <state relative-caret-position="153">
+              <caret line="85" column="34" lean-forward="false" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ischema.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/Ischema.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/mainParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="42" column="22" lean-forward="false" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+            <state relative-caret-position="153">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1221#1242#0" expanded="true" />
@@ -108,22 +78,96 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rawNVarchar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/rawNVarchar.java">
+      <file leaf-file-name="mdfreader.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdfreader.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="297">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rawNChar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/rawNChar.java">
+      <file leaf-file-name="rawColumnParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+            <state relative-caret-position="342">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codeStyleSettings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/codeStyleSettings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1595817690832" expanded="true" signature="63940:63957" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="63940:63975" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="63940:63988" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="63940:64003" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64038:66531" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64051:66516" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64105:64400" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64124:64385" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64187:64365" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64227:64331" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64248:64309" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64450:64777" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64469:64762" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64564:64742" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64604:64708" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64625:64686" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64828:65093" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64847:65078" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64880:65058" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64920:65024" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="64941:65002" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65136:65442" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65155:65427" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65229:65407" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65269:65373" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65290:65351" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65493:65844" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65512:65829" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65592:65809" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65632:65775" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65653:65753" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65879:66185" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65898:66170" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="65972:66150" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66012:66116" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66033:66094" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66237:66502" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66256:66487" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66289:66467" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66329:66433" ph="..." />
+                <marker date="1595817690832" expanded="true" signature="66350:66411" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,7 +221,6 @@
         <option value="$PROJECT_DIR$/src/git.java" />
         <option value="$PROJECT_DIR$/src/title/titleRecord.java" />
         <option value="$PROJECT_DIR$/src/domain/rawDataTime.java" />
-        <option value="$PROJECT_DIR$/src/domain/rawBigInt.java" />
         <option value="$PROJECT_DIR$/src/domain/rawBinary.java" />
         <option value="$PROJECT_DIR$/src/domain/rawDateTime.java" />
         <option value="$PROJECT_DIR$/src/domain/rawInt.java" />
@@ -199,13 +242,14 @@
         <option value="$PROJECT_DIR$/src/domain/rawNChar.java" />
         <option value="$PROJECT_DIR$/src/util/recordCuter.java" />
         <option value="$PROJECT_DIR$/src/domain/rawChar.java" />
-        <option value="$PROJECT_DIR$/src/util/hexUtil.java" />
         <option value="$PROJECT_DIR$/src/domain/Ischema.java" />
         <option value="$PROJECT_DIR$/src/util/rawColumnParser.java" />
         <option value="$PROJECT_DIR$/src/domain/rawVarBinary.java" />
         <option value="$PROJECT_DIR$/src/domain/rawNVarchar.java" />
-        <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/util/mainParser.java" />
+        <option value="$PROJECT_DIR$/src/domain/rawBigInt.java" />
+        <option value="$PROJECT_DIR$/src/util/hexUtil.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
       </list>
     </option>
   </component>
@@ -276,6 +320,12 @@
               <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
               <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -286,7 +336,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -482,38 +532,38 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testTitleName - 2020.07.27 at 09h 39m 06s.xml">
+    <history-entry file="test_testTitleName - 2020.07.27 at 10h 26m 00s.xml">
       <configuration name="test.testTitleName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testTitleName - 2020.07.27 at 09h 40m 12s.xml">
+    <history-entry file="test_testTitleName - 2020.07.27 at 10h 31m 18s.xml">
       <configuration name="test.testTitleName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 37m 15s.xml">
+    <history-entry file="test_testTitleName - 2020.07.27 at 10h 34m 18s.xml">
+      <configuration name="test.testTitleName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testTitleName - 2020.07.27 at 10h 38m 21s.xml">
+      <configuration name="test.testTitleName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testTitleName - 2020.07.27 at 10h 39m 07s.xml">
+      <configuration name="test.testTitleName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 27m 18s.xml">
       <configuration name="test.testmainPaarser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 39m 36s.xml">
+    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 31m 40s.xml">
       <configuration name="test.testmainPaarser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 40m 34s.xml">
+    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 37m 39s.xml">
       <configuration name="test.testmainPaarser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 41m 37s.xml">
+    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 38m 46s.xml">
       <configuration name="test.testmainPaarser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 41m 47s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 51m 10s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 53m 04s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 09h 54m 22s.xml">
+    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 39m 29s.xml">
       <configuration name="test.testmainPaarser" configurationId="JUnit" />
     </history-entry>
   </component>
-  <component name="TodoView" selected-index="3">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -531,8 +581,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4004603" sideWeight="0.50323975" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31530493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33947065" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31530493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33947065" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2586393" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
@@ -617,7 +667,8 @@
     <MESSAGE value=" 优化了输出结果里空格太多" />
     <MESSAGE value="微小维护" />
     <MESSAGE value="修复只能恢复单个页面的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复只能恢复单个页面的bug" />
+    <MESSAGE value="把sample1跑了一遍，全部通过" />
+    <option name="LAST_COMMIT_MESSAGE" value="把sample1跑了一遍，全部通过" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -660,12 +711,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/util/mainParser.java</url>
-          <line>22</line>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="181" />
+          <option name="timeStamp" value="185" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="182" />
+      <option name="time" value="186" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -674,25 +725,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="65" lean-forward="false" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page.java" />
-    <entry file="file://$PROJECT_DIR$/src/domain/pageHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page.java" />
     <entry file="file://$PROJECT_DIR$/src/domain/schema.java" />
     <entry file="file://$PROJECT_DIR$/src/util/nomalUtils.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
@@ -755,13 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/rawBigInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -889,13 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4941">
-          <caret line="189" column="24" lean-forward="false" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/rawFloat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -938,35 +956,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdfreader.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/rawVarBinary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -986,23 +980,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="213" column="59" lean-forward="true" selection-start-line="213" selection-start-column="59" selection-end-line="213" selection-end-column="59" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdfreader.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1595817690832" expanded="true" signature="63940:63957" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="63940:63975" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="63940:63988" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="63940:64003" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64038:66531" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64051:66516" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64105:64400" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64124:64385" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64187:64365" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64227:64331" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64248:64309" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64450:64777" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64469:64762" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64564:64742" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64604:64708" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64625:64686" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64828:65093" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64847:65078" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64880:65058" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64920:65024" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="64941:65002" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65136:65442" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65155:65427" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65229:65407" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65269:65373" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65290:65351" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65493:65844" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65512:65829" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65592:65809" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65632:65775" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65653:65753" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65879:66185" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65898:66170" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="65972:66150" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66012:66116" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66033:66094" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66237:66502" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66256:66487" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66289:66467" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66329:66433" ph="..." />
+            <marker date="1595817690832" expanded="true" signature="66350:66411" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/codeStyleSettings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/mainParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1221#1242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/rawColumnParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/mainParser.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/rawBigInt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="42" column="22" lean-forward="false" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state relative-caret-position="153">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/hexUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="85" column="34" lean-forward="false" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="213" column="93" lean-forward="false" selection-start-line="213" selection-start-column="93" selection-end-line="213" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1221#1242#0" expanded="true" />
           </folding>
         </state>
       </provider>

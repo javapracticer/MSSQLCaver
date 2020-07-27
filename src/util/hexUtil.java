@@ -83,7 +83,7 @@ public class hexUtil {
         String int8 = "";
         for (int i = offset + 7; i >= offset; i--) {
             String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) <= 16) {
+            if ((head[i] & 0xff) < 16) {
                 s = "0" + s;
             }
             int8 += s;
