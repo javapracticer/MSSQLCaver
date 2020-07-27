@@ -211,42 +211,12 @@ public class test {
         @Test
         public void testmainPaarser() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(1390627997));
+            List<Map<String, String>> maps = mainParser.parsetTable(String.valueOf(110623437));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }
             long endTime = System.currentTimeMillis();
             System.out.println(endTime-startTime);
-        }
-        @Test
-        public void keyTest() throws IOException {
-            List<Ischema> list = new ArrayList<>();
-            list.add(new rawBigInt("rsid"));
-            list.add(new rawInt("resolid"));
-            list.add(new rawInt("hbcolid"));
-            list.add(new rawBigInt("rcmodified"));
-            list.add(new rawInt("ti"));
-            list.add(new rawInt("cid"));
-            list.add(new rawSmallInt("ordkey"));
-            list.add(new rawSmallInt("maxinrowlen"));
-            list.add(new rawInt("status"));
-            list.add(new rawInt("offset"));
-            list.add(new rawInt("nullbit"));
-            list.add(new rawSmallInt("bitpos"));
-            list.add(new rawVarBinary("colguid",16));
-            byte[][] pages = pageSelecter.getPages();
-            for (byte[] page : pages) {
-                pageHeader header = new pageHeader(page);
-                if (header.getIdObj()==3&&header.getType()==1){
-                    List<byte[]> records = recordCuter.cutRrcord(page,header.getSlotCnt());
-                    List<Map<String, String>> maps = rawColumnParser.prserRecord(records, list);
-                    for (Map<String, String> map : maps) {
-                            if (map.get("rsid").equals("72057594043301888")){
-                                System.out.println(map);
-                            }
-                    }
-                }
-            }
         }
     }
 
