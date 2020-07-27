@@ -29,16 +29,18 @@ public class mainParser {
             schemaList.add(schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
         }
         schemaSorter(schemaList,colmap);
+        List<Map<String,String>> result = new ArrayList<Map<String, String>>();
         for (byte[] bytes : read) {
             pageHeader header = new pageHeader(bytes);
             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
                 List<byte[]> records = recordCuter.cutRrcord(bytes, header.getSlotCnt());
 //                List<byte[]> records = deletedRecordCuter.cutRrcord(bytes, header.getFreeData());
-                List<Map<String, String>> maps = rawColumnParser.prserRecord(records, schemaList);
-                return maps;
+                result.addAll(rawColumnParser.prserRecord(records, schemaList));
+
             }
+
         }
-        throw new RuntimeException("并未找到相关数据");
+        return result;
     }
 
     /**

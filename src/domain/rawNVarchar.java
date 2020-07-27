@@ -32,7 +32,7 @@ public class rawNVarchar implements Ischema {
     public int fixd() {
         return fixed;
     }
-
+    @Override
     public boolean isLOB() {
         return isLOB;
     }
