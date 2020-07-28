@@ -5,41 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="修改类命使其符合驼峰规范">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/MainParserIndex.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/pageHeader.java" afterPath="$PROJECT_DIR$/src/domain/PageHeader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawBigInt.java" afterPath="$PROJECT_DIR$/src/domain/RawBigInt.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawBinary.java" afterPath="$PROJECT_DIR$/src/domain/RawBinary.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawBit.java" afterPath="$PROJECT_DIR$/src/domain/RawBit.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawChar.java" afterPath="$PROJECT_DIR$/src/domain/RawChar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawDateTime.java" afterPath="$PROJECT_DIR$/src/domain/RawDateTime.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawFloat.java" afterPath="$PROJECT_DIR$/src/domain/RawFloat.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawInt.java" afterPath="$PROJECT_DIR$/src/domain/RawInt.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawNChar.java" afterPath="$PROJECT_DIR$/src/domain/RawNChar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawNVarchar.java" afterPath="$PROJECT_DIR$/src/domain/RawNVarchar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawSmallInt.java" afterPath="$PROJECT_DIR$/src/domain/RawSmallInt.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawText.java" afterPath="$PROJECT_DIR$/src/domain/RawText.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawTinyint.java" afterPath="$PROJECT_DIR$/src/domain/RawTinyint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawVarBinary.java" afterPath="$PROJECT_DIR$/src/domain/RawVarBinary.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/rawVarchar.java" afterPath="$PROJECT_DIR$/src/domain/RawVarchar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/recordPage.java" afterPath="$PROJECT_DIR$/src/domain/RecordPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/domain/schemaType.java" afterPath="$PROJECT_DIR$/src/domain/SchemaType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/schema/schemaRecord.java" afterPath="$PROJECT_DIR$/src/schema/SchemaRecord.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/schema/schemaRecordUtil.java" afterPath="$PROJECT_DIR$/src/schema/SchemaRecordUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/schema/schemeaPage.java" afterPath="$PROJECT_DIR$/src/schema/SchemeaPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/title/titlePage.java" afterPath="$PROJECT_DIR$/src/title/TitlePage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/title/titleRecord.java" afterPath="$PROJECT_DIR$/src/title/TitleRecord.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/title/titleRecordUtil.java" afterPath="$PROJECT_DIR$/src/title/TitleRecordUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/deletedRecordCuter.java" afterPath="$PROJECT_DIR$/src/util/DeletedRecordCuter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/hexUtil.java" afterPath="$PROJECT_DIR$/src/util/HexUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/lobRecordParser.java" afterPath="$PROJECT_DIR$/src/util/LobRecordParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/mainParser.java" afterPath="$PROJECT_DIR$/src/util/MainParserForce.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/overFlowRecordParser.java" afterPath="$PROJECT_DIR$/src/util/OverFlowRecordParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/pageCuter.java" afterPath="$PROJECT_DIR$/src/util/PageCuter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/pageSelecter.java" afterPath="$PROJECT_DIR$/src/util/PageSelecter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/rawColumnParser.java" afterPath="$PROJECT_DIR$/src/util/RawColumnParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/recordCuter.java" afterPath="$PROJECT_DIR$/src/util/RecordCuter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/PageHeader.java" afterPath="$PROJECT_DIR$/src/domain/PageHeader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/RawText.java" afterPath="$PROJECT_DIR$/src/domain/RawText.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/RawVarchar.java" afterPath="$PROJECT_DIR$/src/domain/RawVarchar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/SchemaType.java" afterPath="$PROJECT_DIR$/src/domain/SchemaType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/HexUtil.java" afterPath="$PROJECT_DIR$/src/util/HexUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/LobRecordParser.java" afterPath="$PROJECT_DIR$/src/util/LobRecordParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserForce.java" afterPath="$PROJECT_DIR$/src/util/MainParserForce.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserIndex.java" afterPath="$PROJECT_DIR$/src/util/MainParserIndex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/PageSelecter.java" afterPath="$PROJECT_DIR$/src/util/PageSelecter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5454">
-              <caret line="214" column="98" lean-forward="false" selection-start-line="214" selection-start-column="98" selection-end-line="214" selection-end-column="98" />
+            <state relative-caret-position="271">
+              <caret line="224" column="65" lean-forward="false" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,23 +39,124 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainParserIndex.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainParserIndex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="375">
+              <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RawBigInt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/RawBigInt.java">
+      <file leaf-file-name="PageHeader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-462">
+              <caret line="255" column="18" lean-forward="false" selection-start-line="255" selection-start-column="18" selection-end-line="255" selection-end-column="18" />
               <folding>
-                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#1757#1758#0" expanded="true" />
+                <element signature="e#1793#1794#0" expanded="true" />
+                <element signature="e#1848#1849#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1926#1927#0" expanded="true" />
+                <element signature="e#1953#1954#0" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
+                <element signature="e#2022#2023#0" expanded="true" />
+                <element signature="e#2058#2059#0" expanded="true" />
+                <element signature="e#2093#2094#0" expanded="true" />
+                <element signature="e#2146#2147#0" expanded="true" />
+                <element signature="e#2194#2195#0" expanded="true" />
+                <element signature="e#2223#2224#0" expanded="true" />
+                <element signature="e#2251#2252#0" expanded="true" />
+                <element signature="e#2290#2291#0" expanded="true" />
+                <element signature="e#2324#2325#0" expanded="true" />
+                <element signature="e#2356#2357#0" expanded="true" />
+                <element signature="e#2387#2388#0" expanded="true" />
+                <element signature="e#2432#2433#0" expanded="true" />
+                <element signature="e#2472#2473#0" expanded="true" />
+                <element signature="e#2503#2504#0" expanded="true" />
+                <element signature="e#2533#2534#0" expanded="true" />
+                <element signature="e#2576#2577#0" expanded="true" />
+                <element signature="e#2614#2615#0" expanded="true" />
+                <element signature="e#2647#2648#0" expanded="true" />
+                <element signature="e#2678#2679#0" expanded="true" />
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2764#2765#0" expanded="true" />
+                <element signature="e#2795#2796#0" expanded="true" />
+                <element signature="e#2825#2826#0" expanded="true" />
+                <element signature="e#2868#2869#0" expanded="true" />
+                <element signature="e#2906#2907#0" expanded="true" />
+                <element signature="e#2939#2940#0" expanded="true" />
+                <element signature="e#2970#2971#0" expanded="true" />
+                <element signature="e#3016#3017#0" expanded="true" />
+                <element signature="e#3056#3057#0" expanded="true" />
+                <element signature="e#3087#3088#0" expanded="true" />
+                <element signature="e#3117#3118#0" expanded="true" />
+                <element signature="e#3160#3161#0" expanded="true" />
+                <element signature="e#3198#3199#0" expanded="true" />
+                <element signature="e#3228#3229#0" expanded="true" />
+                <element signature="e#3256#3257#0" expanded="true" />
+                <element signature="e#3296#3297#0" expanded="true" />
+                <element signature="e#3330#3331#0" expanded="true" />
+                <element signature="e#3361#3362#0" expanded="true" />
+                <element signature="e#3391#3392#0" expanded="true" />
+                <element signature="e#3434#3435#0" expanded="true" />
+                <element signature="e#3472#3473#0" expanded="true" />
+                <element signature="e#3504#3505#0" expanded="true" />
+                <element signature="e#3535#3536#0" expanded="true" />
+                <element signature="e#3580#3581#0" expanded="true" />
+                <element signature="e#3620#3621#0" expanded="true" />
+                <element signature="e#3651#3652#0" expanded="true" />
+                <element signature="e#3680#3681#0" expanded="true" />
+                <element signature="e#3722#3723#0" expanded="true" />
+                <element signature="e#3758#3759#0" expanded="true" />
+                <element signature="e#3794#3795#0" expanded="true" />
+                <element signature="e#3827#3828#0" expanded="true" />
+                <element signature="e#3878#3879#0" expanded="true" />
+                <element signature="e#3922#3923#0" expanded="true" />
+                <element signature="e#3957#3958#0" expanded="true" />
+                <element signature="e#3991#3992#0" expanded="true" />
+                <element signature="e#4042#4043#0" expanded="true" />
+                <element signature="e#4088#4089#0" expanded="true" />
+                <element signature="e#4116#4117#0" expanded="true" />
+                <element signature="e#4143#4144#0" expanded="true" />
+                <element signature="e#4180#4181#0" expanded="true" />
+                <element signature="e#4212#4213#0" expanded="true" />
+                <element signature="e#4240#4241#0" expanded="true" />
+                <element signature="e#4267#4268#0" expanded="true" />
+                <element signature="e#4304#4305#0" expanded="true" />
+                <element signature="e#4336#4337#0" expanded="true" />
+                <element signature="e#4364#4365#0" expanded="true" />
+                <element signature="e#4391#4392#0" expanded="true" />
+                <element signature="e#4428#4429#0" expanded="true" />
+                <element signature="e#4460#4461#0" expanded="true" />
+                <element signature="e#4490#4491#0" expanded="true" />
+                <element signature="e#4516#4517#0" expanded="true" />
+                <element signature="e#4554#4555#0" expanded="true" />
+                <element signature="e#4584#4585#0" expanded="true" />
+                <element signature="e#4620#4621#0" expanded="true" />
+                <element signature="e#4655#4656#0" expanded="true" />
+                <element signature="e#4708#4709#0" expanded="true" />
+                <element signature="e#4756#4757#0" expanded="true" />
+                <element signature="e#4787#4788#0" expanded="true" />
+                <element signature="e#4816#4817#0" expanded="true" />
+                <element signature="e#4858#4859#0" expanded="true" />
+                <element signature="e#4894#4895#0" expanded="true" />
+                <element signature="e#4928#4929#0" expanded="true" />
+                <element signature="e#4961#4962#0" expanded="true" />
+                <element signature="e#5010#5011#0" expanded="true" />
+                <element signature="e#5054#5055#0" expanded="true" />
+                <element signature="e#5087#5088#0" expanded="true" />
+                <element signature="e#5118#5119#0" expanded="true" />
+                <element signature="e#5164#5165#0" expanded="true" />
+                <element signature="e#5204#5205#0" expanded="true" />
+                <element signature="e#5234#5235#0" expanded="true" />
+                <element signature="e#5263#5264#0" expanded="true" />
+                <element signature="e#5304#5305#0" expanded="true" />
+                <element signature="e#5340#5341#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,19 +165,22 @@
       <file leaf-file-name="HexUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/HexUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2241">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="328">
+              <caret line="81" column="54" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordCuter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
+      <file leaf-file-name="RawSmallInt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/RawSmallInt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="32" column="85" lean-forward="false" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
-              <folding />
+            <state relative-caret-position="267">
+              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
+              <folding>
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,11 +188,21 @@
       <file leaf-file-name="MainParserForce.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+            <state relative-caret-position="153">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LobRecordParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/LobRecordParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,40 +210,31 @@
       <file leaf-file-name="PageSelecter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/PageSelecter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="11" column="81" lean-forward="false" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RawColumnParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1296">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="297">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <file leaf-file-name="RawText.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/RawText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codeStyleSettings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/codeStyleSettings.xml">
+      <file leaf-file-name="RawVarchar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/RawVarchar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -181,19 +262,13 @@
         <option value="me" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/titlePage.java" />
-        <option value="$PROJECT_DIR$/src/hexUtil.java" />
-        <option value="$PROJECT_DIR$/src/titleRecordUtil.java" />
-        <option value="$PROJECT_DIR$/src/titleRecord.java" />
-        <option value="$PROJECT_DIR$/src/util/pageCuter.java" />
-        <option value="$PROJECT_DIR$/src/title/titlePage.java" />
-        <option value="$PROJECT_DIR$/src/schema/shcemaRecordUtil.java" />
-        <option value="$PROJECT_DIR$/src/schema/schemeaPage.java" />
         <option value="$PROJECT_DIR$/src/schema/schemaRecordUtil.java" />
         <option value="$PROJECT_DIR$/src/domain/RawInt.java" />
         <option value="$PROJECT_DIR$/src/util/nomalUtils.java" />
@@ -232,11 +307,19 @@
         <option value="$PROJECT_DIR$/src/domain/rawNVarchar.java" />
         <option value="$PROJECT_DIR$/src/domain/rawBigInt.java" />
         <option value="$PROJECT_DIR$/src/util/hexUtil.java" />
-        <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/util/mainParser.java" />
         <option value="$PROJECT_DIR$/src/util/mainParserIndex.java" />
         <option value="$PROJECT_DIR$/src/util/mainParserForce.java" />
+        <option value="$PROJECT_DIR$/src/util/RecordCuter.java" />
+        <option value="$PROJECT_DIR$/src/util/RawColumnParser.java" />
+        <option value="$PROJECT_DIR$/src/util/PageCuter.java" />
+        <option value="$PROJECT_DIR$/src/util/OverFlowRecordParser.java" />
+        <option value="$PROJECT_DIR$/src/util/PageSelecter.java" />
+        <option value="$PROJECT_DIR$/src/domain/SchemaType.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserForce.java" />
+        <option value="$PROJECT_DIR$/src/domain/PageHeader.java" />
+        <option value="$PROJECT_DIR$/src/util/MainParserIndex.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
       </list>
     </option>
   </component>
@@ -259,7 +342,7 @@
     <option name="jreName" value="9.0" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1912" />
     <option name="y" value="-513" />
     <option name="width" value="1936" />
@@ -329,7 +412,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -347,7 +430,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.test.testmainPaarser">
+  <component name="RunManager" selected="JUnit.test.testMainParserIndex">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -406,25 +489,6 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
     </configuration>
-    <configuration name="test.deletedRecordCut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mdfreader" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="deletedRecordCut" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="test.testBinary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -444,13 +508,13 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="test.testTableSchema" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test.testMainParserIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="testTableSchema" />
+      <option name="METHOD_NAME" value="testMainParserIndex" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -482,13 +546,32 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="test.testmainPaarser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test.testid7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="testmainPaarser" />
+      <option name="METHOD_NAME" value="testid7" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="test.testmainPaarserForce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mdfreader" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="testmainPaarserForce" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -502,19 +585,19 @@
       <patterns />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testmainPaarser" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.test.deletedRecordCut" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.test.testid7" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testmainPaarserForce" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testMainParserIndex" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.test.testmainPaarser" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.test.testMainParserIndex" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.test.deletedRecordCut" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testmainPaarserForce" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testid7" />
       </list>
     </recent_temporary>
   </component>
@@ -525,35 +608,35 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testTitleName - 2020.07.27 at 10h 31m 18s.xml">
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 01m 03s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 01m 09s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 01m 43s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 07m 24s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 08m 27s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 08m 40s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 09m 28s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.28 at 18h 12m 20s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testTitleName - 2020.07.28 at 18h 11m 58s.xml">
       <configuration name="test.testTitleName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testTitleName - 2020.07.27 at 10h 34m 18s.xml">
-      <configuration name="test.testTitleName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testTitleName - 2020.07.27 at 10h 38m 21s.xml">
-      <configuration name="test.testTitleName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testTitleName - 2020.07.27 at 10h 39m 07s.xml">
-      <configuration name="test.testTitleName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 27m 18s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 31m 40s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 37m 39s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 38m 46s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.27 at 10h 39m 29s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testmainPaarser - 2020.07.28 at 11h 28m 12s.xml">
-      <configuration name="test.testmainPaarser" configurationId="JUnit" />
+    <history-entry file="test_testmainPaarserForce - 2020.07.28 at 18h 07m 40s.xml">
+      <configuration name="test.testmainPaarserForce" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -566,24 +649,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-513" width="1936" height="1056" extended-state="7" />
+    <frame x="1912" y="-513" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31760645" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4004603" sideWeight="0.50323975" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33947065" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33947065" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31530493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2672786" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2672786" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3981588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -674,7 +757,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test.java</url>
-          <line>152</line>
+          <line>153</line>
           <properties />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
@@ -686,7 +769,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test.java</url>
-          <line>184</line>
+          <line>185</line>
           <properties />
           <option name="timeStamp" value="135" />
         </line-breakpoint>
@@ -708,8 +791,14 @@
           <properties />
           <option name="timeStamp" value="185" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/util/MainParserIndex.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="186" />
+      <option name="time" value="193" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -760,13 +849,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/rawDeleteColParser.java" />
-    <entry file="file://$PROJECT_DIR$/src/domain/RawSmallInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/deletedRecordParser.java" />
     <entry file="file://$PROJECT_DIR$/src/domain/RawTinyint.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -793,13 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/SchemaType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -831,13 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBinary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unnamed.patch" />
     <entry file="file://$PROJECT_DIR$/src/util/DeletedRecordCuter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -850,52 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawVarchar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/LobRecordParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="8" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/PageCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <element signature="e#3087#3088#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -913,22 +935,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/Ischema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/OverFlowRecordParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,33 +1007,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawBigInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#403#404#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
+        <state relative-caret-position="751">
           <caret line="32" column="85" lean-forward="false" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/PageSelecter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="81" lean-forward="false" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/HexUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2241">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
+        <state relative-caret-position="207">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1035,30 +1035,224 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBigInt.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/Ischema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/OverFlowRecordParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/PageCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/SchemaType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawBinary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="20" />
           <folding>
-            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/RawVarchar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5454">
-          <caret line="214" column="98" lean-forward="false" selection-start-line="214" selection-start-column="98" selection-end-line="214" selection-end-column="98" />
+        <state relative-caret-position="216">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawSmallInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="255" column="18" lean-forward="false" selection-start-line="255" selection-start-column="18" selection-end-line="255" selection-end-column="18" />
+          <folding>
+            <element signature="e#1757#1758#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+            <element signature="e#1953#1954#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2093#2094#0" expanded="true" />
+            <element signature="e#2146#2147#0" expanded="true" />
+            <element signature="e#2194#2195#0" expanded="true" />
+            <element signature="e#2223#2224#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
+            <element signature="e#2290#2291#0" expanded="true" />
+            <element signature="e#2324#2325#0" expanded="true" />
+            <element signature="e#2356#2357#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2472#2473#0" expanded="true" />
+            <element signature="e#2503#2504#0" expanded="true" />
+            <element signature="e#2533#2534#0" expanded="true" />
+            <element signature="e#2576#2577#0" expanded="true" />
+            <element signature="e#2614#2615#0" expanded="true" />
+            <element signature="e#2647#2648#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2764#2765#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#2868#2869#0" expanded="true" />
+            <element signature="e#2906#2907#0" expanded="true" />
+            <element signature="e#2939#2940#0" expanded="true" />
+            <element signature="e#2970#2971#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
+            <element signature="e#3056#3057#0" expanded="true" />
+            <element signature="e#3087#3088#0" expanded="true" />
+            <element signature="e#3117#3118#0" expanded="true" />
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3198#3199#0" expanded="true" />
+            <element signature="e#3228#3229#0" expanded="true" />
+            <element signature="e#3256#3257#0" expanded="true" />
+            <element signature="e#3296#3297#0" expanded="true" />
+            <element signature="e#3330#3331#0" expanded="true" />
+            <element signature="e#3361#3362#0" expanded="true" />
+            <element signature="e#3391#3392#0" expanded="true" />
+            <element signature="e#3434#3435#0" expanded="true" />
+            <element signature="e#3472#3473#0" expanded="true" />
+            <element signature="e#3504#3505#0" expanded="true" />
+            <element signature="e#3535#3536#0" expanded="true" />
+            <element signature="e#3580#3581#0" expanded="true" />
+            <element signature="e#3620#3621#0" expanded="true" />
+            <element signature="e#3651#3652#0" expanded="true" />
+            <element signature="e#3680#3681#0" expanded="true" />
+            <element signature="e#3722#3723#0" expanded="true" />
+            <element signature="e#3758#3759#0" expanded="true" />
+            <element signature="e#3794#3795#0" expanded="true" />
+            <element signature="e#3827#3828#0" expanded="true" />
+            <element signature="e#3878#3879#0" expanded="true" />
+            <element signature="e#3922#3923#0" expanded="true" />
+            <element signature="e#3957#3958#0" expanded="true" />
+            <element signature="e#3991#3992#0" expanded="true" />
+            <element signature="e#4042#4043#0" expanded="true" />
+            <element signature="e#4088#4089#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4143#4144#0" expanded="true" />
+            <element signature="e#4180#4181#0" expanded="true" />
+            <element signature="e#4212#4213#0" expanded="true" />
+            <element signature="e#4240#4241#0" expanded="true" />
+            <element signature="e#4267#4268#0" expanded="true" />
+            <element signature="e#4304#4305#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4364#4365#0" expanded="true" />
+            <element signature="e#4391#4392#0" expanded="true" />
+            <element signature="e#4428#4429#0" expanded="true" />
+            <element signature="e#4460#4461#0" expanded="true" />
+            <element signature="e#4490#4491#0" expanded="true" />
+            <element signature="e#4516#4517#0" expanded="true" />
+            <element signature="e#4554#4555#0" expanded="true" />
+            <element signature="e#4584#4585#0" expanded="true" />
+            <element signature="e#4620#4621#0" expanded="true" />
+            <element signature="e#4655#4656#0" expanded="true" />
+            <element signature="e#4708#4709#0" expanded="true" />
+            <element signature="e#4756#4757#0" expanded="true" />
+            <element signature="e#4787#4788#0" expanded="true" />
+            <element signature="e#4816#4817#0" expanded="true" />
+            <element signature="e#4858#4859#0" expanded="true" />
+            <element signature="e#4894#4895#0" expanded="true" />
+            <element signature="e#4928#4929#0" expanded="true" />
+            <element signature="e#4961#4962#0" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5054#5055#0" expanded="true" />
+            <element signature="e#5087#5088#0" expanded="true" />
+            <element signature="e#5118#5119#0" expanded="true" />
+            <element signature="e#5164#5165#0" expanded="true" />
+            <element signature="e#5204#5205#0" expanded="true" />
+            <element signature="e#5234#5235#0" expanded="true" />
+            <element signature="e#5263#5264#0" expanded="true" />
+            <element signature="e#5304#5305#0" expanded="true" />
+            <element signature="e#5340#5341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/HexUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="81" column="54" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/LobRecordParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/PageSelecter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="153">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1067,9 +1261,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="375">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="224" column="65" lean-forward="false" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

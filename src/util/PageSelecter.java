@@ -17,7 +17,7 @@ public class PageSelecter {
     public static byte[][] getPages(){
         return read;
     }
-    public static byte[] pageSelecterByid(long pageid) throws IOException {
+    public static byte[] pageSelecterByObjid(long pageid) throws IOException {
         for (byte[] page : read) {
             PageHeader header = new PageHeader(page);
             if (header.getPageId()==pageid){
@@ -25,5 +25,8 @@ public class PageSelecter {
             }
         }
         return null;
+    }
+    public static byte[] getPagebyPageNum(int num){
+        return read[num];
     }
 }

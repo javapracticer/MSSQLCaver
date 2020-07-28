@@ -22,7 +22,7 @@ public class RawVarchar implements Ischema {
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 16);
         int slot = HexUtil.int2(bytes,offset+22);
-        byte[] aimpage = PageSelecter.pageSelecterByid(pageid);
+        byte[] aimpage = PageSelecter.pageSelecterByObjid(pageid);
         Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
         return result;
     }

@@ -19,7 +19,7 @@ public class RawText implements Ischema {
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 8);
         int slot = HexUtil.int2(bytes,offset+14);
-        byte[] aimpage = PageSelecter.pageSelecterByid(pageid);
+        byte[] aimpage = PageSelecter.pageSelecterByObjid(pageid);
         Object textResult = LobRecordParser.parserLobRecord(aimpage, slot);
         return textResult;
     }

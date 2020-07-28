@@ -63,7 +63,7 @@ public class test {
      */
     @Test
     public void testTableSchema() throws IOException {
-        byte[][] pages = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] pages = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\cx_data1.mdf");
         List<SchemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             PageHeader header = new PageHeader(page);
@@ -75,7 +75,7 @@ public class test {
         for (SchemeaPage SchemeaPage : list) {
             List<SchemaRecord> records = SchemeaPage.getRecords();
             for (SchemaRecord record : records) {
-                long tableid = 1954106002L;
+                long tableid = 1294679710L;
                 if (record.getTableId()== tableid){
                     System.out.println("Type:"+ SchemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
                 }
@@ -98,7 +98,8 @@ public class test {
         list.add(new RawSmallInt("fgid"));
         list.add(new RawBinary("pgfirst",6));
         list.add(new RawBinary("pgroot",6));
-        list.add(new RawBinary("pgfirstiam",6));
+        list.add(new RawInt("firstIAMpage"));
+        list.add(new RawSmallInt("firstIAMFileId"));
         list.add(new RawBigInt("pcused"));
         list.add(new RawBigInt("pcdata"));
         list.add(new RawBigInt("pcreserved"));
@@ -109,7 +110,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594043760640")){
+                    if (map.get("ownerid").equals("72057594044481536")){
                         System.out.println(map);
                     }
                 }
@@ -123,7 +124,7 @@ public class test {
      */
     @Test
     public void testid5() throws IOException {
-        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new RawBigInt("rowsetid"));
         list.add(new RawTinyint("ownertype"));
@@ -149,7 +150,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("1221579390")){
+                    if (map.get("idmajor").equals("1954106002")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -193,7 +194,7 @@ public class test {
         }
         @Test
         public void testBinary(){
-            System.out.println((byte)((0xf0 >>1 ) & 0x1)==1);
+            System.out.println((byte)((1 >>0 ) & 0x1)==1);
             System.out.println("");
         }
         @Test
@@ -210,7 +211,7 @@ public class test {
             }
         }
         @Test
-        public void testmainPaarser() throws IOException {
+        public void testmainPaarserForce() throws IOException {
             long startTime = System.currentTimeMillis();
             List<Map<String, String>> maps = MainParserForce.parsetTable(String.valueOf(1298103665));
             for (Map<String, String> map : maps) {
@@ -218,6 +219,10 @@ public class test {
             }
             long endTime = System.currentTimeMillis();
             System.out.println(endTime-startTime);
+        }
+        @Test
+        public void testMainParserIndex() throws IOException {
+            MainParserIndex.parserTable(String.valueOf(1954106002));
         }
     }
 

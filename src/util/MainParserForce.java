@@ -18,8 +18,8 @@ public class MainParserForce {
     public static List<Map<String, String>> parsetTable(String tableid) throws IOException {
         Map<Long, SchemaRecord> schemaMap = tableSchema(tableid);
         List<Ischema> schemaList = new ArrayList<>();
-        String rowSetId = idobj5Page(tableid);
-        String allocationUnitID = id7objPage(rowSetId);
+        String rowSetId = id5objPage(tableid);
+        String allocationUnitID = id7objPage(rowSetId).get("auid");
         Map<Integer, Integer> colmap = id3objPage(rowSetId);
         Long aLong = Long.valueOf(allocationUnitID);
         Long indexID = aLong >> 48;
@@ -49,7 +49,7 @@ public class MainParserForce {
      * @return
      * @throws IOException
      */
-    private static String idobj5Page(String tableid) throws IOException {
+    public static String id5objPage(String tableid) throws IOException {
         List<Ischema> list = new ArrayList<>();
         list.add(new RawBigInt("rowsetid"));
         list.add(new RawTinyint("ownertype"));
@@ -90,7 +90,7 @@ public class MainParserForce {
      * @return
      * @throws IOException
      */
-    private static String id7objPage(String rowsetId) throws IOException {
+    public static Map<String,String> id7objPage(String rowsetId) throws IOException {
         List<Ischema> list = new ArrayList<>();
         list.add(new RawBigInt("auid"));
         list.add(new RawTinyint("type"));
@@ -99,7 +99,8 @@ public class MainParserForce {
         list.add(new RawSmallInt("fgid"));
         list.add(new RawBinary("pgfirst",6));
         list.add(new RawBinary("pgroot",6));
-        list.add(new RawBinary("pgfirstiam",6));
+        list.add(new RawInt("firstIAMpage"));
+        list.add(new RawSmallInt("firstIAMFileId"));
         list.add(new RawBigInt("pcused"));
         list.add(new RawBigInt("pcdata"));
         list.add(new RawBigInt("pcreserved"));
@@ -111,12 +112,12 @@ public class MainParserForce {
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals(rowsetId)&&map.get("type").equals("1")){
-                        return map.get("auid");
+                        return map;
                     }
                 }
             }
         }
-        return "";
+        return null;
     }
 
     /**

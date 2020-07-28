@@ -16,7 +16,8 @@ public class PageHeader {
     private Long idObj;
     private int freeCnt;
     private int freeData;
-    private long pageId;
+    private Long pageId;
+    private short pageFileId;
     private int reservedCnt;
     private int lsn1;
     private int lsn2;
@@ -155,12 +156,20 @@ public class PageHeader {
         this.freeData = freeData;
     }
 
-    public long getPageId() {
+    public Long getPageId() {
         return pageId;
     }
 
-    public void setPageId(long pageId) {
+    public void setPageId(Long pageId) {
         this.pageId = pageId;
+    }
+
+    public short getPageFileId() {
+        return pageFileId;
+    }
+
+    public void setPageFileId(short pageFileId) {
+        this.pageFileId = pageFileId;
     }
 
     public int getReservedCnt() {
@@ -260,6 +269,7 @@ public class PageHeader {
                 ", freeCnt=" + freeCnt +
                 ", freeData=" + freeData +
                 ", pageId=" + pageId +
+                ", pageFileId=" + pageFileId +
                 ", reservedCnt=" + reservedCnt +
                 ", lsn1=" + lsn1 +
                 ", lsn2=" + lsn2 +

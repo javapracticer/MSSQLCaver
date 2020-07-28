@@ -34,7 +34,7 @@ public class LobRecordParser {
         int prerecord = startOffset+10;//跳过固定头，进入type头
         for (int i = 0; i <=curLinks ; i++) {
             Long pageid = HexUtil.int4(page,prerecord+4);
-            byte[] aimPage = PageSelecter.pageSelecterByid(pageid);
+            byte[] aimPage = PageSelecter.pageSelecterByObjid(pageid);
             int aimslot = HexUtil.int2(page,prerecord+10);
             Object s = parserLobRecord(aimPage, aimslot);
             lobrecord.append(s);

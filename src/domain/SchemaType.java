@@ -18,7 +18,7 @@ public enum SchemaType {
     SmallInt(52,"smallint"),
     SmallMoney(122,"smallmoney"),
     TimeStamp(189,"timeStamp"),
-    TimyInt(48,"timtint"),
+    TimyInt(48,"tinytimtint"),
     UniqueIdentifier(36,"uniqueidentifier"),
     Varchar(167,"varchar"),
     Ntext(99,"ntext"),

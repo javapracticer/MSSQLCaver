@@ -178,7 +178,7 @@ public class HexUtil {
     public static void recordIndexParser(byte[] record, int startoffset, int endoffset) throws IOException {
         long pageId = HexUtil.int6(record, startoffset + 8);
         int slot = HexUtil.int2(record, startoffset + 14);
-        byte[] page = PageSelecter.pageSelecterByid(pageId);
+        byte[] page = PageSelecter.pageSelecterByObjid(pageId);
         LobRecordParser.parserLobRecord(page, slot);
     }
 
