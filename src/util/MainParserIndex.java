@@ -36,18 +36,12 @@ public class MainParserIndex {
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
         byte[] iamPage = PageSelecter.getPagebyPageNum(firstIamPageNum);
         //获取表记录所在区的首页的list
-        List<Integer> indexList = recordArea(counter,iamPage);
-        List<byte[]> records = new ArrayList<>();
-        for (Integer index : indexList) {
-            for (int i = index; i <index+8 ; i++) {
-                byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(i);
-                PageHeader header = new PageHeader(pagebyPageNum);
-                if (header.getSlotCnt()==0){
-                    break;
-                }
-                records.addAll(RecordCuter.cutRrcord(pagebyPageNum, new PageHeader(pagebyPageNum).getSlotCnt()));
-            }
-        }
+        List<Integer> indexUnitAreaList = recordUnitArea(counter,iamPage);
+        List<byte[]> records;
+        //获取混合区的指针
+        List<Integer> mixPointer = recordMixPointer(iamPage);
+        //遍历统一区的开始节点
+        records = addRecords(mixPointer, indexUnitAreaList);
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
             SchemaRecord SchemaRecord = schemaRecordMap.get((long)i);
             schemaList.add(schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
@@ -80,9 +74,11 @@ public class MainParserIndex {
      * 如果小于2016，就直接用暴力解法吧
      * @return
      */
-    public static List<Integer> recordArea(int counter,byte[] iamPage){
+    public static List<Integer> recordUnitArea(int counter, byte[] iamPage){
         List<Integer> list = new ArrayList<>();
-        for (int i = 194; i <counter+194 ; i++) {
+        //统一区开始的偏移
+        int startOffSet = 194;
+        for (int i = startOffSet; i <counter+startOffSet ; i++) {
             if(iamPage[i]!=0) {
                int precout = (i-194)*8;
                for(int j = 0 ;j<8;j++){
@@ -93,5 +89,43 @@ public class MainParserIndex {
             }
         }
         return list;
+    }
+    public static List<Integer> recordMixPointer(byte[] iamPage){
+        List<Integer> result = new ArrayList<>();
+        //混合区指针开始的地方
+        int startOffset = 142;
+        //一共有8条记录在混合区
+        int count = 8;
+        for (int i = 0; i < count ; i++) {
+            startOffset+=i*6;
+            long pageid = HexUtil.int4(iamPage, startOffset);
+            int fileid = HexUtil.int2(iamPage, startOffset + 4);
+            if (pageid!=0&&fileid!=0){
+                result.add((int) pageid);
+            }
+        }
+        return result;
+    }
+    public static List<byte[]> addRecords(List<Integer> mixs,List<Integer> units){
+        List<byte[]> records = new ArrayList<>();
+        for (Integer mix : mixs) {
+            byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(mix);
+            PageHeader header = new PageHeader(pagebyPageNum);
+            records.addAll(RecordCuter.cutRrcord(pagebyPageNum,header.getSlotCnt()));
+        }
+        if (mixs.size()>0&&mixs.size()<8){
+            return records;
+        }
+        for (Integer unit : units) {
+            for (int i = unit; i <unit+8 ; i++) {
+                byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(i);
+                PageHeader header = new PageHeader(pagebyPageNum);
+                if (header.getSlotCnt()==0){
+                    break;
+                }
+                records.addAll(RecordCuter.cutRrcord(PageSelecter.getPagebyPageNum(i),header.getSlotCnt()));
+            }
+        }
+        return records;
     }
 }
