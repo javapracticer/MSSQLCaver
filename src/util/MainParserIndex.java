@@ -1,6 +1,7 @@
 package util;
 
 import domain.Ischema;
+import domain.PageHeader;
 import schema.SchemaRecord;
 
 
@@ -8,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import static util.MainParserForce.schemaBuilder;
 
 
 /**
@@ -18,9 +21,10 @@ import java.util.Map;
  */
 public class MainParserIndex {
     public static List<Map<String,String>> parserTable(String tableId) throws IOException {
+        List<Map<String,String>> result = new ArrayList<>();
         Map<Long, SchemaRecord> SchemaRecordMap = MainParserForce.tableSchema(tableId);
         List<Ischema> schemaList = new ArrayList<>();
-        String rowSetId=MainParserForce.id5objPage(tableId);
+        String rowSetId = MainParserForce.id5objPage(tableId);
         Map<String, String> id7PageRecord = MainParserForce.id7objPage(rowSetId);
         String allocationUnitID = id7PageRecord.get("auid");
         Map<Integer, Integer> colmap = MainParserForce.id3objPage(rowSetId);
@@ -28,9 +32,25 @@ public class MainParserIndex {
         int counter = countPages(page2);
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
         byte[] IamPage = PageSelecter.getPagebyPageNum(firstIamPageNum);
-        List<Integer> list = recordArea(counter,IamPage);
-        System.out.println(list);
-        return null;
+        List<Integer> indexList = recordArea(counter,IamPage);
+        List<byte[]> records = new ArrayList<>();
+        for (Integer index : indexList) {
+            for (int i = index; i <index+8 ; i++) {
+                byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(index);
+                PageHeader header = new PageHeader(pagebyPageNum);
+                if (header.getSlotCnt()==0){
+                    break;
+                }
+                records.addAll(RecordCuter.cutRrcord(pagebyPageNum, new PageHeader(pagebyPageNum).getSlotCnt()));
+            }
+        }
+        for (int i = 1; i <= SchemaRecordMap.size(); i++) {
+            SchemaRecord SchemaRecord = SchemaRecordMap.get((long)i);
+            schemaList.add(schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
+        }
+        MainParserForce.schemaSorter(schemaList,colmap);
+        result = RawColumnParser.prserRecord(records, schemaList);
+        return result;
     }
 
     /**

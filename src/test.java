@@ -222,7 +222,13 @@ public class test {
         }
         @Test
         public void testMainParserIndex() throws IOException {
-            MainParserIndex.parserTable(String.valueOf(1954106002));
+            long startTime = System.currentTimeMillis();
+            List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(1954106002));
+            for (Map<String, String> map : maps) {
+                System.out.println(map);
+            }
+            long endTime = System.currentTimeMillis();
+            System.out.println(endTime-startTime);
         }
     }
 

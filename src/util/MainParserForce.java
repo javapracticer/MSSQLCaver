@@ -16,6 +16,7 @@ import java.util.Map;
 public class MainParserForce {
     static byte[][] read = PageSelecter.getPages();
     public static List<Map<String, String>> parsetTable(String tableid) throws IOException {
+        //这个map按逻辑顺序储存了schema
         Map<Long, SchemaRecord> schemaMap = tableSchema(tableid);
         List<Ischema> schemaList = new ArrayList<>();
         String rowSetId = id5objPage(tableid);
@@ -24,6 +25,7 @@ public class MainParserForce {
         Long aLong = Long.valueOf(allocationUnitID);
         Long indexID = aLong >> 48;
         Long idObj = (aLong - (indexID << 48)) >> 16;
+        //将map里的schema按物理顺序拿出
         for (int i = 1; i <= schemaMap.size(); i++) {
             SchemaRecord SchemaRecord = schemaMap.get((long)i);
             schemaList.add(schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
