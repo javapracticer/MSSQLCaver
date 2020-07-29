@@ -36,7 +36,7 @@ public class MainParserIndex {
         List<byte[]> records = new ArrayList<>();
         for (Integer index : indexList) {
             for (int i = index; i <index+8 ; i++) {
-                byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(index);
+                byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(i);
                 PageHeader header = new PageHeader(pagebyPageNum);
                 if (header.getSlotCnt()==0){
                     break;

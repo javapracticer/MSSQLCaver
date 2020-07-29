@@ -19,10 +19,11 @@ public class RawVarchar implements Ischema {
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
         return HexUtil.parseRecordString(bytes,offset,endoffset);
     }
+    @Override
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 16);
         int slot = HexUtil.int2(bytes,offset+22);
-        byte[] aimpage = PageSelecter.pageSelecterByObjid(pageid);
+        byte[] aimpage = PageSelecter.getPagebyPageNum((int) pageid);
         Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
         return result;
     }
