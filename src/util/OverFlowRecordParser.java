@@ -10,7 +10,8 @@ public class OverFlowRecordParser {
         }
         int startOffset = preRecord+14;
         int length = HexUtil.int2(page,preRecord+2);
-        String result = HexUtil.parseRecordString(page, startOffset, startOffset + length - 15); //15 = 头14+1，因为行溢出的长度包含了头
+        //15 = 头14+1，因为行溢出的长度包含了头
+        String result = HexUtil.parseRecordString(page, startOffset, startOffset + length - 15);
         return result;
     }
 }

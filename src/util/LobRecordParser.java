@@ -20,21 +20,27 @@ public class LobRecordParser {
         }
         int recordType = HexUtil.int2(page,preRecord+12);
         if (recordType==5){
-            result = parserType5(page, preRecord + 14); //直接从跳过固定记录头，从记录开始
+            //直接从跳过固定记录头，从记录开始
+            result = parserType5(page, preRecord + 14);
         }else if (recordType==3){
-            result=parserType3(page,preRecord); //因为要分析记录头长度，所以不跳过固定记录头
+            //因为要分析记录头长度，所以不跳过固定记录头
+            result=parserType3(page,preRecord);
         }else if (recordType==0){
-            result =parserType0(page,preRecord+14);//不分析固定头，跳过固定头
+            //不分析固定头，跳过固定头
+            result =parserType0(page,preRecord+14);
         }
         return result;
     }
     private static Object parserType5(byte[] page,int startOffset) throws IOException {
-        int curLinks = HexUtil.int2(page,startOffset+2);  //找出数据内部存了几条数据
-        StringBuilder lobrecord = new StringBuilder("");//新建String类储存数据
-        int prerecord = startOffset+10;//跳过固定头，进入type头
+        //找出数据内部存了几条数据
+        int curLinks = HexUtil.int2(page,startOffset+2);
+        //新建String类储存数据
+        StringBuilder lobrecord = new StringBuilder("");
+        //跳过固定头，进入type头
+        int prerecord = startOffset+10;
         for (int i = 0; i <=curLinks ; i++) {
-            Long pageid = HexUtil.int4(page,prerecord+4);
-            byte[] aimPage = PageSelecter.pageSelecterByObjid(pageid);
+            long pageid = HexUtil.int4(page,prerecord+4);
+            byte[] aimPage =PageSelecter.getPagebyPageNum((int)pageid);
             int aimslot = HexUtil.int2(page,prerecord+10);
             Object s = parserLobRecord(aimPage, aimslot);
             lobrecord.append(s);

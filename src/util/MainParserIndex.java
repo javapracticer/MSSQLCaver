@@ -21,18 +21,22 @@ import static util.MainParserForce.schemaBuilder;
  */
 public class MainParserIndex {
     public static List<Map<String,String>> parserTable(String tableId) throws IOException {
-        List<Map<String,String>> result = new ArrayList<>();
-        Map<Long, SchemaRecord> SchemaRecordMap = MainParserForce.tableSchema(tableId);
+        List<Map<String,String>> result;
+        Map<Long, SchemaRecord> schemaRecordMap = MainParserForce.tableSchema(tableId);
         List<Ischema> schemaList = new ArrayList<>();
         String rowSetId = MainParserForce.id5objPage(tableId);
+        //获得id为7的表的record
         Map<String, String> id7PageRecord = MainParserForce.id7objPage(rowSetId);
-        String allocationUnitID = id7PageRecord.get("auid");
+        //获取每个字段物理位置和逻辑位置的对应关系
         Map<Integer, Integer> colmap = MainParserForce.id3objPage(rowSetId);
+        //获取GAM页，并获取页面的分配情况
         byte[] page2 = PageSelecter.getPagebyPageNum(2);
         int counter = countPages(page2);
+        //获取IAM页面的第一页
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
-        byte[] IamPage = PageSelecter.getPagebyPageNum(firstIamPageNum);
-        List<Integer> indexList = recordArea(counter,IamPage);
+        byte[] iamPage = PageSelecter.getPagebyPageNum(firstIamPageNum);
+        //获取表记录所在区的首页的list
+        List<Integer> indexList = recordArea(counter,iamPage);
         List<byte[]> records = new ArrayList<>();
         for (Integer index : indexList) {
             for (int i = index; i <index+8 ; i++) {
@@ -44,8 +48,8 @@ public class MainParserIndex {
                 records.addAll(RecordCuter.cutRrcord(pagebyPageNum, new PageHeader(pagebyPageNum).getSlotCnt()));
             }
         }
-        for (int i = 1; i <= SchemaRecordMap.size(); i++) {
-            SchemaRecord SchemaRecord = SchemaRecordMap.get((long)i);
+        for (int i = 1; i <= schemaRecordMap.size(); i++) {
+            SchemaRecord SchemaRecord = schemaRecordMap.get((long)i);
             schemaList.add(schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
         }
         MainParserForce.schemaSorter(schemaList,colmap);
