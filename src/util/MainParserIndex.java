@@ -127,7 +127,7 @@ public class MainParserIndex {
             for (int i = unit; i <unit+8 ; i++) {
                 byte[] pagebyPageNum = PageUtils.getPagebyPageNum(i);
                 PageHeader header = new PageHeader(pagebyPageNum);
-                if (header.getSlotCnt()==0){
+                if (header.getSlotCnt()==0||header.getType()!=1){
                     break;
                 }
                 records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));

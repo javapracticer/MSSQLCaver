@@ -45,11 +45,11 @@ public class test {
             }
         }
         int i = 0;
-        for (TitlePage TitlePage : list) {
-            List<TitleRecord> list1 = TitlePage.getList();
-            for (TitleRecord TitleRecord : list1) {
-                if (TitleRecord.getType()==8277){
-                    System.out.println(TitleRecord);
+        for (TitlePage titlePage : list) {
+            List<TitleRecord> list1 = titlePage.getList();
+            for (TitleRecord titleRecord : list1) {
+                if (titleRecord.getType()==8277){
+                    System.out.println(titleRecord);
                     i++;
                 }
             }
@@ -222,7 +222,7 @@ public class test {
         @Test
         public void testMainParserIndex() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(1298103665));
+            List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(978102525));
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }

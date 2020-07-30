@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/pageSelecter.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/domain/rawText.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/domain/rawText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/domain/rawVarchar.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/domain/rawVarchar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/test.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/hexUtil.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/hexUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/lobRecordParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/lobRecordParser.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CompleteTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserForce.java" afterPath="$PROJECT_DIR$/src/util/MainParserForce.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserIndex.java" afterPath="$PROJECT_DIR$/src/util/MainParserIndex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/PageUtils.java" afterPath="$PROJECT_DIR$/src/util/PageUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +31,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="229" column="60" lean-forward="true" selection-start-line="228" selection-start-column="10" selection-end-line="229" selection-end-column="60" />
+            <state relative-caret-position="379">
+              <caret line="224" column="97" lean-forward="false" selection-start-line="224" selection-start-column="97" selection-end-line="224" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompleteTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CompleteTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +82,8 @@
       <file leaf-file-name="MainParserIndex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+            <state relative-caret-position="195">
+              <caret line="126" column="49" lean-forward="true" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,8 +126,8 @@
       <file leaf-file-name="RecordCuter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="6" column="61" lean-forward="false" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+            <state relative-caret-position="157">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/domain/rawwBinary.java" />
         <option value="$PROJECT_DIR$/src/domain/recordPage.java" />
         <option value="$PROJECT_DIR$/src/title/titleRecordUtil.java" />
         <option value="$PROJECT_DIR$/src/util/rawColumnParserNullBit.java" />
@@ -204,10 +208,11 @@
         <option value="$PROJECT_DIR$/src/util/LobRecordParser.java" />
         <option value="$PROJECT_DIR$/src/util/PageSelecter.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserForce.java" />
-        <option value="$PROJECT_DIR$/src/util/MainParserIndex.java" />
-        <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/util/RawColumnParser.java" />
         <option value="$PROJECT_DIR$/src/util/PageUtils.java" />
+        <option value="$PROJECT_DIR$/src/CompleteTest.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
+        <option value="$PROJECT_DIR$/src/util/MainParserIndex.java" />
       </list>
     </option>
   </component>
@@ -268,30 +273,6 @@
               <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="schema" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="title" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -318,7 +299,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.test.testMainParserIndex">
+  <component name="RunManager" selected="Application.CompleteTest">
+    <configuration name="CompleteTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CompleteTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mdfreader" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -415,25 +409,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="test.testTitleName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mdfreader" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="testTitleName" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="test.testid5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -475,17 +450,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.test.testmainPaarserForce" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.test.testMainParserIndex" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testid5" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testid5" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CompleteTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.test.testMainParserIndex" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.test.testmainPaarserForce" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testid5" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CompleteTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.test.testMainParserIndex" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testmainPaarserForce" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testBinary" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testid5" />
       </list>
     </recent_temporary>
   </component>
@@ -496,15 +471,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 19m 10s.xml">
-      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 19m 15s.xml">
-      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 19m 20s.xml">
-      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 22m 19s.xml">
       <configuration name="test.testMainParserIndex" configurationId="JUnit" />
     </history-entry>
@@ -517,11 +483,20 @@
     <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 31m 28s.xml">
       <configuration name="test.testMainParserIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarserForce - 2020.07.30 at 16h 19m 04s.xml">
-      <configuration name="test.testmainPaarserForce" configurationId="JUnit" />
+    <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 52m 32s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testmainPaarserForce - 2020.07.30 at 16h 19m 25s.xml">
-      <configuration name="test.testmainPaarserForce" configurationId="JUnit" />
+    <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 54m 26s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.30 at 16h 56m 20s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.30 at 17h 01m 02s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testMainParserIndex - 2020.07.30 at 17h 04m 02s.xml">
+      <configuration name="test.testMainParserIndex" configurationId="JUnit" />
     </history-entry>
     <history-entry file="test_testmainPaarserForce - 2020.07.30 at 16h 19m 30s.xml">
       <configuration name="test.testmainPaarserForce" configurationId="JUnit" />
@@ -544,7 +519,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4004603" sideWeight="0.50323975" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33947065" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38434982" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31530493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27213824" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -674,17 +649,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/util/MainParserIndex.java</url>
-          <line>80</line>
+          <line>118</line>
           <properties />
-          <option name="timeStamp" value="202" />
+          <option name="timeStamp" value="205" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="205" />
+      <option name="time" value="206" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/util/nomalUtils.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1081,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="6" column="61" lean-forward="false" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/PageCuter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1115,16 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/OverFlowRecordParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1145,10 +1101,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="126" column="49" lean-forward="true" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="229" column="60" lean-forward="true" selection-start-line="228" selection-start-column="10" selection-end-line="229" selection-end-column="60" />
+        <state relative-caret-position="379">
+          <caret line="224" column="97" lean-forward="false" selection-start-line="224" selection-start-column="97" selection-end-line="224" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CompleteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
