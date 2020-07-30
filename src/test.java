@@ -110,7 +110,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594044481536")){
+                    if (map.get("ownerid").equals("562949956108288")){
                         System.out.println(map);
                     }
                 }
@@ -150,7 +150,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("1954106002")){
+                    if (map.get("idmajor").equals("110623437")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -167,7 +167,7 @@ public class test {
         }
         @Test
         public void testParseRecord() throws IOException {
-            byte[][] read = PageSelecter.getPages();
+            byte[][] read = PageUtils.getPages();
             List<Ischema> list = new ArrayList<>();
             list.add(new RawInt("dog"));
             list.add(new RawChar("cat",10));
@@ -195,11 +195,10 @@ public class test {
         @Test
         public void testBinary(){
             System.out.println((byte)((1 >>0 ) & 0x1)==1);
-            System.out.println("");
         }
         @Test
         public void deletedRecordCut(){
-            byte[][] pages = PageSelecter.getPages();
+            byte[][] pages = PageUtils.getPages();
             for (byte[] page : pages) {
                 PageHeader header = new PageHeader(page);
                 if (header.getPageId()==464){

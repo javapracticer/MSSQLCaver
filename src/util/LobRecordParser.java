@@ -40,7 +40,7 @@ public class LobRecordParser {
         int prerecord = startOffset+10;
         for (int i = 0; i <=curLinks ; i++) {
             long pageid = HexUtil.int4(page,prerecord+4);
-            byte[] aimPage =PageSelecter.getPagebyPageNum((int)pageid);
+            byte[] aimPage = PageUtils.getPagebyPageNum((int)pageid);
             int aimslot = HexUtil.int2(page,prerecord+10);
             Object s = parserLobRecord(aimPage, aimslot);
             lobrecord.append(s);

@@ -2,7 +2,7 @@ package domain;
 
 import util.HexUtil;
 import util.OverFlowRecordParser;
-import util.PageSelecter;
+import util.PageUtils;
 
 import java.io.IOException;
 
@@ -23,7 +23,7 @@ public class RawVarchar implements Ischema {
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 16);
         int slot = HexUtil.int2(bytes,offset+22);
-        byte[] aimpage = PageSelecter.getPagebyPageNum((int) pageid);
+        byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);
         Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
         return result;
     }

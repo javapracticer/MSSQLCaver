@@ -22,29 +22,33 @@ import static util.MainParserForce.schemaBuilder;
 public class MainParserIndex {
     public static List<Map<String,String>> parserTable(String tableId) throws IOException {
         List<Map<String,String>> result;
-        Map<Long, SchemaRecord> schemaRecordMap = MainParserForce.tableSchema(tableId);
+        Map<Long, SchemaRecord> schemaRecordMap = PageUtils.getTableSchema(tableId);
         List<Ischema> schemaList = new ArrayList<>();
-        String rowSetId = MainParserForce.id5objPage(tableId);
-        //获得id为7的表的record
-        Map<String, String> id7PageRecord = MainParserForce.id7objPage(rowSetId);
+        List<Map<String, String>> maps = PageUtils.getRowSetIdByTableId(tableId);
+        String rowSetId ="";
+        for (Map<String, String> map : maps) {
+            if (map.get("idmajor").equals(tableId)&&(map.get("idminor").equals("1")||map.get("idminor").equals("0"))){
+                rowSetId= map.get("rowsetid");
+                break;
+            }
+        }
+        //获得id为7的表的值为rowset的record
+        Map<String, String> id7PageRecord = PageUtils.getId7ObjPage(rowSetId);
         //获取每个字段物理位置和逻辑位置的对应关系
         Map<Integer, Integer> colmap = MainParserForce.id3objPage(rowSetId);
-        //获取GAM页，并获取页面的分配情况
-        byte[] page2 = PageSelecter.getPagebyPageNum(2);
-        int counter = countPages(page2);
         //获取IAM页面的第一页
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
-        byte[] iamPage = PageSelecter.getPagebyPageNum(firstIamPageNum);
+        byte[] iamPage = PageUtils.getPagebyPageNum(firstIamPageNum);
         //获取表记录所在区的首页的list
-        List<Integer> indexUnitAreaList = recordUnitArea(counter,iamPage);
+        List<Integer> indexUnitAreaList = recordUnitArea(iamPage);
         List<byte[]> records;
         //获取混合区的指针
         List<Integer> mixPointer = recordMixPointer(iamPage);
         //遍历统一区的开始节点
         records = addRecords(mixPointer, indexUnitAreaList);
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
-            SchemaRecord SchemaRecord = schemaRecordMap.get((long)i);
-            schemaList.add(schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
+            SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
+            schemaList.add(schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
         }
         MainParserForce.schemaSorter(schemaList,colmap);
         result = RawColumnParser.prserRecord(records, schemaList);
@@ -74,16 +78,22 @@ public class MainParserIndex {
      * 如果小于2016，就直接用暴力解法吧
      * @return
      */
-    public static List<Integer> recordUnitArea(int counter, byte[] iamPage){
+    public static List<Integer> recordUnitArea( byte[] iamPage){
         List<Integer> list = new ArrayList<>();
         //统一区开始的偏移
         int startOffSet = 194;
-        for (int i = startOffSet; i <counter+startOffSet ; i++) {
+        int size = PageUtils.getPageNumber();
+        int block = size/8;
+        int gamSize = 64000;
+        while (block>gamSize){
+            block-=gamSize;
+        }
+        for (int i = startOffSet; i <block+startOffSet; i++) {
             if(iamPage[i]!=0) {
-               int precout = (i-194)*8;
+               int precount = (i-194)*8;
                for(int j = 0 ;j<8;j++){
                    if ((byte)((iamPage[i] >>j ) & 0x1)==1){
-                       list.add((precout+j)*8);
+                       list.add((precount+j)*8);
                    }
                }
             }
@@ -109,21 +119,19 @@ public class MainParserIndex {
     public static List<byte[]> addRecords(List<Integer> mixs,List<Integer> units){
         List<byte[]> records = new ArrayList<>();
         for (Integer mix : mixs) {
-            byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(mix);
+            byte[] pagebyPageNum = PageUtils.getPagebyPageNum(mix);
             PageHeader header = new PageHeader(pagebyPageNum);
             records.addAll(RecordCuter.cutRrcord(pagebyPageNum,header.getSlotCnt()));
         }
-        if (mixs.size()>0&&mixs.size()<8){
-            return records;
-        }
+
         for (Integer unit : units) {
             for (int i = unit; i <unit+8 ; i++) {
-                byte[] pagebyPageNum = PageSelecter.getPagebyPageNum(i);
+                byte[] pagebyPageNum = PageUtils.getPagebyPageNum(i);
                 PageHeader header = new PageHeader(pagebyPageNum);
                 if (header.getSlotCnt()==0){
                     break;
                 }
-                records.addAll(RecordCuter.cutRrcord(PageSelecter.getPagebyPageNum(i),header.getSlotCnt()));
+                records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
             }
         }
         return records;

@@ -2,7 +2,6 @@ package util;
 
 import domain.*;
 import schema.SchemaRecord;
-import schema.SchemeaPage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,13 +13,19 @@ import java.util.Map;
  * 这是一个整合类，将全自动的执行查询操作，然后返回一个表的map
  */
 public class MainParserForce {
-    static byte[][] read = PageSelecter.getPages();
+    static byte[][] read = PageUtils.getPages();
     public static List<Map<String, String>> parsetTable(String tableid) throws IOException {
         //这个map按逻辑顺序储存了schema
-        Map<Long, SchemaRecord> schemaMap = tableSchema(tableid);
+        Map<Long, SchemaRecord> schemaMap = PageUtils.getTableSchema(tableid);
         List<Ischema> schemaList = new ArrayList<>();
-        String rowSetId = id5objPage(tableid);
-        String allocationUnitID = id7objPage(rowSetId).get("auid");
+        List<Map<String, String>> maps = PageUtils.getRowSetIdByTableId(tableid);
+        String rowSetId ="";
+        for (Map<String, String> map : maps) {
+            if (map.get("idmajor").equals(tableid)&&(map.get("idminor").equals("1")||map.get("idminor").equals("0"))){
+                rowSetId= map.get("rowsetid");
+            }
+        }
+        String allocationUnitID = PageUtils.getId7ObjPage(rowSetId).get("auid");
         Map<Integer, Integer> colmap = id3objPage(rowSetId);
         Long aLong = Long.valueOf(allocationUnitID);
         Long indexID = aLong >> 48;
@@ -44,84 +49,6 @@ public class MainParserForce {
         }
         return result;
     }
-
-    /**
-     *  查找idobj为5的页里的数据表项
-     * @param tableid
-     * @return
-     * @throws IOException
-     */
-    public static String id5objPage(String tableid) throws IOException {
-        List<Ischema> list = new ArrayList<>();
-        list.add(new RawBigInt("rowsetid"));
-        list.add(new RawTinyint("ownertype"));
-        list.add(new RawInt("idmajor"));
-        list.add(new RawInt("idminor"));
-        list.add(new RawInt("numpart"));
-        list.add(new RawInt("status"));
-        list.add(new RawSmallInt("figidfs"));
-        list.add(new RawBigInt("rcrows"));
-        list.add(new RawTinyint("cmprlevel"));
-        list.add(new RawTinyint("fillfact"));
-        list.add(new RawSmallInt("maxnullbit"));
-        list.add(new RawInt("maxleaf"));
-        list.add(new RawSmallInt("maxint"));
-        list.add(new RawSmallInt("minleaf"));
-        list.add(new RawSmallInt("minint"));
-        list.add(new RawVarBinary("rsguid",0));
-        list.add(new RawVarBinary("lockres",0));
-        list.add(new RawInt("dbfragid"));
-        for (byte[] bytes : read) {
-            PageHeader header = new PageHeader(bytes);
-            if (header.getIdObj()==5&&header.getType()==1){
-                List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
-                for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals(tableid)&&(map.get("idminor").equals("1")||map.get("idminor").equals("0"))){
-                        return map.get("rowsetid");
-                    }
-                }
-            }
-        }
-        return "";
-    }
-
-    /**
-     * 查早id为7的页里数据
-     * @param rowsetId
-     * @return
-     * @throws IOException
-     */
-    public static Map<String,String> id7objPage(String rowsetId) throws IOException {
-        List<Ischema> list = new ArrayList<>();
-        list.add(new RawBigInt("auid"));
-        list.add(new RawTinyint("type"));
-        list.add(new RawBigInt("ownerid"));
-        list.add(new RawInt("status"));
-        list.add(new RawSmallInt("fgid"));
-        list.add(new RawBinary("pgfirst",6));
-        list.add(new RawBinary("pgroot",6));
-        list.add(new RawInt("firstIAMpage"));
-        list.add(new RawSmallInt("firstIAMFileId"));
-        list.add(new RawBigInt("pcused"));
-        list.add(new RawBigInt("pcdata"));
-        list.add(new RawBigInt("pcreserved"));
-        list.add(new RawInt("dbfragid"));
-        for (byte[] bytes : read) {
-            PageHeader header = new PageHeader(bytes);
-            if (header.getIdObj()==7&&header.getType()==1){
-                List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
-                for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals(rowsetId)&&map.get("type").equals("1")){
-                        return map;
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
     /**
      * 查找id为3的页面里的行的物理顺序
      * @throws IOException
@@ -142,7 +69,7 @@ public class MainParserForce {
         list.add(new RawInt("nullbit"));
         list.add(new RawSmallInt("bitpos"));
         list.add(new RawVarBinary("colguid",16));
-        byte[][] pages = PageSelecter.getPages();
+        byte[][] pages = PageUtils.getPages();
         for (byte[] page : pages) {
             PageHeader header = new PageHeader(page);
             if (header.getIdObj()==3&&header.getType()==1){
@@ -156,33 +83,6 @@ public class MainParserForce {
             }
         }
         return colMap;
-    }
-
-    /**
-     * 找到表的schema
-     * @param tableId
-     * @return
-     */
-    public static  Map<Long, SchemaRecord> tableSchema(String tableId){
-        Map<Long, SchemaRecord> recordMap = new HashMap<>();
-        List<SchemeaPage> list = new ArrayList<>();
-        for (byte[] page : read) {
-            PageHeader header = new PageHeader(page);
-            if (header.getType()==1&&header.getIdObj()==41){
-                SchemeaPage sp = new SchemeaPage(page);
-                list.add(sp);
-            }
-        }
-        for (SchemeaPage SchemeaPage : list) {
-            List<SchemaRecord> records = SchemeaPage.getRecords();
-            for (SchemaRecord record : records) {
-                long tableid = Long.parseLong(tableId);
-                if (record.getTableId()== tableid){
-                   recordMap.put(record.getColumnid(),record);
-                }
-            }
-        }
-        return recordMap;
     }
 
     /**
