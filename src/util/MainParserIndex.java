@@ -24,6 +24,8 @@ public class MainParserIndex {
         Map<Long, SchemaRecord> schemaRecordMap = PageUtils.getTableSchema(tableId);
         List<Ischema> schemaList = new ArrayList<>();
         List<Map<String, String>> maps = PageUtils.getRowSetIdByTableId(tableId);
+        //如果没有找到该表,
+        if (maps==null){throw new RuntimeException("找不到该表");}
         String rowSetId ="";
         for (Map<String, String> map : maps) {
             if (map.get("idmajor").equals(tableId)&&(map.get("idminor").equals("1")||map.get("idminor").equals("0"))){
@@ -37,6 +39,9 @@ public class MainParserIndex {
         Map<Integer, Integer> colmap =PageUtils.id3objPageRecords(rowSetId);
         //获取IAM页面的第一页
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
+        if (firstIamPageNum==0){
+            throw new RuntimeException("该表数据为空或页面损害");
+        }
         byte[] iamPage = PageUtils.getPagebyPageNum(firstIamPageNum);
         //获取表记录所在区的首页的list
         List<Integer> indexUnitAreaList = recordUnitArea(iamPage);

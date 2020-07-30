@@ -110,7 +110,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("562949956108288")){
+                    if (map.get("ownerid").equals("72057594044743680")){
                         System.out.println(map);
                     }
                 }
@@ -150,7 +150,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("110623437")){
+                    if (map.get("idmajor").equals("1710629137")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }
@@ -222,10 +222,13 @@ public class test {
         @Test
         public void testMainParserIndex() throws IOException {
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(978102525));
-            for (Map<String, String> map : maps) {
-                System.out.println(map);
-            }
+            List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(1710629137));
+             if (maps!=null){
+                 for (Map<String, String> map : maps) {
+                     System.out.println(map);
+                 }
+             }
+
             long endTime = System.currentTimeMillis();
             System.out.println("总共耗时:"+(endTime-startTime));
         }

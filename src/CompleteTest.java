@@ -36,9 +36,13 @@ public class CompleteTest {
             String tableId = sc.nextLine();
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
-            for (Map<String, String> map : maps) {
-                System.out.println(map);
+            try {
+                List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
+                for (Map<String, String> map : maps) {
+                    System.out.println(map);
+                }
+            }catch (Exception e){
+                System.out.println(e);
             }
             long endTime = System.currentTimeMillis();
             System.out.println("总共耗时:"+(endTime-startTime));

@@ -99,7 +99,7 @@ public class PageUtils {
                 }
             }
         }
-        throw new RuntimeException("未找到指定表 ");
+        return null;
     }
     public static  Map<String,String> getId7ObjPage(String rowsetId) throws IOException {
         List<Ischema> list = new ArrayList<>();
@@ -197,7 +197,7 @@ public class PageUtils {
             case 127:
                 return new RawBigInt(name);
             default:
-                throw new RuntimeException(code+"暂时不被支持");
+                throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
     }
     /**
