@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static util.MainParserForce.schemaBuilder;
 
 
 /**
@@ -35,7 +34,7 @@ public class MainParserIndex {
         //获得id为7的表的值为rowset的record
         Map<String, String> id7PageRecord = PageUtils.getId7ObjPage(rowSetId);
         //获取每个字段物理位置和逻辑位置的对应关系
-        Map<Integer, Integer> colmap = MainParserForce.id3objPage(rowSetId);
+        Map<Integer, Integer> colmap =PageUtils.id3objPageRecords(rowSetId);
         //获取IAM页面的第一页
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
         byte[] iamPage = PageUtils.getPagebyPageNum(firstIamPageNum);
@@ -48,9 +47,9 @@ public class MainParserIndex {
         records = addRecords(mixPointer, indexUnitAreaList);
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
             SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
-            schemaList.add(schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
+            schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
         }
-        MainParserForce.schemaSorter(schemaList,colmap);
+        PageUtils.schemaSorter(schemaList,colmap);
         result = RawColumnParser.prserRecord(records, schemaList);
         return result;
     }

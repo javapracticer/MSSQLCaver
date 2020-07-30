@@ -227,7 +227,7 @@ public class test {
                 System.out.println(map);
             }
             long endTime = System.currentTimeMillis();
-            System.out.println(endTime-startTime);
+            System.out.println("总共耗时:"+(endTime-startTime));
         }
     }
 

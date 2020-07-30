@@ -26,16 +26,16 @@ public class MainParserForce {
             }
         }
         String allocationUnitID = PageUtils.getId7ObjPage(rowSetId).get("auid");
-        Map<Integer, Integer> colmap = id3objPage(rowSetId);
+        Map<Integer, Integer> colmap = PageUtils.id3objPageRecords(rowSetId);
         Long aLong = Long.valueOf(allocationUnitID);
         Long indexID = aLong >> 48;
         Long idObj = (aLong - (indexID << 48)) >> 16;
         //将map里的schema按物理顺序拿出
         for (int i = 1; i <= schemaMap.size(); i++) {
             SchemaRecord SchemaRecord = schemaMap.get((long)i);
-            schemaList.add(schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
+            schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
         }
-        schemaSorter(schemaList,colmap);
+        PageUtils.schemaSorter(schemaList,colmap);
         List<Map<String,String>> result = new ArrayList<Map<String, String>>();
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
@@ -49,84 +49,7 @@ public class MainParserForce {
         }
         return result;
     }
-    /**
-     * 查找id为3的页面里的行的物理顺序
-     * @throws IOException
-     */
-    public static Map<Integer,Integer> id3objPage(String rowsetid) throws IOException {
-        Map<Integer,Integer> colMap = new HashMap<>();
-        List<Ischema> list = new ArrayList<>();
-        list.add(new RawBigInt("rsid"));
-        list.add(new RawInt("resolid"));
-        list.add(new RawInt("hbcolid"));
-        list.add(new RawBigInt("rcmodified"));
-        list.add(new RawInt("ti"));
-        list.add(new RawInt("cid"));
-        list.add(new RawSmallInt("ordkey"));
-        list.add(new RawSmallInt("maxinrowlen"));
-        list.add(new RawInt("status"));
-        list.add(new RawInt("offset"));
-        list.add(new RawInt("nullbit"));
-        list.add(new RawSmallInt("bitpos"));
-        list.add(new RawVarBinary("colguid",16));
-        byte[][] pages = PageUtils.getPages();
-        for (byte[] page : pages) {
-            PageHeader header = new PageHeader(page);
-            if (header.getIdObj()==3&&header.getType()==1){
-                List<byte[]> records = RecordCuter.cutRrcord(page,header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
-                for (Map<String, String> map : maps) {
-                    if (map.get("rsid").equals(rowsetid)){
-                        colMap.put(Integer.valueOf(map.get("resolid")),Integer.valueOf(map.get("hbcolid")));
-                    }
-                }
-            }
-        }
-        return colMap;
-    }
 
-    /**
-     * 将schema列表的逻辑顺序调整为物理顺序
-     * @param ischemaList
-     * @param sortmap
-     */
-    public static void schemaSorter(List<Ischema> ischemaList, Map<Integer, Integer> sortmap) {
-        Ischema[] ischemas = new Ischema[ischemaList.size()];
-        for (int i = 1; i <= sortmap.size(); i++) {
-            ischemas[sortmap.get(i) - 1] = ischemaList.get(i - 1);
-        }
-        ischemaList.clear();
-        for (Ischema ischema : ischemas) {
-            ischemaList.add(ischema);
-        }
-    }
 
-    /**
-     * 通过code生成schema类
-     * @param code
-     * @param length
-     * @return
-     */
-    public static Ischema schemaBuilder(int code,int length,String name){
-        switch (code){
-            case 56:
-                return new RawInt(name);
-            case 175:
-                return new RawChar(name,length);
-            case 35:
-                return new RawText(name);
-            case 167:
-                return new RawVarchar(name,length);
-            case 61:
-                return new RawDateTime(name);
-            case 62:
-                return new RawFloat(name,length);
-            case 239:
-                return new RawNChar(name,length);
-            case 127:
-                return new RawBigInt(name);
-        }
-        throw new RuntimeException("并未找到对应的schema类");
-    }
 
 }

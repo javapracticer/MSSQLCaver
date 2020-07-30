@@ -15,7 +15,9 @@ public class PageUtils {
     private static List<byte[]> idobj7Pages = new ArrayList<>();
     private static List<byte[]> idobj5Pages = new ArrayList<>();
     private static List<SchemeaPage> schemaPages = new ArrayList<>();
+    private static List<byte[]> idobj3Pages = new ArrayList<>();
     static {
+        long startTime = System.currentTimeMillis();
         System.out.println("文件载入初始化...");
         try {
             read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
@@ -31,8 +33,12 @@ public class PageUtils {
             }else if (header.getType()==1&&header.getIdObj()==41){
                 SchemeaPage sp = new SchemeaPage(page);
                 schemaPages.add(sp);
+            }else if (header.getIdObj()==3&&header.getType()==1){
+                idobj3Pages.add(page);
             }
         }
+        long endTime = System.currentTimeMillis();
+        System.out.println("文件初始化耗时:"+(endTime-startTime));
     }
     public static byte[][] getPages(){
         return read;
@@ -136,5 +142,77 @@ public class PageUtils {
             }
         }
         return schemaMap;
+    }
+    public static Map<Integer,Integer> id3objPageRecords(String rowsetid) throws IOException {
+        Map<Integer,Integer> colMap = new HashMap<>();
+        List<Ischema> list = new ArrayList<>();
+        list.add(new RawBigInt("rsid"));
+        list.add(new RawInt("resolid"));
+        list.add(new RawInt("hbcolid"));
+        list.add(new RawBigInt("rcmodified"));
+        list.add(new RawInt("ti"));
+        list.add(new RawInt("cid"));
+        list.add(new RawSmallInt("ordkey"));
+        list.add(new RawSmallInt("maxinrowlen"));
+        list.add(new RawInt("status"));
+        list.add(new RawInt("offset"));
+        list.add(new RawInt("nullbit"));
+        list.add(new RawSmallInt("bitpos"));
+        list.add(new RawVarBinary("colguid",16));
+        for (byte[] idobj3Page : idobj3Pages) {
+            PageHeader header = new PageHeader(idobj3Page);
+            List<byte[]> records = RecordCuter.cutRrcord(idobj3Page,header.getSlotCnt());
+            List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
+            for (Map<String, String> map : maps) {
+                if (map.get("rsid").equals(rowsetid)){
+                    colMap.put(Integer.valueOf(map.get("resolid")),Integer.valueOf(map.get("hbcolid")));
+                }
+            }
+        }
+        return colMap;
+    }
+
+    /**
+     * 通过code生成schema类
+     * @param code
+     * @param length
+     * @return
+     */
+    public static Ischema schemaBuilder(int code,int length,String name){
+        switch (code){
+            case 56:
+                return new RawInt(name);
+            case 175:
+                return new RawChar(name,length);
+            case 35:
+                return new RawText(name);
+            case 167:
+                return new RawVarchar(name,length);
+            case 61:
+                return new RawDateTime(name);
+            case 62:
+                return new RawFloat(name,length);
+            case 239:
+                return new RawNChar(name,length);
+            case 127:
+                return new RawBigInt(name);
+            default:
+                throw new RuntimeException(code+"暂时不被支持");
+        }
+    }
+    /**
+     * 将schema列表的逻辑顺序调整为物理顺序
+     * @param ischemaList
+     * @param sortmap
+     */
+    public static void schemaSorter(List<Ischema> ischemaList, Map<Integer, Integer> sortmap) {
+        Ischema[] ischemas = new Ischema[ischemaList.size()];
+        for (int i = 1; i <= sortmap.size(); i++) {
+            ischemas[sortmap.get(i) - 1] = ischemaList.get(i - 1);
+        }
+        ischemaList.clear();
+        for (Ischema ischema : ischemas) {
+            ischemaList.add(ischema);
+        }
     }
 }
