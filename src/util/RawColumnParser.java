@@ -9,6 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 public class RawColumnParser {
+    /**
+     * 这个方法专门负责解析记录
+     * @param records 这是切割好了的列表
+     * @param list 这是已经解析好了的类的shcema
+     * @return 返回值是用map记录好了记录的list集合
+     * @throws IOException
+     */
     public static List<Map<String,String>> prserRecord(List<byte[]> records, List<Ischema> list) throws IOException {
         List<Map<String,String>> recordList = new ArrayList<>();
         int j = 0;
@@ -17,12 +24,18 @@ public class RawColumnParser {
             if (j==records.size()||record==null){
                 break;
             }
+            //固定长段的开始点
             int fixdOffset = 4;
+            //记录总共有几列记录的offset
             int columnsOffset = HexUtil.int2(record, 2);
+            //总共有几列记录
             int numOfColumns = HexUtil.int2(record, columnsOffset);
             int endOffsetPointer =0;
+            //记录可变长列结尾的offset
             int variableEndOffsetPointer = 0;
+            //可变长列的数量
             int variableColumns = 0;
+            //可变长列的开始位置
             int startOffsetOfVariableColumn = 0;
             byte b = 0x00;
             int variableHasParase = 0;
@@ -51,7 +64,7 @@ public class RawColumnParser {
              * 接下来就是激动人心的记录解析部分
              */
             for (Ischema ischema : list) {
-                //这一个if语句是专门针对
+                //这一个if语句是专门针对后续临时增加锅行的表
                 if (i+1>numOfColumns){
                     recordmap.put(ischema.name(), "NULL");
                     continue;
@@ -101,7 +114,7 @@ public class RawColumnParser {
                             value = "NULL";
                         }
                         recordmap.put(ischema.name(), String.valueOf(value));
-
+                        //开始下一轮的解析2
                         startOffsetOfVariableColumn = variableEndOffsetPointer;
                         variableEndOffsetPointer = HexUtil.int2(record,endOffsetPointer+2);
                         endOffsetPointer+=2;

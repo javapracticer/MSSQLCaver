@@ -3,13 +3,13 @@ package util;
 import domain.*;
 import schema.SchemaRecord;
 import schema.SchemeaPage;
+import test.CompleteTest;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class PageUtils {
     private static byte[][] read;
     private static List<byte[]> idobj7Pages = new ArrayList<>();
@@ -20,7 +20,7 @@ public class PageUtils {
         long startTime = System.currentTimeMillis();
         System.out.println("文件载入初始化...");
         try {
-            read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
+            read = PageCuter.read(CompleteTest.mkdir);
         } catch (IOException e) {
             e.printStackTrace();
         }
