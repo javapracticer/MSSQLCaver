@@ -44,17 +44,21 @@ public class CompleteTest {
             }
         }
         int i = 0;
+        List<TitleRecord> titles = new ArrayList<>();
         for (TitlePage titlePage : list) {
             List<TitleRecord> list1 = titlePage.getList();
             for (TitleRecord titleRecord : list1) {
                 if (titleRecord.getType()==8277){
-                    System.out.println(titleRecord);
+                    titles.add(titleRecord);
                 }
             }
         }
         while (true){
+            for (TitleRecord title : titles) {
+                System.out.println(title);
+            }
             Scanner sc = new Scanner(System.in);
-            System.out.println("请输入要查早的表id:                              (退出请输入quit)");
+            System.out.println("请输入要查找的表id:                              (退出请输入quit)");
             String tableId = sc.nextLine();
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
@@ -64,10 +68,16 @@ public class CompleteTest {
                     System.out.println(map);
                 }
             }catch (Exception e){
-                System.out.println(e);
+                e.printStackTrace();
             }
             long endTime = System.currentTimeMillis();
             System.out.println("总共耗时:"+(endTime-startTime));
+            System.out.println("继续查询请按回车，结束请输入quit");
+            Scanner sc2 = new Scanner(System.in);
+            String s = sc2.nextLine();
+            if (s.equals("quit")){
+                break;
+            }
         }
     }
 

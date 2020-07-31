@@ -41,7 +41,7 @@ public class HexUtil {
         String int4 = "";
         for (int i = offset + 3; i >= offset; i--) {
             String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) <= 16) {
+            if ((head[i] & 0xff) < 16) {
                 s = "0" + s;
             }
             int4 += s;

@@ -38,7 +38,7 @@ public class PageUtils {
             }
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("文件初始化耗时:"+(endTime-startTime));
+        System.out.println("文件初始化耗时:"+(endTime-startTime)+"ms");
     }
     public static byte[][] getPages(){
         return read;
