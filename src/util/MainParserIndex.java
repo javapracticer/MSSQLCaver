@@ -60,22 +60,6 @@ public class MainParserIndex {
     }
 
     /**
-     * 计算page有多少正在使用
-     * @param page2
-     * @return
-     */
-    public static int countPages(byte[] page2){
-        int counter = 0;
-        for(int i = 194;i<8192;i++){
-            if ((page2[i] & 0xff)==255){
-                break;
-            }
-            counter++;
-        }
-        return counter;
-    }
-
-    /**
      * 通过IAM页面查找数据所在的页面，区间
      * 由于在2016之后的IAM不会先进入混合区
      * 所以这里我暂时先做大于2016版本的适配

@@ -1,5 +1,6 @@
 import domain.*;
 
+
 import org.junit.jupiter.api.Test;
 import schema.SchemeaPage;
 import schema.SchemaRecord;
@@ -166,35 +167,11 @@ public class test {
             System.out.println("idObj="+idObj);
         }
         @Test
-        public void testParseRecord() throws IOException {
-            byte[][] read = PageUtils.getPages();
-            List<Ischema> list = new ArrayList<>();
-            list.add(new RawInt("dog"));
-            list.add(new RawChar("cat",10));
-            list.add(new RawText("butterfly"));
-            System.out.printf("%-20s","dog");
-            System.out.printf("%-20s","cat");
-            System.out.printf("%-20s","butterfly");
-            System.out.println();
-
-            for (byte[] bytes : read) {
-                PageHeader header = new PageHeader(bytes);
-                if (header.getIndexId()==256&&header.getIdObj()==135&&header.getType()==1){
-                    List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-//                    List<byte[]> records = DeletedRecordCuter.cutRrcord(bytes, header.getFreeData());
-                    List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
-                    for (Map<String, String> map : maps) {
-                        System.out.printf("%-20s",map.get("dog"));
-                        System.out.printf("%-20s",map.get("cat"));
-                        System.out.printf("%-20s",map.get("butterfly"));
-                        System.out.println();
-                    }
-                }
-            }
-        }
-        @Test
         public void testBinary(){
-            System.out.println((byte)((1 >>0 ) & 0x1)==1);
+            String hex = "01312d00";
+            Long aLong = Long.parseLong(hex,16);
+            double v = Double.longBitsToDouble(aLong);
+            System.out.println(v);
         }
         @Test
         public void deletedRecordCut(){

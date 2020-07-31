@@ -20,7 +20,7 @@ public class PageUtils {
         long startTime = System.currentTimeMillis();
         System.out.println("文件载入初始化...");
         try {
-            read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+            read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\GH.mdf");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -196,6 +196,8 @@ public class PageUtils {
                 return new RawNChar(name,length);
             case 127:
                 return new RawBigInt(name);
+            case 60:
+                return new RawMoney(name);
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
