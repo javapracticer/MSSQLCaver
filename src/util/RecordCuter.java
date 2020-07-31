@@ -5,11 +5,11 @@ import java.util.List;
 
 public class RecordCuter {
     public static List<byte[]> cutRrcord(byte[] page,int recordCounter){
-
         int j = 0;
-        int endOffset = 0;
+
         List<byte[]> records = new ArrayList<>();
         for (int i = 8190; i>=8192-recordCounter*2 ; i=i-2){
+            int endOffset = 0;
             int startOffset = HexUtil.int2(page,i);
             if (startOffset>8192){
                 continue;

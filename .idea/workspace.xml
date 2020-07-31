@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/RawMoney.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/test.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserIndex.java" afterPath="$PROJECT_DIR$/src/util/MainParserIndex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/PageUtils.java" afterPath="$PROJECT_DIR$/src/util/PageUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/RecordCuter.java" afterPath="$PROJECT_DIR$/src/util/RecordCuter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,10 +66,22 @@
       <file leaf-file-name="MainParserIndex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageHeader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+              <folding>
+                <element signature="e#3117#3118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,21 +90,11 @@
       <file leaf-file-name="CompleteTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompleteTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            <state relative-caret-position="427">
+              <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TitleRecordUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/title/TitleRecordUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -133,6 +131,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RecordCuter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PageUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/PageUtils.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,16 +149,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RawDateTime.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/RawDateTime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -217,7 +215,6 @@
         <option value="$PROJECT_DIR$/src/util/mainParser.java" />
         <option value="$PROJECT_DIR$/src/util/mainParserIndex.java" />
         <option value="$PROJECT_DIR$/src/util/mainParserForce.java" />
-        <option value="$PROJECT_DIR$/src/util/RecordCuter.java" />
         <option value="$PROJECT_DIR$/src/util/PageCuter.java" />
         <option value="$PROJECT_DIR$/src/domain/SchemaType.java" />
         <option value="$PROJECT_DIR$/src/domain/PageHeader.java" />
@@ -228,13 +225,14 @@
         <option value="$PROJECT_DIR$/src/util/PageSelecter.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserForce.java" />
         <option value="$PROJECT_DIR$/src/util/RawColumnParser.java" />
-        <option value="$PROJECT_DIR$/src/CompleteTest.java" />
         <option value="$PROJECT_DIR$/src/MDFReader.form" />
         <option value="$PROJECT_DIR$/src/MDFReader.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/util/PageUtils.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserIndex.java" />
         <option value="$PROJECT_DIR$/src/domain/RawMoney.java" />
+        <option value="$PROJECT_DIR$/src/CompleteTest.java" />
+        <option value="$PROJECT_DIR$/src/util/RecordCuter.java" />
       </list>
     </option>
   </component>
@@ -623,7 +621,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="可以恢复被删除的数据了（LOB和行溢出数据除外）" />
     <MESSAGE value="写了个一键打印表数据类（只写了一部分）" />
     <MESSAGE value="写了一个输入表id就可以打印表的的类，并修复了一些bug（预感还有很多bug没有发现）" />
     <MESSAGE value="修复了varchar类里遗留的一个bug（以前解析id是六位，现在解析id是4位加2位的文件id）" />
@@ -648,7 +645,8 @@
     <MESSAGE value="大幅优化了代码结构，使其更紧凑，代码复用率更高" />
     <MESSAGE value="写了个综合测试类" />
     <MESSAGE value="加入了异常处理try catch" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入了异常处理try catch" />
+    <MESSAGE value="新增了money类" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了money类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -689,8 +687,20 @@
           <properties />
           <option name="timeStamp" value="209" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/util/MainParserIndex.java</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/util/RecordCuter.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="210" />
+      <option name="time" value="218" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -787,6 +797,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -822,13 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
           <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="255" column="18" lean-forward="false" selection-start-line="255" selection-start-column="18" selection-end-line="255" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -898,14 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/PageCuter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
@@ -958,12 +954,12 @@
         <state relative-caret-position="137">
           <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="42" />
           <folding>
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#376#377#0" expanded="false" />
+            <element signature="e#403#404#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#476#477#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1006,16 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="218" column="0" lean-forward="false" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1068,10 +1054,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding>
+            <element signature="e#3117#3118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CompleteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        <state relative-caret-position="427">
+          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
