@@ -69,19 +69,21 @@ public class MainParserIndex {
     public static List<Integer> recordUnitArea( byte[] iamPage){
         List<Integer> list = new ArrayList<>();
         //统一区开始的偏移
+        int gamcounter  = 1;
         int startOffSet = 194;
         int size = PageUtils.getPageNumber();
         int block = size/8;
         int gamSize = 64000;
         while (block>gamSize){
             block-=gamSize;
+            gamcounter++;
         }
         for (int i = startOffSet; i <block+startOffSet; i++) {
             if(iamPage[i]!=0) {
                int precount = (i-194)*8;
                for(int j = 0 ;j<8;j++){
                    if ((byte)((iamPage[i] >>j ) & 0x1)==1){
-                       list.add((precount+j)*8);
+                       list.add((gamcounter-1)*gamSize*8+(precount+j)*8);
                    }
                }
             }
