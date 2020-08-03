@@ -198,6 +198,8 @@ public class PageUtils {
                 return new RawBigInt(name);
             case 60:
                 return new RawMoney(name);
+            case 231:
+                return new RawVarchar(name,length);
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }

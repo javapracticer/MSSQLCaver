@@ -73,7 +73,7 @@ public class MainParserIndex {
         int startOffSet = 194;
         int size = PageUtils.getPageNumber();
         int block = size/8;
-        int gamSize = 64000;
+        int gamSize = 63903;
         while (block>gamSize){
             block-=gamSize;
             gamcounter++;

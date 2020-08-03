@@ -1,16 +1,19 @@
 package domain;
 
 import util.HexUtil;
+import util.OverFlowRecordParser;
+import util.PageUtils;
 
 import java.io.IOException;
 
 public class RawNVarchar implements Ischema {
     private String name;
-    int length = 16;
+    int length = 0;
     private int fixed = 0;
     private boolean isLOB = false;
-    public RawNVarchar(String name1){
+    public RawNVarchar(String name1,int length1){
         this.name = name1;
+        this.length = length1;
     }
 
     @Override
@@ -38,7 +41,11 @@ public class RawNVarchar implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
-        return null;
+    public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
+        long pageid = HexUtil.int4(bytes, offset + 16);
+        int slot = HexUtil.int2(bytes,offset+22);
+        byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);
+        Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
+        return result;
     }
 }
