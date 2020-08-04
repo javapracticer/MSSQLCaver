@@ -42,12 +42,13 @@ public class MainParserIndex {
         if (firstIamPageNum==0){
             throw new RuntimeException("该表数据为空或页面损害");
         }
-        byte[] iamPage = PageUtils.getPagebyPageNum(firstIamPageNum);
+        byte[] firstIamPage = PageUtils.getPagebyPageNum(firstIamPageNum);
+        List<byte[]> allIamPage = PageUtils.findAllIamPage(firstIamPage);
         //获取表记录所在区的首页的list
-        List<Integer> indexUnitAreaList = recordUnitArea(iamPage);
+        List<Integer> indexUnitAreaList = recordUnitArea(allIamPage);
         List<byte[]> records;
         //获取混合区的指针
-        List<Integer> mixPointer = recordMixPointer(iamPage);
+        List<Integer> mixPointer = recordMixPointer(firstIamPage);
         //遍历统一区的开始节点
         records = addRecords(mixPointer, indexUnitAreaList);
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
@@ -65,28 +66,36 @@ public class MainParserIndex {
      * 所以这里我暂时先做大于2016版本的适配
      * 如果小于2016，就直接用暴力解法吧
      * @return
+     * @param iamPages
      */
-    public static List<Integer> recordUnitArea( byte[] iamPage){
+    public static List<Integer> recordUnitArea(List<byte[]> iamPages){
         List<Integer> list = new ArrayList<>();
         //统一区开始的偏移
-        int gamcounter  = 1;
+        int gamcounter  = 0;
         int startOffSet = 194;
         int size = PageUtils.getPageNumber();
         int block = size/8;
         int gamSize = 63903;
-        while (block>gamSize){
-            block-=gamSize;
-            gamcounter++;
-        }
-        for (int i = startOffSet; i <block+startOffSet; i++) {
-            if(iamPage[i]!=0) {
-               int precount = (i-194)*8;
-               for(int j = 0 ;j<8;j++){
-                   if ((byte)((iamPage[i] >>j ) & 0x1)==1){
-                       list.add((gamcounter-1)*gamSize*8+(precount+j)*8);
-                   }
-               }
+        int temp = 63903;
+        for (byte[] iamPage : iamPages) {
+            if (gamcounter<iamPages.size()-1){
+                temp = gamSize;
+            }else{
+                while (temp>gamSize){
+                    temp-=gamSize;
+                }
             }
+            for (int i = startOffSet; i <temp/8+startOffSet; i++) {
+                if(iamPage[i]!=0) {
+                    int precount = (i-194)*8;
+                    for(int j = 0 ;j<8;j++){
+                        if ((byte)((iamPage[i] >>j ) & 0x1)==1){
+                            list.add(gamcounter*gamSize*8+(precount+j)*8);
+                        }
+                    }
+                }
+            }
+            gamcounter++;
         }
         return list;
     }
@@ -106,7 +115,7 @@ public class MainParserIndex {
         }
         return result;
     }
-    public static List<byte[]> addRecords(List<Integer> mixs,List<Integer> units){
+    public static List<byte[]> addRecords(List<Integer> mixs,List<Integer> units) throws IOException {
         List<byte[]> records = new ArrayList<>();
         for (Integer mix : mixs) {
             byte[] pagebyPageNum = PageUtils.getPagebyPageNum(mix);
@@ -122,6 +131,9 @@ public class MainParserIndex {
                     break;
                 }
                 records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
+            }
+            if (records.size()>10000){
+                break;
             }
         }
         return records;

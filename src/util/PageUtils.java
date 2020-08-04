@@ -4,12 +4,16 @@ import domain.*;
 import schema.SchemaRecord;
 import schema.SchemeaPage;
 import test.CompleteTest;
-
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static util.PageCuter.borderPage;
+import static util.PageCuter.file;
+
 public class PageUtils {
     private static byte[][] read;
     private static List<byte[]> idobj7Pages = new ArrayList<>();
@@ -37,6 +41,41 @@ public class PageUtils {
                 idobj3Pages.add(page);
             }
         }
+        //获取读取了的最后一页,查看是否还有后续页，如果有就读取。
+        byte[] tempPage = idobj7Pages.get(idobj7Pages.size() - 1);
+        PageHeader header = new PageHeader(tempPage);
+        try {
+            while (header.getNextPage() != 0) {
+                byte[] pagebyPageNum = getPagebyPageNum((int) header.getNextPage());
+                idobj7Pages.add(pagebyPageNum);
+                header = new PageHeader(pagebyPageNum);
+
+            }
+            tempPage = idobj5Pages.get(idobj5Pages.size() - 1);
+            header = new PageHeader(tempPage);
+            while (header.getNextPage() != 0) {
+                byte[] pagebyPageNum = getPagebyPageNum((int) header.getNextPage());
+                idobj5Pages.add(pagebyPageNum);
+                header = new PageHeader(pagebyPageNum);
+            }
+            tempPage = idobj3Pages.get(idobj3Pages.size() - 1);
+            header = new PageHeader(tempPage);
+            while (header.getNextPage() != 0) {
+                byte[] pagebyPageNum = getPagebyPageNum((int) header.getNextPage());
+                idobj3Pages.add(pagebyPageNum);
+                header = new PageHeader(pagebyPageNum);
+            }
+            SchemeaPage tempSchemaPage = schemaPages.get(schemaPages.size() - 1);
+            header = tempSchemaPage.getHeader();
+            while (header.getNextPage() != 0) {
+                byte[] pagebyPageNum = getPagebyPageNum((int) header.getNextPage());
+                tempSchemaPage = new SchemeaPage(pagebyPageNum);
+                schemaPages.add(tempSchemaPage);
+                header = tempSchemaPage.getHeader();
+            }
+        }catch (Exception e){
+            throw new RuntimeException("初始化失败");
+        }
         long endTime = System.currentTimeMillis();
         System.out.println("文件初始化耗时:"+(endTime-startTime)+"ms");
     }
@@ -58,8 +97,24 @@ public class PageUtils {
      * @param num 指定的页码
      * @return
      */
-    public static byte[] getPagebyPageNum(int num){
-        return read[num];
+    public static byte[] getPagebyPageNum(int num)  {
+        try {
+            if (num<borderPage){
+                return read[num];
+            }else {
+                //直接按流读取
+                FileInputStream fileInputStream = new FileInputStream(file);
+                fileInputStream.skip((long)num*8192L);
+                byte[] aimPage = new byte[8192];
+                fileInputStream.read(aimPage);
+                fileInputStream.close();
+                return aimPage;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+        throw new RuntimeException("查找页面出错");
     }
 
     /**
@@ -67,7 +122,8 @@ public class PageUtils {
      * @return
      */
     public static int getPageNumber(){
-        return read.length;
+        int pagenumber = (int) (file.length()/8192);
+        return pagenumber;
     }
     public static  List<Map<String, String>> getRowSetIdByTableId(String tableId) throws IOException {
         List<Ischema> list = new ArrayList<>();
@@ -218,5 +274,16 @@ public class PageUtils {
         for (Ischema ischema : ischemas) {
             ischemaList.add(ischema);
         }
+    }
+    public static List<byte[]> findAllIamPage(byte[] iamPage) throws IOException {
+        List<byte[]> allIamPage = new ArrayList<>();
+        PageHeader header = new PageHeader(iamPage);
+        allIamPage.add(iamPage);
+        while (header.getNextPage()!=0){
+            iamPage = getPagebyPageNum((int) header.getNextPage());
+            header = new PageHeader(iamPage);
+            allIamPage.add(iamPage);
+        }
+        return allIamPage;
     }
 }

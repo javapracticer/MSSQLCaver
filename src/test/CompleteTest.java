@@ -67,8 +67,9 @@ public class CompleteTest {
                 for (Map<String, String> map : maps) {
                     System.out.println(map);
                 }
+                System.out.println(maps.size());
             }catch (Exception e){
-                System.out.println(e);
+                e.printStackTrace();
             }
             long endTime = System.currentTimeMillis();
             System.out.println("总共耗时:"+(endTime-startTime));

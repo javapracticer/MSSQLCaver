@@ -2,7 +2,7 @@ package test;
 
 import domain.*;
 
-
+import java.io.*;
 import org.junit.jupiter.api.Test;
 import schema.SchemeaPage;
 import schema.SchemaRecord;
@@ -10,7 +10,10 @@ import title.TitlePage;
 import title.TitleRecord;
 import util.*;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -210,6 +213,23 @@ public class test {
 
             long endTime = System.currentTimeMillis();
             System.out.println("总共耗时:"+(endTime-startTime));
+        }
+        @Test
+        public void testLarge() throws IOException {
+            long startTime = System.currentTimeMillis();
+            File file = new File("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+            FileInputStream fileInputStream = new FileInputStream(file);
+            long length = file.length();
+            System.out.println(length);
+            long test = 262488L*8192L;
+            fileInputStream.skip(test);
+            byte[] bs = new byte[8192];
+            fileInputStream.read(bs);
+            fileInputStream.close();
+            PageHeader header = new PageHeader(bs);
+            System.out.println(header);
+            long endTime = System.currentTimeMillis();
+            System.out.println("总共耗时:"+(endTime-startTime)/1000);
         }
     }
 

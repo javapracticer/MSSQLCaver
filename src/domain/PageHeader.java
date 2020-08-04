@@ -16,7 +16,7 @@ public class PageHeader {
     private Long idObj;
     private int freeCnt;
     private int freeData;
-    private Long pageId;
+    private long pageId;
     private short pageFileId;
     private int reservedCnt;
     private int lsn1;
