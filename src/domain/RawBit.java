@@ -11,7 +11,12 @@ public class RawBit implements Ischema {
     }
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
-        return "暂不支持bit";
+        int bit = bytes[offset] & 0xff;
+        if ((byte)((bit >>0 ) & 0x1)==1){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override

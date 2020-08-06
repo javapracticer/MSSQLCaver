@@ -262,6 +262,8 @@ public class PageUtils {
                 return new RawDate(name);
             case 58:
                 return new RawSmallDateTime(name);
+            case 104:
+                return new RawBit(name);
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
