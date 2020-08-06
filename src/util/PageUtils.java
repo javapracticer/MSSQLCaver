@@ -260,6 +260,8 @@ public class PageUtils {
                 return new RawNText(name);
             case 40:
                 return new RawDate(name);
+            case 58:
+                return new RawSmallDateTime(name);
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
