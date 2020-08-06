@@ -41,26 +41,24 @@ public class test {
      */
     @Test
     public void testTitleName() throws IOException {
-        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\samplexp.mdf");
         List<TitlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
             if (header.getType()==1&&header.getIdObj()==34){
                 TitlePage tp = new TitlePage(bytes);
                 list.add(tp);
+                System.out.println(header.getPageId());
             }
         }
-        int i = 0;
-        for (TitlePage titlePage : list) {
-            List<TitleRecord> list1 = titlePage.getList();
-            for (TitleRecord titleRecord : list1) {
-                if (titleRecord.getType()==8277){
-                    System.out.println(titleRecord);
-                    i++;
-                }
-            }
-        }
-        System.out.println(i);
+//        int i = 0;
+//        for (TitlePage titlePage : list) {
+//            List<TitleRecord> list1 = titlePage.getList();
+//            for (TitleRecord titleRecord : list1) {
+//                    System.out.println(titleRecord);
+//
+//            }
+//        }
     }
 
     /**
@@ -130,7 +128,7 @@ public class test {
      */
     @Test
     public void testid5() throws IOException {
-        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
+        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\samplexp.mdf");
         List<Ischema> list = new ArrayList<>();
         list.add(new RawBigInt("rowsetid"));
         list.add(new RawTinyint("ownertype"));
@@ -156,7 +154,7 @@ public class test {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("1710629137")){
+                    if (map.get("idmajor").equals("2105058535")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
                     }
                     }

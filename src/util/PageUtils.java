@@ -256,6 +256,10 @@ public class PageUtils {
                 return new RawMoney(name);
             case 231:
                 return new RawVarchar(name,length);
+            case 99:
+                return new RawNText(name);
+            case 40:
+                return new RawDate(name);
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
@@ -268,7 +272,12 @@ public class PageUtils {
     public static void schemaSorter(List<Ischema> ischemaList, Map<Integer, Integer> sortmap) {
         Ischema[] ischemas = new Ischema[ischemaList.size()];
         for (int i = 1; i <= sortmap.size(); i++) {
-            ischemas[sortmap.get(i) - 1] = ischemaList.get(i - 1);
+            try {
+                ischemas[sortmap.get(i) - 1] = ischemaList.get(i - 1);
+            }catch (Exception e){
+                System.out.println("正在修正行数量");
+            }
+
         }
         ischemaList.clear();
         for (Ischema ischema : ischemas) {

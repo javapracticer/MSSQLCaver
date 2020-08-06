@@ -6,15 +6,14 @@ import util.PageUtils;
 
 import java.io.IOException;
 
-public class RawText implements Ischema {
+public class RawNText implements Ischema {
     private String name;
     int length = 16;
     private int fixed = 0;
     private boolean isLOB = true;
-    public RawText(String name1){
+    public RawNText(String name1){
         this.name = name1;
     }
-
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 8);
@@ -23,6 +22,7 @@ public class RawText implements Ischema {
         Object textResult = LobRecordParser.parserLobRecord(aimpage, slot);
         return textResult;
     }
+
     @Override
     public String name() {
         return name;
@@ -30,20 +30,21 @@ public class RawText implements Ischema {
 
     @Override
     public int getLength() {
-        return 16;
+        return length;
     }
 
     @Override
     public int fixd() {
         return fixed;
     }
+
     @Override
     public boolean isLOB() {
         return isLOB;
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
         return null;
     }
 }
