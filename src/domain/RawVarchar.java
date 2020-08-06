@@ -1,6 +1,7 @@
 package domain;
 
 import util.HexUtil;
+import util.LobRecordParser;
 import util.OverFlowRecordParser;
 import util.PageUtils;
 
@@ -11,9 +12,13 @@ public class RawVarchar implements Ischema {
     int length = 0;
     private int fixed = 0;
     private boolean isLOB = false;
+    private boolean changeToLob = false;
     public RawVarchar(String name1, int length1){
         this.name = name1;
         this.length = length1;
+        if (length==65535){
+            changeToLob = true;
+        }
     }
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
@@ -21,11 +26,16 @@ public class RawVarchar implements Ischema {
     }
     @Override
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
-        long pageid = HexUtil.int4(bytes, offset + 16);
-        int slot = HexUtil.int2(bytes,offset+22);
-        byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);
-        Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
-        return result;
+        if (changeToLob){
+            return parserChangeLob(bytes,offset,endoffset);
+        }else {
+            long pageid = HexUtil.int4(bytes, offset + 16);
+            int slot = HexUtil.int2(bytes,offset+22);
+            byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);
+            Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
+            return result;
+        }
+
     }
 
     @Override
@@ -42,9 +52,24 @@ public class RawVarchar implements Ischema {
     public int fixd() {
         return fixed;
     }
-
+    @Override
     public boolean isLOB() {
         return isLOB;
+    }
+
+    public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {
+        int preoffset = offset+16;
+        StringBuilder lobrecord = new StringBuilder("");
+        while ( preoffset<endoffset){
+            long pageId = HexUtil.int4(bytes, preoffset);
+            int fileId = HexUtil.int2(bytes, preoffset + 4);
+            int slotId = HexUtil.int2(bytes, preoffset + 6);
+            byte[] aimpage = PageUtils.getPagebyPageNum((int) pageId);
+            Object o = LobRecordParser.parserLobRecord(aimpage, slotId);
+            lobrecord.append(o);
+            preoffset+=12;
+        }
+        return lobrecord.toString();
     }
 
 }

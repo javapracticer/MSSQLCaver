@@ -28,6 +28,9 @@ public class LobRecordParser {
         }else if (recordType==0){
             //不分析固定头，跳过固定头
             result =parserType0(page,preRecord+14);
+        }else if (recordType==2){
+            //跳过固定头
+            result = parserType2(page,preRecord+14);
         }
         return result;
     }
@@ -36,14 +39,15 @@ public class LobRecordParser {
         int curLinks = HexUtil.int2(page,startOffset+2);
         //新建String类储存数据
         StringBuilder lobrecord = new StringBuilder("");
-        //跳过固定头，进入type头
+        //跳过type头
         int prerecord = startOffset+10;
-        for (int i = 0; i <=curLinks ; i++) {
+        for (int i = 0; i <curLinks ; i++) {
             long pageid = HexUtil.int4(page,prerecord+4);
             byte[] aimPage = PageUtils.getPagebyPageNum((int)pageid);
             int aimslot = HexUtil.int2(page,prerecord+10);
             Object s = parserLobRecord(aimPage, aimslot);
             lobrecord.append(s);
+            prerecord+=12;
         }
         return lobrecord.toString();
     }
@@ -52,8 +56,20 @@ public class LobRecordParser {
         String result = HexUtil.parseRecordString(page, startOffset + 14, startOffset + length - 1);
         return result;
     }
-    public static void parserType2(){
-
+    public static Object parserType2(byte[] page, int startOffset) throws IOException {
+        int curLinks = HexUtil.int2(page,startOffset+2);
+        StringBuilder lobrecord = new StringBuilder("");
+        //跳过type头
+        int prerecord = startOffset+14;
+        for (int i = 0; i <curLinks ; i++) {
+            long pageid = HexUtil.int4(page,prerecord);
+            byte[] aimPage = PageUtils.getPagebyPageNum((int)pageid);
+            int aimslot = HexUtil.int2(page,prerecord+6);
+            Object s = parserLobRecord(aimPage, aimslot);
+            lobrecord.append(s);
+            prerecord+=16;
+        }
+        return lobrecord.toString();
     }
     private static Object parserType0(byte[] page, int startOffset) throws UnsupportedEncodingException {
         int length = HexUtil.int2(page,startOffset);
