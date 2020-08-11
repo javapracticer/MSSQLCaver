@@ -51,7 +51,4 @@ public enum SchemaType {
         throw new RuntimeException("没有找到对应的枚举");
     }
 
-    public static void main(String[] args) {
-        System.out.println(SchemaType.codeOf(175).getFiled());
-    }
 }

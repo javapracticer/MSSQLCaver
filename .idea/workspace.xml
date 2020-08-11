@@ -8,13 +8,28 @@
       <artifact name="mdfreader:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/util/RawColumnParser.java" line="32" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/domain/rawBit.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/domain/rawBit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/domain/rawVarchar.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/domain/rawVarchar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/domain/schemaType.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/domain/schemaType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/hexUtil.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/hexUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/lobRecordParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/lobRecordParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/pageCuter.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/pageCuter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/RawVarchar.java" afterPath="$PROJECT_DIR$/src/domain/RawVarchar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/SchemaType.java" afterPath="$PROJECT_DIR$/src/domain/SchemaType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/test.java" afterPath="$PROJECT_DIR$/src/test/test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/LobRecordParser.java" afterPath="$PROJECT_DIR$/src/util/LobRecordParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/HexUtil.java" afterPath="$PROJECT_DIR$/src/util/HexUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserForce.java" afterPath="$PROJECT_DIR$/src/util/MainParserForce.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserIndex.java" afterPath="$PROJECT_DIR$/src/util/MainParserIndex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/PageCuter.java" afterPath="$PROJECT_DIR$/src/util/PageCuter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/PageUtils.java" afterPath="$PROJECT_DIR$/src/util/PageUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/RawColumnParser.java" afterPath="$PROJECT_DIR$/src/util/RawColumnParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/RecordCuter.java" afterPath="$PROJECT_DIR$/src/util/RecordCuter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,21 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="RawVarchar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/RawVarchar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PageUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/PageUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state relative-caret-position="3780">
+              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
               <folding>
                 <element signature="method#pageSelecterByObjid#0;class#PageUtils#0" expanded="false" />
               </folding>
@@ -59,11 +64,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LobRecordParser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/util/LobRecordParser.java">
+      <file leaf-file-name="RawBigInt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/RawBigInt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="66" column="55" lean-forward="false" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+            <state relative-caret-position="243">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#167#168#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RawMoney.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/RawMoney.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RawColumnParser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="166" column="21" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+              <folding>
+                <element signature="method#parserNormalRecord#0;class#RawColumnParser#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainParserForce.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainParserIndex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,8 +121,28 @@
       <file leaf-file-name="CompleteTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/CompleteTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="1512">
+              <caret line="67" column="35" lean-forward="false" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HexUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/HexUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="207" column="47" lean-forward="false" selection-start-line="207" selection-start-column="47" selection-end-line="207" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-189">
+              <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,13 +155,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>j</find>
+    </findStrings>
     <dirStrings>
       <dir>C:\Users\s6560\IdeaProjects\mdfreader\src\util</dir>
     </dirStrings>
@@ -110,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/util/rawDeleteColParser.java" />
         <option value="$PROJECT_DIR$/src/domain/pageHeader.java" />
         <option value="$PROJECT_DIR$/src/domain/rawText.java" />
         <option value="$PROJECT_DIR$/src/util/deletedRecordParser.java" />
@@ -135,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/util/mainParser.java" />
         <option value="$PROJECT_DIR$/src/util/mainParserIndex.java" />
         <option value="$PROJECT_DIR$/src/util/mainParserForce.java" />
-        <option value="$PROJECT_DIR$/src/domain/SchemaType.java" />
         <option value="$PROJECT_DIR$/src/util/OverFlowRecordParser.java" />
         <option value="$PROJECT_DIR$/src/util/PageSelecter.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserForce.java" />
@@ -143,13 +213,9 @@
         <option value="$PROJECT_DIR$/src/MDFReader.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/domain/RawMoney.java" />
-        <option value="$PROJECT_DIR$/src/util/RecordCuter.java" />
         <option value="$PROJECT_DIR$/src/CompleteTest.java" />
-        <option value="$PROJECT_DIR$/src/util/HexUtil.java" />
         <option value="$PROJECT_DIR$/src/domain/RawNVarchar.java" />
-        <option value="$PROJECT_DIR$/src/util/PageCuter.java" />
         <option value="$PROJECT_DIR$/src/domain/PageHeader.java" />
-        <option value="$PROJECT_DIR$/src/util/RawColumnParser.java" />
         <option value="$PROJECT_DIR$/src/test/CompleteTest.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserIndex.java" />
         <option value="$PROJECT_DIR$/src/domain/RawText.java" />
@@ -158,9 +224,15 @@
         <option value="$PROJECT_DIR$/src/domain/RawSmallDateTime.java" />
         <option value="$PROJECT_DIR$/src/domain/RawBit.java" />
         <option value="$PROJECT_DIR$/src/util/PageUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/test.java" />
         <option value="$PROJECT_DIR$/src/domain/RawVarchar.java" />
         <option value="$PROJECT_DIR$/src/util/LobRecordParser.java" />
+        <option value="$PROJECT_DIR$/src/util/PageCuter.java" />
+        <option value="$PROJECT_DIR$/src/domain/SchemaType.java" />
+        <option value="$PROJECT_DIR$/src/domain/CompressLength.java" />
+        <option value="$PROJECT_DIR$/src/test/test.java" />
+        <option value="$PROJECT_DIR$/src/util/HexUtil.java" />
+        <option value="$PROJECT_DIR$/src/util/RecordCuter.java" />
+        <option value="$PROJECT_DIR$/src/util/RawColumnParser.java" />
       </list>
     </option>
   </component>
@@ -213,8 +285,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,12 +328,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_crawler" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -349,13 +421,13 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
     </configuration>
-    <configuration name="test.testLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test.getLow4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.test" />
-      <option name="METHOD_NAME" value="testLarge" />
+      <option name="METHOD_NAME" value="getLow4" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -427,18 +499,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.CompleteTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testLarge" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testid5" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testid5" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.test.getLow4" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.CompleteTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testid5" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testLarge" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.test.getLow4" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.test.testTitleName" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testid5" />
       </list>
     </recent_temporary>
   </component>
@@ -449,17 +521,17 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testTableSchema - 2020.08.06 at 16h 05m 29s.xml">
-      <configuration name="test.testTableSchema" configurationId="JUnit" />
+    <history-entry file="test_getLow4 - 2020.08.10 at 16h 21m 16s.xml">
+      <configuration name="test.getLow4" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testTableSchema - 2020.08.06 at 16h 11m 28s.xml">
-      <configuration name="test.testTableSchema" configurationId="JUnit" />
+    <history-entry file="test_getLow4 - 2020.08.10 at 16h 21m 30s.xml">
+      <configuration name="test.getLow4" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testTableSchema - 2020.08.06 at 16h 13m 29s.xml">
-      <configuration name="test.testTableSchema" configurationId="JUnit" />
+    <history-entry file="test_getLow4 - 2020.08.10 at 16h 23m 15s.xml">
+      <configuration name="test.getLow4" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_testTitleName - 2020.08.05 at 18h 25m 34s.xml">
-      <configuration name="test.testTitleName" configurationId="JUnit" />
+    <history-entry file="test_getLow4 - 2020.08.10 at 16h 26m 04s.xml">
+      <configuration name="test.getLow4" configurationId="JUnit" />
     </history-entry>
     <history-entry file="test_testTitleName - 2020.08.05 at 18h 25m 39s.xml">
       <configuration name="test.testTitleName" configurationId="JUnit" />
@@ -491,6 +563,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-513" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31760645" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -498,15 +571,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4004603" sideWeight="0.50323975" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42577675" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25086308" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31530493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31803456" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21112311" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33371693" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37514386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -561,7 +634,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="成功的修复了当逻辑顺序靠后的列被设为主键时，物理顺序会提前的问题" />
     <MESSAGE value="删除了些无用文件" />
     <MESSAGE value="修复了更改列数量后，恢复删除数据会报错的bug" />
     <MESSAGE value="新增两个支持类，float和nchar，并修复当列为8的整数时出现的一些bug" />
@@ -586,14 +658,15 @@
     <MESSAGE value="增加了date数据类型" />
     <MESSAGE value="增加了smalldatetime数据类型" />
     <MESSAGE value="增加了Bit数据类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了Bit数据类型" />
+    <MESSAGE value="加强了对行溢出列的支持，现在可以支持行溢出转变的LOB类型数据了（暂时支持）" />
+    <option name="LAST_COMMIT_MESSAGE" value="加强了对行溢出列的支持，现在可以支持行溢出转变的LOB类型数据了（暂时支持）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/test.java</url>
-          <line>159</line>
+          <line>158</line>
           <properties />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
@@ -611,7 +684,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/test.java</url>
-          <line>219</line>
+          <line>218</line>
           <properties />
           <option name="timeStamp" value="224" />
         </line-breakpoint>
@@ -645,19 +718,18 @@
           <properties />
           <option name="timeStamp" value="262" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/util/RecordCuter.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="264" />
+      <option name="time" value="277" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/schema/SchemaRecordUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RecordPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -676,13 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/title/TitleRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -736,34 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBinary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawSmallInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawChar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawVarBinary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -780,35 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawMoney.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#752#753#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RawNChar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawNVarchar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/SchemaType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -830,18 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="122" column="11" lean-forward="false" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBigInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="42" />
-          <folding>
-            <element signature="e#285#286#0" expanded="false" />
-            <element signature="e#334#335#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,39 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RawNText.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#303#304#0" expanded="false" />
-            <element signature="e#336#337#0" expanded="false" />
-            <element signature="e#762#763#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#833#834#0" expanded="false" />
-            <element signature="e#862#863#0" expanded="false" />
-            <element signature="e#901#902#0" expanded="false" />
-            <element signature="e#929#930#0" expanded="false" />
-            <element signature="e#973#974#0" expanded="false" />
-            <element signature="e#1001#1002#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawFloat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -911,67 +882,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/PageCuter.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/RawVarchar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="648">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawChar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RawDateTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="783">
           <caret line="36" column="58" lean-forward="false" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawSmallDateTime.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/RawFloat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawTinyint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
-          <folding>
-            <element signature="e#702#703#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/HexUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="31" />
+        <state relative-caret-position="459">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBit.java">
+    <entry file="file://$PROJECT_DIR$/src/title/TitleRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        <state relative-caret-position="324">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/LobRecordParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="66" column="55" lean-forward="false" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/PageCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1141">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -984,21 +945,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="83" column="40" lean-forward="false" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RawInt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="8" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/CompressLength.java" />
+    <entry file="file://$PROJECT_DIR$/src/domain/SchemaType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawTinyint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
+          <folding>
+            <element signature="e#702#703#0" expanded="false" />
+            <element signature="e#729#730#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,65 +981,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/RawSmallInt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="402">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#737#738#0" expanded="false" />
+            <element signature="e#764#765#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
+    <entry file="file://$PROJECT_DIR$/src/domain/RawSmallDateTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="102" column="40" lean-forward="false" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+        <state relative-caret-position="373">
+          <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawNVarchar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawVarBinary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawBit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawBinary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#735#736#0" expanded="false" />
+            <element signature="e#762#763#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/CompleteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state relative-caret-position="1512">
+          <caret line="67" column="35" lean-forward="false" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawMoney.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawBigInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/PageUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="3780">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding>
             <element signature="method#pageSelecterByObjid#0;class#PageUtils#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawVarchar.java">
+    <entry file="file://$PROJECT_DIR$/src/util/HexUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="371">
+          <caret line="207" column="47" lean-forward="false" selection-start-line="207" selection-start-column="47" selection-end-line="207" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/LobRecordParser.java">
+    <entry file="file://$PROJECT_DIR$/src/util/MainParserIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="66" column="55" lean-forward="false" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+        <state relative-caret-position="425">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="166" column="21" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+          <folding>
+            <element signature="method#parserNormalRecord#0;class#RawColumnParser#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

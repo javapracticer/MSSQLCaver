@@ -5,7 +5,6 @@ import schema.SchemaRecord;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,7 +41,7 @@ public class MainParserForce {
             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
 //                List<byte[]> records = DeletedRecordCuter.cutRrcord(bytes, header.getFreeData());
-                result.addAll(RawColumnParser.prserRecord(records, schemaList));
+                result.addAll(RawColumnParser.parserRecord(records, schemaList));
 
             }
 

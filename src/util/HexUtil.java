@@ -193,4 +193,25 @@ public class HexUtil {
         }
         return hex.toString();
     }
+    public static int getLow4Bit(byte data){
+        int low;
+        low = (data & 0x0f);
+        return low;
+    }
+    public static int getHeight4Bit(byte data){//获取高四位
+        int height;
+        height = ((data & 0xf0) >> 4);
+        return height;
+    }
+    public static int normalInt2(byte[] data, int offset){
+        String int2 = "";
+        for (int i = offset; i <= offset+1; i++) {
+            String s = Integer.toHexString(data[i] & 0xff);
+            if ((data[i] & 0xff) < 16) {
+                s = "0" + s;
+            }
+            int2 += s;
+        }
+        return Integer.valueOf(int2, 16);
+    }
 }

@@ -6,14 +6,13 @@ import java.io.*;
 import org.junit.jupiter.api.Test;
 import schema.SchemeaPage;
 import schema.SchemaRecord;
+import sun.util.resources.cldr.ti.CurrencyNames_ti_ER;
 import title.TitlePage;
 import title.TitleRecord;
 import util.*;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -114,7 +113,7 @@ public class test {
             PageHeader header = new PageHeader(bytes);
             if (header.getIdObj()==7&&header.getType()==1){
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
+                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals("72057594044743680")){
                         System.out.println(map);
@@ -154,7 +153,7 @@ public class test {
             PageHeader header = new PageHeader(bytes);
             if (header.getIdObj()==5&&header.getType()==1){
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
+                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("idmajor").equals("2105058535")){
                         System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
@@ -231,5 +230,16 @@ public class test {
             long endTime = System.currentTimeMillis();
             System.out.println("总共耗时:"+(endTime-startTime)/1000);
         }
+        @Test
+        public void getLow4() {
+            byte data = 0x2b;
+            int low;
+            low = (data & 0x0f);
+            System.out.println(low);
+        }
+        @Test
+        public void testCompressRowRecordCuter() {
+
     }
+}
 

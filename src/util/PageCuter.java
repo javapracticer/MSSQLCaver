@@ -9,8 +9,8 @@ public class PageCuter {
      * 当文件大小大于此边界值的时候，就会先只读取这么多文件进入内存
      * 换算为数据页面数位71680页
      */
-    public static final int borderSize = 587202560;
-    public static final int borderPage= 71680;
+    public static final int BORDERSIZE = 587202560;
+    public static final int BORDERPAGE = 71680;
     public static  File file = null;
     /**
      * 读取数据
@@ -22,8 +22,8 @@ public class PageCuter {
        file = new File(path);
 
         long fileSize=0;
-        if (file.length()> borderSize){
-            fileSize = borderSize;
+        if (file.length()> BORDERSIZE){
+            fileSize = BORDERSIZE;
         }else {
             fileSize = file.length();
         }

@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static util.PageCuter.borderPage;
+import static util.PageCuter.BORDERPAGE;
 import static util.PageCuter.file;
 
 public class PageUtils {
@@ -99,7 +99,7 @@ public class PageUtils {
      */
     public static byte[] getPagebyPageNum(int num)  {
         try {
-            if (num<borderPage){
+            if (num< BORDERPAGE){
                 return read[num];
             }else {
                 //直接按流读取
@@ -148,7 +148,7 @@ public class PageUtils {
         for (byte[] idobj5Page : idobj5Pages) {
             PageHeader header = new PageHeader(idobj5Page);
             List<byte[]> records = RecordCuter.cutRrcord(idobj5Page, header.getSlotCnt());
-            List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
+            List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
             for (Map<String, String> map : maps) {
                 if( map.get("idmajor").equals(tableId)){
                     return maps;
@@ -176,7 +176,7 @@ public class PageUtils {
             PageHeader header = new PageHeader(idobj7Page);
             if (header.getIdObj()==7&&header.getType()==1){
                 List<byte[]> records = RecordCuter.cutRrcord(idobj7Page, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
+                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals(rowsetId)&&map.get("type").equals("1")){
                         return map;
@@ -218,7 +218,7 @@ public class PageUtils {
         for (byte[] idobj3Page : idobj3Pages) {
             PageHeader header = new PageHeader(idobj3Page);
             List<byte[]> records = RecordCuter.cutRrcord(idobj3Page,header.getSlotCnt());
-            List<Map<String, String>> maps = RawColumnParser.prserRecord(records, list);
+            List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
             for (Map<String, String> map : maps) {
                 if (map.get("rsid").equals(rowsetid)){
                     colMap.put(Integer.valueOf(map.get("resolid")),Integer.valueOf(map.get("hbcolid")));

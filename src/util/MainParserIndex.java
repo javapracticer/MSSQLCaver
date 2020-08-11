@@ -56,7 +56,7 @@ public class MainParserIndex {
             schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
         }
         PageUtils.schemaSorter(schemaList,colmap);
-        result = RawColumnParser.prserRecord(records, schemaList);
+        result = RawColumnParser.parserRecord(records, schemaList);
         return result;
     }
 
