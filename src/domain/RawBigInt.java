@@ -1,6 +1,8 @@
 package domain;
 import util.HexUtil;
 
+import java.io.IOException;
+
 public class RawBigInt implements Ischema {
     String name;
     int length=8;
@@ -34,7 +36,14 @@ public class RawBigInt implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
         return null;
     }
+
+    @Override
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
+        return null;
+    }
+
+
 }

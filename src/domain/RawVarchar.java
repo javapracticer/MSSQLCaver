@@ -24,6 +24,7 @@ public class RawVarchar implements Ischema {
     public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
         return HexUtil.parseRecordString(bytes,offset,endoffset);
     }
+
     @Override
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
         if (changeToLob){
@@ -55,6 +56,11 @@ public class RawVarchar implements Ischema {
     @Override
     public boolean isLOB() {
         return isLOB;
+    }
+
+    @Override
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
+        return null;
     }
 
     public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {

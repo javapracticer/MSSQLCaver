@@ -26,11 +26,18 @@ public class RecordCuter {
             if (((page[startOffset] >> 0) & 0x1)==0){
                 records.add(cutNoramalRecord(page,startOffset));
             }else {
-                records.add(cutCompressRecord(page,startOffset));
+                records.add(cutRowCompressRecord(page,startOffset));
             }
         }
         return records;
     }
+
+    /**
+     * 切割普通的数据
+     * @param page
+     * @param startOffSet
+     * @return
+     */
     private static byte[] cutNoramalRecord(byte[] page,int startOffSet){
         //这个代表的是每行的结束位置
         int endOffset = 0;
@@ -72,7 +79,14 @@ public class RecordCuter {
             return record;
         }
     }
-    private static  byte[] cutCompressRecord(byte[] page,int startOffSet){
+
+    /**
+     * 切割行压缩数据
+     * @param page
+     * @param startOffSet
+     * @return
+     */
+    private static  byte[] cutRowCompressRecord(byte[] page, int startOffSet){
         //这个代表的是每行的结束位置
         int endOffset = 0;
         //记录总共有多少列

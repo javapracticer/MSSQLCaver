@@ -232,10 +232,8 @@ public class test {
         }
         @Test
         public void getLow4() {
-            byte data = 0x2b;
-            int low;
-            low = (data & 0x0f);
-            System.out.println(low);
+            int test = 141;
+            System.out.println((test<<25)>>25);
         }
         @Test
         public void testCompressRowRecordCuter() {

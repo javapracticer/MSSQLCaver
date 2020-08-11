@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 
 public class RawSmallDateTime implements Ischema {
     String name;
@@ -45,6 +44,11 @@ public class RawSmallDateTime implements Ischema {
     @Override
     public boolean isLOB() {
         return false;
+    }
+
+    @Override
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
+        return null;
     }
 
     @Override

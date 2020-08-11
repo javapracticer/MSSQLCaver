@@ -41,6 +41,11 @@ public class RawNVarchar implements Ischema {
     }
 
     @Override
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
+        return null;
+    }
+
+    @Override
     public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 16);
         int slot = HexUtil.int2(bytes,offset+22);

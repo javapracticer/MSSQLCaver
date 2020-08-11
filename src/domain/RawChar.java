@@ -39,6 +39,14 @@ public class RawChar implements Ischema {
     }
 
     @Override
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws UnsupportedEncodingException {
+        String s = HexUtil.parseRecordString(bytes, startOffset, startOffset+length-1);
+        s=s.replaceAll("     ","");
+        return s;
+
+    }
+
+    @Override
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
         return null;
     }

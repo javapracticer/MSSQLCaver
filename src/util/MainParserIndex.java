@@ -131,6 +131,9 @@ public class MainParserIndex {
                     break;
                 }
                 records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
+                if (header.getNextPage()==0){
+                    break;
+                }
             }
             if (records.size()>10000){
                 break;

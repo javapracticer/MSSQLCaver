@@ -182,11 +182,18 @@ public class HexUtil {
         LobRecordParser.parserLobRecord(page, slot);
     }
 
+    /**
+     * 获取16进制形式的数据，由于大小端问题，所以是倒着获取
+     * @param record
+     * @param start
+     * @param end
+     * @return
+     */
     public static String getHex(byte[] record, int start, int end) {
         StringBuilder hex = new StringBuilder("");
         for (int i = end; i >= start; i--) {
             String s = Integer.toHexString(record[i] & 0xff);
-            if ((record[i] & 0xff) <= 16) {
+            if ((record[i] & 0xff) < 16) {
                 s = "0" + s;
             }
             hex.append(s);
@@ -203,6 +210,13 @@ public class HexUtil {
         height = ((data & 0xf0) >> 4);
         return height;
     }
+
+    /**
+     * 获取正着读取的int2数据
+     * @param data
+     * @param offset
+     * @return
+     */
     public static int normalInt2(byte[] data, int offset){
         String int2 = "";
         for (int i = offset; i <= offset+1; i++) {
@@ -213,5 +227,24 @@ public class HexUtil {
             int2 += s;
         }
         return Integer.valueOf(int2, 16);
+    }
+
+    /**
+     * 获取正着读的hex数据
+     * @param record
+     * @param start
+     * @param end
+     * @return
+     */
+    public static String getNormalHex(byte[] record, int start, int end) {
+        StringBuilder hex = new StringBuilder("");
+        for (int i = start; i <= end; i++) {
+            String s = Integer.toHexString(record[i] & 0xff);
+            if ((record[i] & 0xff) < 16) {
+                s = "0" + s;
+            }
+            hex.append(s);
+        }
+        return hex.toString();
     }
 }

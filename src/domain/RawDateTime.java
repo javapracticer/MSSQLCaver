@@ -58,6 +58,11 @@ public class RawDateTime implements Ischema {
     }
 
     @Override
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
+        return null;
+    }
+
+    @Override
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
         return null;
     }

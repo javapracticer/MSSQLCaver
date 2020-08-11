@@ -3,6 +3,7 @@ package util;
 import domain.Ischema;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +28,7 @@ public class RawColumnParser {
             if (((record[0] >> 0) & 0x1)==0){
                 recordList.add(parserNormalRecord(record,list));
             }else {
-                ;
+                recordList.add(parserRowCompressRecord(record,list));
             }
             j++;
         }
@@ -154,7 +155,7 @@ public class RawColumnParser {
      * @return 返回一个键值对map
      *
      */
-    private static Map<String,String> parserRowCompressRecord(byte[] record, List<Ischema> list){
+    private static Map<String,String> parserRowCompressRecord(byte[] record, List<Ischema> list) throws UnsupportedEncodingException {
         //此变量用来记录短记录的offset
         int shortRecordOffset = 0;
         //此变量用来记录全局长度offset
@@ -163,8 +164,93 @@ public class RawColumnParser {
         int longLengthOffset = 0;
         //此变量用来记录长记录的offset
         int longRecordOffset = 0;
+        //总共有多少列数据
+        int numOfAllRecord = 0;
+        //有多少列长数据
+        int numOfLongRecord = 0;
+        //表明记录全局长度的长度占多少个字节
+        int bytesNumOfLengthOffset = 0;
+        //记录每一列长度的一个list
+        List<Integer> lengths = new ArrayList<>();
         //此变量作为一个临时指针遍历数据的同时把上面的指针指定到正确的位置
-        int temp = 0;
-        return null;
+        int temp = 1;
+        if(((record[temp] >> 7) & 0x1)==0){
+            allLengthOffset += 2;
+            numOfAllRecord = record[temp] & 0xff;
+            bytesNumOfLengthOffset = (int)Math.ceil((double)numOfAllRecord/2);
+            temp += bytesNumOfLengthOffset+1;
+        }else {
+            allLengthOffset+=3;
+            numOfAllRecord = HexUtil.normalInt2(record,temp);
+            bytesNumOfLengthOffset = (int)Math.ceil((double)numOfAllRecord/2);
+            temp+=bytesNumOfLengthOffset+2;
+        }
+        shortRecordOffset = temp;
+        //短数据占的总长度
+        int shortLength = 0;
+        for (int i = allLengthOffset; i <allLengthOffset+bytesNumOfLengthOffset ; i++) {
+            int low4Bit = HexUtil.getLow4Bit(record[i]);
+            if (0<=low4Bit&&low4Bit<10){
+                shortLength+=(low4Bit-1);
+                lengths.add(low4Bit-1);
+            }else if (low4Bit==10){
+                lengths.add(low4Bit-1);
+            }
+            int height4Bit = HexUtil.getHeight4Bit(record[i]);
+            if (0<=height4Bit&&height4Bit<10){
+                shortLength+=(height4Bit-1);
+                lengths.add(height4Bit-1);
+            }else if (height4Bit==10){
+                lengths.add(height4Bit-1);
+            }
+        }
+        //此时temp到达了长数据的列数位置
+        temp+=shortLength+1;
+        if(((record[temp] >> 7) & 0x1)==0){
+            numOfLongRecord=record[temp] & 0xff;
+            longLengthOffset = temp+1;
+            //最后会多出一个字节
+            longRecordOffset =temp+1+numOfLongRecord*2+1;
+        }else {
+            numOfLongRecord = HexUtil.normalInt2(record,temp);
+            longLengthOffset = temp+2;
+            longRecordOffset = temp+2+numOfLongRecord*2+1;
+        }
+        /**
+         * 这个时候，所有的指针都已经就位，就可以开始解析数据了
+         * 由于要同时读两个指针，所以用索引来读取
+         */
+        //用于存放记录的map
+        Map<String,String> recordmap = new HashMap<>();
+        for (int i = 0; i <list.size() ; i++) {
+            Ischema ischema = list.get(i);
+            Integer length = lengths.get(i);
+            if (length <=8&&length >=1){
+                Object rowCompressValue = ischema.getRowCompressValue(record, shortRecordOffset, length,false );
+                recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
+                shortRecordOffset+=length;
+            }else if (length==9){
+                //长数据实际的长度
+                int longRecordLength = HexUtil.normalInt2(record,longLengthOffset);
+                //如果长度大于这个数，说明其primary位为1，应该去掉
+                if (longRecordLength>32768){
+                    longRecordLength-=32768;
+                }
+                if(((record[longLengthOffset+2] >> 7) & 0x1)==0){
+                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength,false);
+                    recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
+                    longRecordOffset+=longRecordLength;
+                }else{
+                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength, true);
+                    recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
+                    longRecordOffset+=longRecordLength;
+                }
+            }else if (length==0){
+                recordmap.put(ischema.name(), String.valueOf(0));
+            }else if (length==-1){
+                recordmap.put(ischema.name(),"NULL");
+            }
+        }
+        return recordmap;
     }
 }
