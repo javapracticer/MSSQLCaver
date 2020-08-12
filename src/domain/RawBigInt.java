@@ -37,7 +37,37 @@ public class RawBigInt implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+        String hex = HexUtil.getNormalHex(bytes, startOffset, startOffset + length-1);
+        Long aLong = Long.valueOf(hex, 16);
+        switch (length) {
+            case 1:
+                aLong = (aLong << 57) >>> 57;
+                break;
+            case 2:
+                aLong = (aLong << 49) >>> 49;
+                break;
+            case 3:
+                aLong = (aLong << 41) >>> 41;
+                break;
+            case 4:
+                aLong = (aLong << 33) >>> 33;
+                break;
+            case 5:
+                aLong =(aLong << 25) >>> 25;
+                break;
+            case 6:
+                aLong =(aLong << 17) >>> 17;
+                break;
+            case 7:
+                aLong =(aLong << 9) >>> 9;
+                break;
+            case 8:
+                aLong =(aLong << 1) >>> 1;
+                break;
+            default:
+                aLong = 0L;
+        }
+        return aLong;
     }
 
     @Override

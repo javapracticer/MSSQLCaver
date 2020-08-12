@@ -124,6 +124,8 @@ public class RecordCuter {
         endOffset+=shortLength;
         //长字段有几个字节
         int numOfLongRecord = 0;
+        //当长字节为0的时候，有时候长字段可能会为65535
+        int noLongRecord = 65535;
         if (((page[endOffset+1] >> 7) & 0x1)==0){
             lengthOffset = endOffset+2;
              numOfLongRecord = page[endOffset+1];
@@ -131,6 +133,10 @@ public class RecordCuter {
         }else {
             lengthOffset = endOffset+3;
             numOfLongRecord = HexUtil.int2(page,endOffset+1);
+            if (numOfLongRecord==noLongRecord){
+                //此处明明应该置0，但是为了能把记录剪切完，所以置为1
+                numOfLongRecord=1;
+            }
             endOffset+=3;
 
         }
@@ -138,8 +144,10 @@ public class RecordCuter {
         for (int i = lengthOffset; i <lengthOffset+numOfLongRecord*2 ; i=i+2) {
             int templength = HexUtil.normalInt2(page, i);
             //如果长度大于32768，那么肯定是因为primary位为1，所以应该减去
-            if (templength>32768){
-                templength-=32768;
+            templength = ((templength << 17) >>> 17);
+            //如果大于8192说明其为空
+            if (templength>8192){
+                templength=-1;
             }
             endOffset+=2;
             longLength+=templength;

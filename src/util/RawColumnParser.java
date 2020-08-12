@@ -236,6 +236,7 @@ public class RawColumnParser {
                 if (longRecordLength>32768){
                     longRecordLength-=32768;
                 }
+                //看下一字节的primary位是否为1
                 if(((record[longLengthOffset+2] >> 7) & 0x1)==0){
                     Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength,false);
                     recordmap.put(ischema.name(), String.valueOf(rowCompressValue));

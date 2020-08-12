@@ -232,8 +232,9 @@ public class test {
         }
         @Test
         public void getLow4() {
-            int test = 141;
-            System.out.println((test<<25)>>25);
+            int test = 0xf106;
+            System.out.println(Integer.toBinaryString(test));
+            System.out.println(Integer.toBinaryString((test<<17)>>>17));
         }
         @Test
         public void testCompressRowRecordCuter() {
