@@ -155,7 +155,7 @@ public class RawColumnParser {
      * @return 返回一个键值对map
      *
      */
-    private static Map<String,String> parserRowCompressRecord(byte[] record, List<Ischema> list) throws UnsupportedEncodingException {
+    private static Map<String,String> parserRowCompressRecord(byte[] record, List<Ischema> list) throws IOException {
         //此变量用来记录短记录的offset
         int shortRecordOffset = 0;
         //此变量用来记录全局长度offset

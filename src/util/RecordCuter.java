@@ -126,7 +126,7 @@ public class RecordCuter {
         int numOfLongRecord = 0;
         if (((page[endOffset+1] >> 7) & 0x1)==0){
             lengthOffset = endOffset+2;
-            numOfLongRecord = page[endOffset+1];
+             numOfLongRecord = page[endOffset+1];
             endOffset+=2;
         }else {
             lengthOffset = endOffset+3;
@@ -139,7 +139,7 @@ public class RecordCuter {
             int templength = HexUtil.normalInt2(page, i);
             //如果长度大于32768，那么肯定是因为primary位为1，所以应该减去
             if (templength>32768){
-                templength-=21768;
+                templength-=32768;
             }
             endOffset+=2;
             longLength+=templength;

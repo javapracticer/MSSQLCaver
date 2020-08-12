@@ -59,8 +59,16 @@ public class RawVarchar implements Ischema {
     }
 
     @Override
-    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException {
+        if (isComplexRow){
+            if (changeToLob){
+                return parserChangeLob(bytes,startOffset,startOffset+length);
+            }else {
+                return getOverFlowValue(bytes,startOffset,startOffset+length);
+            }
+        }else {
+            return getValue(bytes,startOffset,startOffset+length);
+        }
     }
 
     public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {

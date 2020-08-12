@@ -38,7 +38,16 @@ public interface Ischema {
      */
     boolean isLOB();
 
-    Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws UnsupportedEncodingException;
+    /**
+     * 解析行压缩数据用
+     * @param bytes
+     * @param startOffset
+     * @param length
+     * @param isComplexRow 这一项是判断其是否为复杂列
+     * @return
+     * @throws IOException
+     */
+    Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException;
 
     Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException;
 }

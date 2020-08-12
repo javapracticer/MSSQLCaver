@@ -33,7 +33,7 @@ public class RawBinary implements Ischema{
         return false;
     }
 
-
+    @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
         return null;
     }
