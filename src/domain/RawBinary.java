@@ -1,5 +1,7 @@
 package domain;
 
+import util.HexUtil;
+
 public class RawBinary implements Ischema{
     private String name;
     int length = 0;
@@ -10,7 +12,9 @@ public class RawBinary implements Ischema{
     }
     @Override
     public Object getValue(byte[] bytes, int offset, int endoffset) {
-        return bytes;
+        String normalHex = HexUtil.getNormalHex(bytes, offset, endoffset);
+        normalHex = "0x"+normalHex;
+        return normalHex;
     }
 
     @Override
@@ -35,7 +39,7 @@ public class RawBinary implements Ischema{
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+        return getValue(bytes,startOffset,startOffset+length-1);
     }
     @Override
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {

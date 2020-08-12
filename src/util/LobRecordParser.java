@@ -11,9 +11,9 @@ public class LobRecordParser {
      * @return 返回lob数据
      * @throws IOException 错误
      */
-    public static Object parserLobRecord(byte[] page,int slot) throws IOException {
+    public static String parserLobRecord(byte[] page,int slot) throws IOException {
         //找到记录地址的初始偏移量
-        Object result = null;
+        String result = null;
         int preRecord = HexUtil.int2(page,8190-slot*2);
         if (preRecord ==0){
             return "lob数据暂时无法解析";
@@ -34,7 +34,7 @@ public class LobRecordParser {
         }
         return result;
     }
-    private static Object parserType5(byte[] page,int startOffset) throws IOException {
+    private static String parserType5(byte[] page,int startOffset) throws IOException {
         //找出数据内部存了几条数据
         int curLinks = HexUtil.int2(page,startOffset+2);
         //新建String类储存数据
@@ -51,12 +51,12 @@ public class LobRecordParser {
         }
         return lobrecord.toString();
     }
-    private static Object parserType3(byte[] page, int startOffset) throws UnsupportedEncodingException {
+    private static String parserType3(byte[] page, int startOffset) throws UnsupportedEncodingException {
         int length = HexUtil.int2(page,startOffset+2);
         String result = HexUtil.parseRecordString(page, startOffset + 14, startOffset + length - 1);
         return result;
     }
-    public static Object parserType2(byte[] page, int startOffset) throws IOException {
+    public static String parserType2(byte[] page, int startOffset) throws IOException {
         int curLinks = HexUtil.int2(page,startOffset+2);
         StringBuilder lobrecord = new StringBuilder("");
         //跳过type头
@@ -71,7 +71,7 @@ public class LobRecordParser {
         }
         return lobrecord.toString();
     }
-    private static Object parserType0(byte[] page, int startOffset) throws UnsupportedEncodingException {
+    private static String parserType0(byte[] page, int startOffset) throws UnsupportedEncodingException {
         int length = HexUtil.int2(page,startOffset);
         String resulptPart = HexUtil.parseRecordString(page, startOffset + 6, startOffset +6 + length - 1);
         return resulptPart;

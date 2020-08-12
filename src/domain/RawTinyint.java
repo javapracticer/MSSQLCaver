@@ -34,7 +34,7 @@ public class RawTinyint implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+        return bytes[startOffset] & 0xff;
     }
 
     @Override

@@ -20,7 +20,7 @@ public class RawText implements Ischema {
         long pageid = HexUtil.int4(bytes, offset + 8);
         int slot = HexUtil.int2(bytes,offset+14);
         byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);
-        Object textResult = LobRecordParser.parserLobRecord(aimpage, slot);
+        String textResult = LobRecordParser.parserLobRecord(aimpage, slot);
         return textResult;
     }
     @Override

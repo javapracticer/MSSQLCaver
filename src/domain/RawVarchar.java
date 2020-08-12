@@ -66,9 +66,8 @@ public class RawVarchar implements Ischema {
             }else {
                 return getOverFlowValue(bytes,startOffset,startOffset+length);
             }
-        }else {
-            return getValue(bytes,startOffset,startOffset+length);
         }
+        return null;
     }
 
     public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {

@@ -3,7 +3,7 @@ package util;
 import java.io.IOException;
 
 public class OverFlowRecordParser {
-    public static Object parserOverFlowRecord(byte[] page, int slot) throws IOException {
+    public static String parserOverFlowRecord(byte[] page, int slot) throws IOException {
         int preRecord = HexUtil.int2(page,8190-slot*2);
         if (preRecord ==0){
             return "行溢出列删除数据暂时无法恢复";

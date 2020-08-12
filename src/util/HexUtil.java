@@ -157,7 +157,7 @@ public class HexUtil {
             baKeyword[j] = page[i];
             j++;
         }
-        String result = new String(baKeyword, "GBK");
+        String result = new String(baKeyword,"GBK");
         return result;
 //        StringBuilder hex = new StringBuilder("");
 //        for (int i = start; i <=end; i=i+2) {
