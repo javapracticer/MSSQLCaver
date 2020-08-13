@@ -49,7 +49,7 @@ public class RawUniqueidentifier implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException {
-        return getValue(bytes,startOffset,startOffset+length);
+        return getValue(bytes,startOffset,startOffset+length-1);
     }
 
     @Override
