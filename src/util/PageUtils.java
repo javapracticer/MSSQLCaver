@@ -270,6 +270,10 @@ public class PageUtils {
                 return new RawBinary(name,length);
             case 165:
                 return new RawVarBinary(name,length);
+            case 52:
+                return new RawSmallInt(name);
+            case 36:
+                return new RawUniqueidentifier(name);
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }

@@ -106,12 +106,12 @@ public class MainParserIndex {
         //一共有8条记录在混合区
         int count = 8;
         for (int i = 0; i < count ; i++) {
-            startOffset+=i*6;
             long pageid = HexUtil.int4(iamPage, startOffset);
             int fileid = HexUtil.int2(iamPage, startOffset + 4);
             if (pageid!=0&&fileid!=0){
                 result.add((int) pageid);
             }
+            startOffset+=6;
         }
         return result;
     }
@@ -120,7 +120,10 @@ public class MainParserIndex {
         for (Integer mix : mixs) {
             byte[] pagebyPageNum = PageUtils.getPagebyPageNum(mix);
             PageHeader header = new PageHeader(pagebyPageNum);
-            records.addAll(RecordCuter.cutRrcord(pagebyPageNum,header.getSlotCnt()));
+            if (header.getType()==1){
+                records.addAll(RecordCuter.cutRrcord(pagebyPageNum,header.getSlotCnt()));
+            }
+
         }
 
         for (Integer unit : units) {
@@ -130,7 +133,10 @@ public class MainParserIndex {
                 if (header.getSlotCnt()==0||header.getType()!=1){
                     break;
                 }
-                records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
+                if (header.getType()==1){
+                    records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
+                }
+
                 if (header.getNextPage()==0){
                     break;
                 }
