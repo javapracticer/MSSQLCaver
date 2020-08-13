@@ -190,17 +190,21 @@ public class RawColumnParser {
         int shortLength = 0;
         for (int i = allLengthOffset; i <allLengthOffset+bytesNumOfLengthOffset ; i++) {
             int low4Bit = HexUtil.getLow4Bit(record[i]);
-            if (0<=low4Bit&&low4Bit<10){
+            if (1<=low4Bit&&low4Bit<10){
                 shortLength+=(low4Bit-1);
                 lengths.add(low4Bit-1);
             }else if (low4Bit==10){
                 lengths.add(low4Bit-1);
+            }else if (low4Bit==0){
+                lengths.add(low4Bit-1);
             }
             int height4Bit = HexUtil.getHeight4Bit(record[i]);
-            if (0<=height4Bit&&height4Bit<10){
+            if (1<=height4Bit&&height4Bit<10){
                 shortLength+=(height4Bit-1);
                 lengths.add(height4Bit-1);
             }else if (height4Bit==10){
+                lengths.add(height4Bit-1);
+            }else if (height4Bit==0){
                 lengths.add(height4Bit-1);
             }
         }

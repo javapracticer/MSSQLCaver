@@ -128,6 +128,13 @@ public class RecordCuter {
         }
         //此时endOffset来到了变长列的开端
         endOffset+=shortLength;
+        if (page[endOffset]!=1&&shortLength==0){
+            //如果列为0，则是固定九个字长度
+            int length = 9;
+            byte[] record = new byte[length];
+            System.arraycopy(page, startOffSet, record, 0, length);
+            return record;
+        }
         //长字段有几个字节
         int numOfLongRecord = 0;
         //当长字节为0的时候，有时候长字段可能会为65535
