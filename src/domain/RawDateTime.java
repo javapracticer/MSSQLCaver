@@ -11,7 +11,7 @@ public class RawDateTime implements Ischema {
     String name;
     int length=8;
     int fixd=1;
-    private static double CLOCK_TICK_MS = 10d/3d;
+    private static double CLOCK_TICK_MS = 3.33333;
     public RawDateTime(String name1){
         this.name = name1;
     }
@@ -59,7 +59,50 @@ public class RawDateTime implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+        // 首先初始化一个基准时间
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(1900,0,1,0,0,0);
+        if(length>4){
+
+            switch (length){
+                case 5:
+                    calendar.add(Calendar.DATE, Math.toIntExact(-128 + bytes[startOffset]));
+                    break;
+                case 6:
+                    calendar.add(Calendar.DATE, Math.toIntExact(-32768 + HexUtil.ToUIntX(new byte[]{bytes[startOffset + 1], bytes[startOffset]})));
+                    break;
+                case 7:
+                    calendar.add(Calendar.DATE, Math.toIntExact(-8388608 + HexUtil.ToUIntX(new byte[]{bytes[startOffset + 2], bytes[startOffset + 1], bytes[startOffset], 0})));
+                    break;
+                case 8:
+                    calendar.add(Calendar.DATE, Math.toIntExact(-2147483648 + HexUtil.ToUIntX(new byte[]{bytes[startOffset + 3], bytes[startOffset + 2], bytes[startOffset + 1], bytes[startOffset]})));
+                    break;
+                default:
+                    break;
+            }
+            calendar.add(Calendar.MILLISECOND, (int) (Math.toIntExact(HexUtil.ToUIntX(new byte[]{bytes[startOffset+length-1],bytes[startOffset+length-2],bytes[startOffset+length-3],bytes[startOffset+length-4]}))*CLOCK_TICK_MS));
+
+        }else if (length>0){
+            switch (length){
+                case 1:
+                    calendar.add(Calendar.MILLISECOND, (int) (bytes[startOffset]*CLOCK_TICK_MS));
+                    break;
+                case 2:
+                    calendar.add(Calendar.MILLISECOND, Math.toIntExact(-32768 + HexUtil.ToUIntX(new byte[]{bytes[startOffset + 1], bytes[startOffset]})));
+                    break;
+                case 3:
+                    calendar.add(Calendar.MILLISECOND, Math.toIntExact(-8388608 + HexUtil.ToUIntX(new byte[]{bytes[startOffset + 2], bytes[startOffset+1],bytes[startOffset],0})));
+                    break;
+                case 4:
+                    calendar.add(Calendar.MILLISECOND, Math.toIntExact(-2147483648 + HexUtil.ToUIntX(new byte[]{bytes[startOffset + 3], bytes[startOffset+2],bytes[startOffset+1],bytes[startOffset]})));
+                    break;
+                default:
+                    System.out.println("时间异常");
+            }
+        }
+        Date date = calendar.getTime();
+
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").format(date);
     }
 
     @Override

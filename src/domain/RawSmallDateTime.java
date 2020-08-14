@@ -47,7 +47,18 @@ public class RawSmallDateTime implements Ischema {
     }
 
     @Override
-    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException {
+        if (length ==4){
+            return getValue(bytes,startOffset,startOffset+length-1);
+        }else if (length==2){
+            int date = HexUtil.int2(bytes,startOffset);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(1900,0,1);
+            calendar.add(Calendar.DATE,date);
+            Date result = calendar.getTime();
+
+            return new SimpleDateFormat("yyyy-MM-dd").format(result);
+        }
         return null;
     }
 

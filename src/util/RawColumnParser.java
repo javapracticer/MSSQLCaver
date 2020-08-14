@@ -193,7 +193,7 @@ public class RawColumnParser {
             if (1<=low4Bit&&low4Bit<10){
                 shortLength+=(low4Bit-1);
                 lengths.add(low4Bit-1);
-            }else if (low4Bit==10){
+            }else if (low4Bit>=10){
                 lengths.add(low4Bit-1);
             }else if (low4Bit==0){
                 lengths.add(low4Bit-1);
@@ -251,9 +251,11 @@ public class RawColumnParser {
                     longRecordOffset+=longRecordLength;
                 }
             }else if (length==0){
-                recordmap.put(ischema.name(), String.valueOf(0));
+                recordmap.put(ischema.name(),String.valueOf(ischema.getRowCompressValue(record,shortRecordOffset,length,false)));
             }else if (length==-1){
                 recordmap.put(ischema.name(),"NULL");
+            }else if (length==10){
+                recordmap.put(ischema.name(), String.valueOf(ischema.getRowCompressValue(record,shortRecordOffset,length,false)));
             }
         }
         return recordmap;

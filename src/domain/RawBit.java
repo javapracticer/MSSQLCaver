@@ -41,11 +41,15 @@ public class RawBit implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+        if (length==0){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int length) throws IOException {
         return null;
     }
 }

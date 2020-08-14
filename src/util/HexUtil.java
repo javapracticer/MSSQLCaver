@@ -247,4 +247,21 @@ public class HexUtil {
         }
         return hex.toString();
     }
+
+    /**
+     * 此方法用来操作输入一个固定byte数组，将其倒序拼借起来
+     * @return
+     */
+    public static long ToUIntX(byte[] bytes){
+        String hexx = "";
+        for (int i = bytes.length-1; i >= 0; i--) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) <= 16) {
+                s = "0" + s;
+            }
+            hexx += s;
+        }
+        return Integer.valueOf(hexx,16);
+    }
+
 }
