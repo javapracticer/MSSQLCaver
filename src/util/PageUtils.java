@@ -255,7 +255,7 @@ public class PageUtils {
             case 60:
                 return new RawMoney(name);
             case 231:
-                return new RawVarchar(name,length);
+                return new RawNVarchar(name,length);
             case 99:
                 return new RawNText(name);
             case 40:

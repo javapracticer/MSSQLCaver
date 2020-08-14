@@ -43,7 +43,14 @@ public class RawFloat implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+        String hex = HexUtil.getHex(bytes, startOffset, startOffset+length-1);
+        while (length<this.length){
+            hex+="00";
+            length++;
+        }
+        Long aLong = Long.parseLong(hex,16);
+        double v = Double.longBitsToDouble(aLong);
+        return v;
     }
 
     @Override

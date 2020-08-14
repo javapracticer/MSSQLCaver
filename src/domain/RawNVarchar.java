@@ -41,8 +41,8 @@ public class RawNVarchar implements Ischema {
     }
 
     @Override
-    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        return null;
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException {
+        return HexUtil.parseRecordString(bytes,startOffset,startOffset+length-1);
     }
 
     @Override

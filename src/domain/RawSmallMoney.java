@@ -1,17 +1,18 @@
 package domain;
+
 import util.HexUtil;
 
-public class RawInt implements Ischema {
-    private String name;
-    int length = 4;
-    int fixed = 1;
-    public RawInt(String Name){
-        this.name = Name;
-    }
+import java.io.IOException;
 
+public class RawSmallMoney implements Ischema {
+    String name;
+    int length=4;
+    int fixd=1;
     @Override
-    public Object getValue(byte[] bytes, int offset, int endoffset) {
-        return HexUtil.int4(bytes,offset);
+    public Object getValue(byte[] bytes, int offset, int endoffset) throws IOException {
+        long l = HexUtil.int4(bytes, offset);
+        int i = Math.toIntExact(l);
+        return (double)i/10000;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class RawInt implements Ischema {
 
     @Override
     public int fixd() {
-        return fixed;
+        return fixd;
     }
 
     @Override
@@ -35,9 +36,9 @@ public class RawInt implements Ischema {
     }
 
     @Override
-    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
-        String hex = HexUtil.getNormalHex(bytes, startOffset, startOffset + length-1);
-        Integer integer = Integer.valueOf(hex, 16);
+    public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException {
+        String normalHex = HexUtil.getNormalHex(bytes, startOffset, startOffset + length - 1);
+        Integer integer = Integer.valueOf(normalHex, 16);
         switch (length) {
             case 1:
                 integer = (integer << 25) >>> 25;
@@ -54,11 +55,11 @@ public class RawInt implements Ischema {
             default:
                 integer = 0;
         }
-        return integer;
+        return (double)integer/10000;
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
         return null;
     }
 }
