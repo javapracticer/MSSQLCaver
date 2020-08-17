@@ -32,7 +32,7 @@ public class MainParserForce {
         //将map里的schema按物理顺序拿出
         for (int i = 1; i <= schemaMap.size(); i++) {
             SchemaRecord SchemaRecord = schemaMap.get((long)i);
-            schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord.getLength(), SchemaRecord.getSchemaName()));
+            schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord));
         }
         PageUtils.schemaSorter(schemaList,colmap);
         List<Map<String,String>> result = new ArrayList<Map<String, String>>();

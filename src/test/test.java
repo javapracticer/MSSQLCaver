@@ -1,7 +1,6 @@
 package test;
 
 import domain.*;
-
 import java.io.*;
 import org.junit.jupiter.api.Test;
 import schema.SchemeaPage;
@@ -13,6 +12,9 @@ import util.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.sql.SQLData;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -238,7 +240,8 @@ public class test {
         }
         @Test
         public void testCompressRowRecordCuter() {
-
-    }
+            BigDecimal bigDecimal = BigDecimal.valueOf(12345L,2);
+            System.out.println(bigDecimal);
+        }
 }
 

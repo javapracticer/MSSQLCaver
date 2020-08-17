@@ -6,6 +6,8 @@ public class SchemaRecord {
     String schemaName;
     Long columnid;
     int length;
+    short prec;
+    short scale;
     public SchemaRecord(byte[] page, int preRecord, int size){
         this.columnid = HexUtil.int4(page,preRecord+10);
         this.tableId = HexUtil.int4(page,preRecord+4);
@@ -17,6 +19,8 @@ public class SchemaRecord {
         }
 
         this.length = HexUtil.int2(page,preRecord+19);
+        this.prec = page[preRecord+21];
+        this.scale = page[preRecord+22];
     }
 
     public String getType() {
@@ -59,6 +63,22 @@ public class SchemaRecord {
         this.columnid = columnid;
     }
 
+    public short getPrec() {
+        return prec;
+    }
+
+    public void setPrec(short prec) {
+        this.prec = prec;
+    }
+
+    public short getScale() {
+        return scale;
+    }
+
+    public void setScale(short scale) {
+        this.scale = scale;
+    }
+
     @Override
     public String toString() {
         return "SchemaRecord{" +
@@ -67,6 +87,8 @@ public class SchemaRecord {
                 ", schemaName='" + schemaName + '\'' +
                 ", columnid=" + columnid +
                 ", length=" + length +
+                ", prec=" + prec +
+                ", scale=" + scale +
                 '}';
     }
 }

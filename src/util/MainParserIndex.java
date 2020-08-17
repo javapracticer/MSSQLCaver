@@ -53,7 +53,7 @@ public class MainParserIndex {
         records = addRecords(mixPointer, indexUnitAreaList);
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
             SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
-            schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()), schemaRecord.getLength(), schemaRecord.getSchemaName()));
+            schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()),schemaRecord));
         }
         PageUtils.schemaSorter(schemaList,colmap);
         result = RawColumnParser.parserRecord(records, schemaList);

@@ -231,49 +231,51 @@ public class PageUtils {
     /**
      * 通过code生成schema类
      * @param code
-     * @param length
+     * @param schemaRecord
      * @return
      */
-    public static Ischema schemaBuilder(int code,int length,String name){
+    public static Ischema schemaBuilder(int code,SchemaRecord schemaRecord){
         switch (code){
             case 56:
-                return new RawInt(name);
+                return new RawInt(schemaRecord.getSchemaName());
             case 175:
-                return new RawChar(name,length);
+                return new RawChar(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 35:
-                return new RawText(name);
+                return new RawText(schemaRecord.getSchemaName());
             case 167:
-                return new RawVarchar(name,length);
+                return new RawVarchar(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 61:
-                return new RawDateTime(name);
+                return new RawDateTime(schemaRecord.getSchemaName());
             case 62:
-                return new RawFloat(name,length);
+                return new RawFloat(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 239:
-                return new RawNChar(name,length);
+                return new RawNChar(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 127:
-                return new RawBigInt(name);
+                return new RawBigInt(schemaRecord.getSchemaName());
             case 60:
-                return new RawMoney(name);
+                return new RawMoney(schemaRecord.getSchemaName());
             case 231:
-                return new RawNVarchar(name,length);
+                return new RawNVarchar(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 99:
-                return new RawNText(name);
+                return new RawNText(schemaRecord.getSchemaName());
             case 40:
-                return new RawDate(name);
+                return new RawDate(schemaRecord.getSchemaName());
             case 58:
-                return new RawSmallDateTime(name);
+                return new RawSmallDateTime(schemaRecord.getSchemaName());
             case 104:
-                return new RawBit(name);
+                return new RawBit(schemaRecord.getSchemaName());
             case 48:
-                return new RawTinyint(name);
+                return new RawTinyint(schemaRecord.getSchemaName());
             case 173:
-                return new RawBinary(name,length);
+                return new RawBinary(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 165:
-                return new RawVarBinary(name,length);
+                return new RawVarBinary(schemaRecord.getSchemaName(),schemaRecord.getLength());
             case 52:
-                return new RawSmallInt(name);
+                return new RawSmallInt(schemaRecord.getSchemaName());
             case 36:
-                return new RawUniqueidentifier(name);
+                return new RawUniqueidentifier(schemaRecord.getSchemaName());
+            case 106:
+                return new RawDecimal(schemaRecord.getSchemaName(),schemaRecord.getLength(),schemaRecord.getScale());
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
