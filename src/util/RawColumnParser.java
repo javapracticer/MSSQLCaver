@@ -210,15 +210,18 @@ public class RawColumnParser {
         }
         //此时temp到达了长数据的列数位置
         temp+=shortLength+1;
-        if(((record[temp] >> 7) & 0x1)==0){
-            numOfLongRecord=record[temp] & 0xff;
-            longLengthOffset = temp+1;
-            //最后会多出一个字节
-            longRecordOffset =temp+1+numOfLongRecord*2+1;
-        }else {
-            numOfLongRecord = HexUtil.normalInt2(record,temp);
-            longLengthOffset = temp+2;
-            longRecordOffset = temp+2+numOfLongRecord*2+1;
+        //判断是否有长数据
+        if (record[temp-1]!=0){
+            if(((record[temp] >> 7) & 0x1)==0){
+                numOfLongRecord=record[temp] & 0xff;
+                longLengthOffset = temp+1;
+                //最后会多出一个字节
+                longRecordOffset =temp+1+numOfLongRecord*2+1;
+            }else {
+                numOfLongRecord = HexUtil.normalInt2(record,temp);
+                longLengthOffset = temp+2;
+                longRecordOffset = temp+2+numOfLongRecord*2+1;
+            }
         }
         /**
          * 这个时候，所有的指针都已经就位，就可以开始解析数据了

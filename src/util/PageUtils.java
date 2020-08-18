@@ -275,7 +275,7 @@ public class PageUtils {
             case 36:
                 return new RawUniqueidentifier(schemaRecord.getSchemaName());
             case 106:
-                return new RawDecimal(schemaRecord.getSchemaName(),schemaRecord.getLength(),schemaRecord.getScale());
+                return new RawDecimal(schemaRecord.getSchemaName(),schemaRecord.getLength(),schemaRecord.getPrec(),schemaRecord.getScale());
             default:
                 throw new RuntimeException( "类型"+code+"暂时不被支持");
         }
