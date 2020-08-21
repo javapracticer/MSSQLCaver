@@ -211,16 +211,16 @@ public class RawColumnParser {
         //此时temp到达了长数据的列数位置
         temp+=shortLength+1;
         //判断是否有长数据
-        if (record[temp-1]!=0){
+        if (record[temp-1]==1){
             if(((record[temp] >> 7) & 0x1)==0){
                 numOfLongRecord=record[temp] & 0xff;
-                longLengthOffset = temp+1;
+                longLengthOffset = temp+2;
                 //最后会多出一个字节
-                longRecordOffset =temp+1+numOfLongRecord*2+1;
+                longRecordOffset =temp+2+numOfLongRecord*2;
             }else {
                 numOfLongRecord = HexUtil.normalInt2(record,temp);
-                longLengthOffset = temp+2;
-                longRecordOffset = temp+2+numOfLongRecord*2+1;
+                longLengthOffset = temp+3;
+                longRecordOffset = temp+3+numOfLongRecord*2;
             }
         }
         /**
@@ -238,18 +238,15 @@ public class RawColumnParser {
                 shortRecordOffset+=length;
             }else if (length==9){
                 //长数据实际的长度
-                int longRecordLength = HexUtil.normalInt2(record,longLengthOffset);
-                //如果长度大于这个数，说明其primary位为1，应该去掉
+                int longRecordLength = HexUtil.int2(record,longLengthOffset);
+                //如果长度大于这个数，说明其primary位为1，应该去掉,且这是个复杂列
                 if (longRecordLength>32768){
                     longRecordLength-=32768;
-                }
-                //看下一字节的primary位是否为1
-                if(((record[longLengthOffset+2] >> 7) & 0x1)==0){
-                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength,false);
+                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength,true);
                     recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
                     longRecordOffset+=longRecordLength;
                 }else{
-                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength, true);
+                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength, false);
                     recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
                     longRecordOffset+=longRecordLength;
                 }

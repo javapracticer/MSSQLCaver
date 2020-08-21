@@ -1,42 +1,39 @@
 package title;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-import domain.PageHeader;
+import com.sun.prism.impl.Disposer;
+import domain.*;
+import util.HexUtil;
+import util.PageUtils;
+import util.RawColumnParser;
+import util.RecordCuter;
 
 /**
  * 数据表头名页
  */
-public class TitlePage {
-    PageHeader header; //页头
-    List<TitleRecord> list = new ArrayList<>(); //页里包含的文件
-    public TitlePage(byte[] page){
-        header=new PageHeader(page);
-        list = TitleRecordUtil.parsePageRecord(page,header);
-    }
-
-    public PageHeader getHeader() {
-        return header;
-    }
-
-    public void setHeader(PageHeader header) {
-        this.header = header;
-    }
-
-    public List<TitleRecord> getList() {
-        return list;
-    }
-
-    public void setList(List<TitleRecord> list) {
-        this.list = list;
-    }
-
-    @Override
-    public String toString() {
-        return "title.TitlePage{" +
-                "header=" + header +
-                ", list=" + list +
-                '}';
+public  class TitlePage {
+    public static List<Map<String,String>> parserTitle(byte[] bytes) throws IOException {
+        List<Ischema> list = new ArrayList<>();
+        list.add(new RawInt("id"));
+        list.add(new RawNVarchar("name",0));
+        list.add(new RawInt("nsid"));
+        list.add(new RawTinyint("nsclass"));
+        list.add(new RawInt("status"));
+        list.add(new RawChar("type",2));
+        list.add(new RawInt("pid"));
+        list.add(new RawTinyint("pclass"));
+        list.add(new RawInt("intprop"));
+        list.add(new RawDateTime("created"));
+        list.add(new RawDateTime("modified"));
+        if (PageUtils.getVersionNum()<=665){
+            list.add(new RawInt("status"));
+        }
+        PageHeader header = new PageHeader(bytes);
+        List<byte[]> record = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
+        return RawColumnParser.parserRecord(record,list);
     }
 }

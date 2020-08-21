@@ -2,7 +2,7 @@ package test;
 
 import domain.PageHeader;
 import title.TitlePage;
-import title.TitleRecord;
+import util.MainParserForce;
 import util.MainParserIndex;
 import util.PageUtils;
 
@@ -35,26 +35,22 @@ public class CompleteTest {
             }
         }
         byte[][] read = PageUtils.getPages();
-        List<TitlePage> list = new ArrayList<>();
+        List<Map<String, String>> list = new ArrayList<>();
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
             if (header.getType()==1&&header.getIdObj()==34){
-                TitlePage tp = new TitlePage(bytes);
-                list.add(tp);
+                list.addAll(TitlePage.parserTitle(bytes));
             }
         }
         int i = 0;
-        List<TitleRecord> titles = new ArrayList<>();
-        for (TitlePage titlePage : list) {
-            List<TitleRecord> list1 = titlePage.getList();
-            for (TitleRecord titleRecord : list1) {
-                if (titleRecord.getType()==8277){
-                    titles.add(titleRecord);
-                }
+        List<Map<String,String>> titles = new ArrayList<>();
+        for (Map<String, String> map : list) {
+            if (map.get("type").equals("U ")){
+                titles.add(map);
             }
         }
         while (true){
-            for (TitleRecord title : titles) {
+            for (Map<String, String> title : titles) {
                 System.out.println(title);
             }
             Scanner sc = new Scanner(System.in);
@@ -63,7 +59,7 @@ public class CompleteTest {
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
             try {
-                List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
+                List<Map<String, String>> maps = MainParserForce.parsetTable(tableId);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);
                 }

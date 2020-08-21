@@ -125,22 +125,25 @@ public class MainParserIndex {
             }
 
         }
-
+        int endPage = 0;
         for (Integer unit : units) {
+            if (unit==endPage){
+                continue;
+            }
+            byte[] pagebyPageNum = PageUtils.getPagebyPageNum(unit);
+            PageHeader header = new PageHeader(pagebyPageNum);
+            long type = header.getIdObj();
             for (int i = unit; i <unit+8 ; i++) {
-                byte[] pagebyPageNum = PageUtils.getPagebyPageNum(i);
-                PageHeader header = new PageHeader(pagebyPageNum);
-                if (header.getSlotCnt()==0||header.getType()!=1){
+                pagebyPageNum = PageUtils.getPagebyPageNum(i);
+                header = new PageHeader(pagebyPageNum);
+                if (header.getSlotCnt()==0||header.getType()!=1||header.getIdObj()!=type){
                     break;
                 }
                 if (header.getType()==1){
                     records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
                 }
-
-                if (header.getNextPage()==0){
-                    break;
-                }
             }
+            endPage = unit+8;
             if (records.size()>10000){
                 break;
             }

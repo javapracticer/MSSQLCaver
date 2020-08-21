@@ -5,16 +5,12 @@ import java.io.*;
 import org.junit.jupiter.api.Test;
 import schema.SchemeaPage;
 import schema.SchemaRecord;
-import sun.util.resources.cldr.ti.CurrencyNames_ti_ER;
 import title.TitlePage;
-import title.TitleRecord;
 import util.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.SQLData;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -36,33 +32,6 @@ public class test {
         }
     }
 
-    /**
-     * 测试解析表名
-     * @throws IOException
-     */
-    @Test
-    public void testTitleName() throws IOException {
-        byte[][] read = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
-        List<TitlePage> list = new ArrayList<>();
-        for (byte[] bytes : read) {
-            PageHeader header = new PageHeader(bytes);
-            if (header.getType()==1&&header.getIdObj()==34){
-                TitlePage tp = new TitlePage(bytes);
-                list.add(tp);
-            }
-        }
-        int i = 0;
-        for (TitlePage titlePage : list) {
-            List<TitleRecord> list1 = titlePage.getList();
-            for (TitleRecord titleRecord : list1) {
-                if (titleRecord.getType()==8277){
-                    System.out.println(titleRecord);
-                }
-
-
-            }
-        }
-}
 
     /**
      * 测试解析特定表的schema
@@ -74,20 +43,19 @@ public class test {
         List<SchemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             PageHeader header = new PageHeader(page);
-            if (header.getType()==1&&header.getIdObj()==41){
-                SchemeaPage sp = new SchemeaPage(page);
-                list.add(sp);
+            if (header.getType()==1&&header.getIdObj()==7){
+                System.out.println(header);
             }
         }
-        for (SchemeaPage SchemeaPage : list) {
-            List<SchemaRecord> records = SchemeaPage.getRecords();
-            for (SchemaRecord record : records) {
-                long tableid = 658101385L;
-                if (record.getTableId()== tableid){
-                    System.out.println("Type:"+ SchemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
-                }
-            }
-        }
+//        for (SchemeaPage SchemeaPage : list) {
+//            List<SchemaRecord> records = SchemeaPage.getRecords();
+//            for (SchemaRecord record : records) {
+//                long tableid = 658101385L;
+//                if (record.getTableId()== tableid){
+//                    System.out.println("Type:"+ SchemaType.codeOf(Integer.parseInt(record.getType())).getFiled()+"\n"+record);
+//                }
+//            }
+//        }
     }
 
     /**

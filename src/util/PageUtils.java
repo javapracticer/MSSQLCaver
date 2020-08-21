@@ -20,6 +20,7 @@ public class PageUtils {
     private static List<byte[]> idobj5Pages = new ArrayList<>();
     private static List<SchemeaPage> schemaPages = new ArrayList<>();
     private static List<byte[]> idobj3Pages = new ArrayList<>();
+    private static int versionNum = 0;
     static {
         long startTime = System.currentTimeMillis();
         System.out.println("文件载入初始化...");
@@ -76,6 +77,8 @@ public class PageUtils {
         }catch (Exception e){
             throw new RuntimeException("初始化失败");
         }
+        versionNum = HexUtil.int2(read[9],100);
+        System.out.println("内部版本号为"+versionNum);
         long endTime = System.currentTimeMillis();
         System.out.println("文件初始化耗时:"+(endTime-startTime)+"ms");
     }
@@ -310,5 +313,9 @@ public class PageUtils {
             allIamPage.add(iamPage);
         }
         return allIamPage;
+    }
+
+    public static int getVersionNum() {
+        return versionNum;
     }
 }

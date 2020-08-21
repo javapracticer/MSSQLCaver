@@ -230,7 +230,7 @@ public class HexUtil {
     }
 
     /**
-     * 获取正着读的hex数据
+     * 获取从左到右读的hex数据
      * @param record
      * @param start
      * @param end

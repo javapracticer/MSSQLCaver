@@ -35,9 +35,9 @@ public class PageHeader {
         this.level = page[3];
         this.flagBits = HexUtil.int2(page,4);
         this.indexId = HexUtil.int2(page,6);
-        this.prevPage = HexUtil.int6(page,8);
+        this.prevPage = HexUtil.int4(page,8);
         this.pminlen = HexUtil.int2(page,14);
-        this.nextPage = HexUtil.int6(page,16);
+        this.nextPage = HexUtil.int4(page,16);
         this.slotCnt = HexUtil.int2(page,22);
         this.idObj = HexUtil.int4(page,24);
         this.freeCnt = HexUtil.int2(page,28);

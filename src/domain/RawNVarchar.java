@@ -1,6 +1,7 @@
 package domain;
 
 import util.HexUtil;
+import util.LobRecordParser;
 import util.OverFlowRecordParser;
 import util.PageUtils;
 
@@ -11,9 +12,13 @@ public class RawNVarchar implements Ischema {
     int length = 0;
     private int fixed = 0;
     private boolean isLOB = false;
+    private boolean changeToLob = false;
     public RawNVarchar(String name1,int length1){
         this.name = name1;
         this.length = length1;
+        if (length==65535){
+            changeToLob = true;
+        }
     }
 
     @Override
@@ -42,7 +47,14 @@ public class RawNVarchar implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException {
-        return HexUtil.parseRecordString(bytes,startOffset,startOffset+length-1);
+        if (isComplexRow){
+            if (changeToLob){
+                return parserChangeLob(bytes,startOffset,startOffset+length-1);
+            }else {
+                return getOverFlowValue(bytes,startOffset,startOffset+length-1);
+            }
+        }
+        return getValue(bytes,startOffset,startOffset+length-1);
     }
 
     @Override
@@ -52,5 +64,20 @@ public class RawNVarchar implements Ischema {
         byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);
         Object result = OverFlowRecordParser.parserOverFlowRecord(aimpage, slot);
         return result;
+    }
+
+    public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {
+        int preoffset = offset+16;
+        StringBuilder lobrecord = new StringBuilder("");
+        while ( preoffset<endoffset){
+            long pageId = HexUtil.int4(bytes, preoffset);
+            int fileId = HexUtil.int2(bytes, preoffset + 4);
+            int slotId = HexUtil.int2(bytes, preoffset + 6);
+            byte[] aimpage = PageUtils.getPagebyPageNum((int) pageId);
+            Object o = LobRecordParser.parserLobRecord(aimpage, slotId);
+            lobrecord.append(o);
+            preoffset+=12;
+        }
+        return lobrecord.toString();
     }
 }

@@ -36,6 +36,9 @@ public class RawInt implements Ischema {
 
     @Override
     public Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) {
+        if (length==0){
+            return 0;
+        }
         String hex = HexUtil.getNormalHex(bytes, startOffset, startOffset + length-1);
         Integer integer = Integer.valueOf(hex, 16);
         switch (length) {
