@@ -125,11 +125,7 @@ public class MainParserIndex {
             }
 
         }
-        int endPage = 0;
         for (Integer unit : units) {
-            if (unit==endPage){
-                continue;
-            }
             byte[] pagebyPageNum = PageUtils.getPagebyPageNum(unit);
             PageHeader header = new PageHeader(pagebyPageNum);
             long type = header.getIdObj();
@@ -143,7 +139,6 @@ public class MainParserIndex {
                     records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
                 }
             }
-            endPage = unit+8;
             if (records.size()>10000){
                 break;
             }
