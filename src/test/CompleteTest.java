@@ -2,7 +2,6 @@ package test;
 
 import domain.PageHeader;
 import title.TitlePage;
-import util.MainParserForce;
 import util.MainParserIndex;
 import util.PageUtils;
 
@@ -59,7 +58,7 @@ public class CompleteTest {
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
             try {
-                List<Map<String, String>> maps = MainParserForce.parsetTable(tableId);
+                List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);
                 }

@@ -224,6 +224,7 @@ public class PageUtils {
             List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
             for (Map<String, String> map : maps) {
                 if (map.get("rsid").equals(rowsetid)){
+                    //key是逻辑顺序，value是物理顺序
                     colMap.put(Integer.valueOf(map.get("resolid")),Integer.valueOf(map.get("hbcolid")));
                 }
             }

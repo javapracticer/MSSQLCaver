@@ -49,4 +49,9 @@ public class RawNChar implements Ischema {
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
         return null;
     }
+
+    @Override
+    public String getSqlSchema() {
+        return "nchar("+length/2+")";
+    }
 }

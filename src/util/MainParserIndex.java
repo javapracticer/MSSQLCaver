@@ -37,14 +37,16 @@ public class MainParserIndex {
         Map<String, String> id7PageRecord = PageUtils.getId7ObjPage(rowSetId);
         //获取每个字段物理位置和逻辑位置的对应关系
         Map<Integer, Integer> colmap =PageUtils.id3objPageRecords(rowSetId);
-        //获取IAM页面的第一页
+        //获取IAM页面的第一页的页码
         int firstIamPageNum = Integer.valueOf(id7PageRecord.get("firstIAMpage"));
         if (firstIamPageNum==0){
             throw new RuntimeException("该表数据为空或页面损害");
         }
+        //获取第一张IAM页
         byte[] firstIamPage = PageUtils.getPagebyPageNum(firstIamPageNum);
+        //解析IAM页
         List<byte[]> allIamPage = PageUtils.findAllIamPage(firstIamPage);
-        //获取表记录所在区的首页的list
+        //获取表记录所在区的list
         List<Integer> indexUnitAreaList = recordUnitArea(allIamPage);
         List<byte[]> records;
         //获取混合区的指针
@@ -55,6 +57,7 @@ public class MainParserIndex {
             SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
             schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()),schemaRecord));
         }
+        OutPutRecord.outPutRecordAsSql(schemaList);
         PageUtils.schemaSorter(schemaList,colmap);
         result = RawColumnParser.parserRecord(records, schemaList);
         return result;

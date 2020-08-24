@@ -40,6 +40,14 @@ public class RawVarchar implements Ischema {
     }
 
     @Override
+    public String getSqlSchema() {
+        if (changeToLob){
+            return "varchar(MAX)";
+        }
+        return "varchar("+length+")";
+    }
+
+    @Override
     public String name() {
         return name;
     }

@@ -75,5 +75,10 @@ public class RawBigInt implements Ischema {
         return null;
     }
 
+    @Override
+    public String getSqlSchema() {
+        return "bigint";
+    }
+
 
 }

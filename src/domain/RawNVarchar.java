@@ -66,6 +66,14 @@ public class RawNVarchar implements Ischema {
         return result;
     }
 
+    @Override
+    public String getSqlSchema() {
+        if (changeToLob){
+            return "nvarchar(max)";
+        }
+        return "nvarchar("+length/2+")";
+    }
+
     public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {
         int preoffset = offset+16;
         StringBuilder lobrecord = new StringBuilder("");

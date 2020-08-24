@@ -52,4 +52,9 @@ public class RawBit implements Ischema {
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int length) throws IOException {
         return null;
     }
+
+    @Override
+    public String getSqlSchema() {
+        return "bit";
+    }
 }

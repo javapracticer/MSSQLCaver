@@ -46,4 +46,9 @@ public class RawBinary implements Ischema{
         return null;
     }
 
+    @Override
+    public String getSqlSchema() {
+        return "binary("+length+")";
+    }
+
 }

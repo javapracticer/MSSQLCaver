@@ -41,4 +41,9 @@ public class RawSmallInt implements Ischema {
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
         return null;
     }
+
+    @Override
+    public String getSqlSchema() {
+        return "smallint";
+    }
 }

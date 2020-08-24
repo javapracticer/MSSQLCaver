@@ -11,11 +11,11 @@ public class RawDecimal implements Ischema {
     int fixed = 1;
     int prec = 0;
     private short scale = 0;
-    public  RawDecimal(String name1,int length1,short prec,short scale1){
+    public  RawDecimal(String name1,int length1,short prec1,short scale1){
         this.length = length1;
         this.name = name1;
         this.scale = scale1;
-        this.prec = prec;
+        this.prec = prec1;
         if (this.length!=5&&this.length!=9&&this.length!=13&&this.length!=17){
             this.fixed=0;
         }
@@ -95,5 +95,10 @@ public class RawDecimal implements Ischema {
     @Override
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
         return null;
+    }
+
+    @Override
+    public String getSqlSchema() {
+        return "decimal("+prec+","+scale+")";
     }
 }

@@ -134,8 +134,8 @@ public class HexUtil {
             hex.append(HexUtil.hex2(page, i));
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < hex.length() - 1; i += 2) {
-            String h = hex.substring(i, (i + 2));
+        for (int i = 0; i < hex.length() - 1; i += 4) {
+            String h = hex.substring(i,i+2);
             int decimal = Integer.parseInt(h, 16);
             sb.append((char) decimal);
         }

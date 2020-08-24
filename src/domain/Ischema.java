@@ -49,5 +49,19 @@ public interface Ischema {
      */
     Object getRowCompressValue(byte[] bytes, int startOffset, int length, boolean isComplexRow) throws IOException;
 
+    /**
+     * 获取行溢出列
+     * @param record
+     * @param startOffsetOfVariableColumn
+     * @param i
+     * @return
+     * @throws IOException
+     */
     Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException;
+
+    /**
+     * 获取其schema的sql形式
+     * @return
+     */
+    String getSqlSchema();
 }

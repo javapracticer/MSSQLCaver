@@ -109,4 +109,9 @@ public class RawDateTime implements Ischema {
     public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
         return null;
     }
+
+    @Override
+    public String getSqlSchema() {
+        return "datetime";
+    }
 }

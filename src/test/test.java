@@ -210,5 +210,10 @@ public class test {
             BigDecimal bigDecimal = BigDecimal.valueOf(12345L,2);
             System.out.println(bigDecimal);
         }
+        @Test
+        public void testOutSql(){
+
+        }
+
 }
 
