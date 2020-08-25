@@ -188,6 +188,7 @@ public class RawColumnParser {
         shortRecordOffset = temp;
         //短数据占的总长度
         int shortLength = 0;
+        //获取低4位和高4位的值
         for (int i = allLengthOffset; i <allLengthOffset+bytesNumOfLengthOffset ; i++) {
             int low4Bit = HexUtil.getLow4Bit(record[i]);
             if (1<=low4Bit&&low4Bit<10){

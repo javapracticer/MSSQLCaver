@@ -44,6 +44,7 @@ public class CompleteTest {
         int i = 0;
         List<Map<String,String>> titles = new ArrayList<>();
         for (Map<String, String> map : list) {
+            //将type为U的表打印出来
             if (map.get("type").equals("U ")){
                 titles.add(map);
             }
@@ -58,6 +59,7 @@ public class CompleteTest {
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
             try {
+                //进入主解析类
                 List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);

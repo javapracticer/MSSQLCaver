@@ -131,11 +131,11 @@ public class HexUtil {
     public static String parseString(byte[] page, int start, int end) {
         StringBuilder hex = new StringBuilder("");
         for (int i = start; i < end; i = i + 2) {
-            hex.append(HexUtil.hex2(page, i));
+            hex.append(HexUtil.getNormalHex(page,i,i+1));
         }
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < hex.length() - 1; i += 4) {
-            String h = hex.substring(i,i+2);
+            String h = hex.substring(i, (i + 2));
             int decimal = Integer.parseInt(h, 16);
             sb.append((char) decimal);
         }

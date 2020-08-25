@@ -30,7 +30,7 @@ public  class TitlePage {
         list.add(new RawDateTime("created"));
         list.add(new RawDateTime("modified"));
         if (PageUtils.getVersionNum()<=665){
-            list.add(new RawInt("status"));
+            list.add(new RawInt("status2"));
         }
         PageHeader header = new PageHeader(bytes);
         List<byte[]> record = RecordCuter.cutRrcord(bytes, header.getSlotCnt());

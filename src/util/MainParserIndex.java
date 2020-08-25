@@ -21,8 +21,10 @@ import java.util.Map;
 public class MainParserIndex {
     public static List<Map<String,String>> parserTable(String tableId) throws IOException {
         List<Map<String,String>> result;
+        //通过tableId获取shcema列表
         Map<Long, SchemaRecord> schemaRecordMap = PageUtils.getTableSchema(tableId);
         List<Ischema> schemaList = new ArrayList<>();
+        //获取对应表ID的rowsetid
         List<Map<String, String>> maps = PageUtils.getRowSetIdByTableId(tableId);
         //如果没有找到该表,
         if (maps==null){throw new RuntimeException("找不到该表");}
@@ -53,11 +55,13 @@ public class MainParserIndex {
         List<Integer> mixPointer = recordMixPointer(firstIamPage);
         //遍历统一区的开始节点
         records = addRecords(mixPointer, indexUnitAreaList);
+        //将schema按逻辑顺序实例化
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
             SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
             schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()),schemaRecord));
         }
         OutPutRecord.outPutRecordAsSql(schemaList);
+        //将schema按物理顺序排序
         PageUtils.schemaSorter(schemaList,colmap);
         result = RawColumnParser.parserRecord(records, schemaList);
         return result;

@@ -13,9 +13,9 @@ public class SchemaRecord {
         this.tableId = HexUtil.int4(page,preRecord+4);
         this.type = String.valueOf(page[preRecord+14] & 0xff);
         if (HexUtil.int2(page,preRecord+47)!=0){
-            this.schemaName = HexUtil.parseString(page,preRecord+52,preRecord+size);
+            this.schemaName = HexUtil.parseString(page,preRecord+53,preRecord+size);
         }else {
-            this.schemaName = HexUtil.parseString(page,preRecord+54,preRecord+size);
+            this.schemaName = HexUtil.parseString(page,preRecord+55,preRecord+size);
         }
 
         this.length = HexUtil.int2(page,preRecord+19);
