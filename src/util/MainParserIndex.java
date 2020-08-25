@@ -82,27 +82,21 @@ public class MainParserIndex {
         int startOffSet = 194;
         int size = PageUtils.getPageNumber();
         int block = size/8;
-        int gamSize = 63903;
-        int temp = 63903;
+        int gamSize = 63904;
+        int temp = 63904;
         for (byte[] iamPage : iamPages) {
-            if (gamcounter<iamPages.size()-1){
-                temp = gamSize;
-            }else{
-                while (temp>gamSize){
-                    temp-=gamSize;
-                }
-            }
+            //IAM页掌管区域的开头
+            int starPage = Math.toIntExact(HexUtil.int4(iamPage, 40));
             for (int i = startOffSet; i <temp/8+startOffSet; i++) {
                 if(iamPage[i]!=0) {
                     int precount = (i-194)*8;
                     for(int j = 0 ;j<8;j++){
                         if ((byte)((iamPage[i] >>j ) & 0x1)==1){
-                            list.add(gamcounter*gamSize*8+(precount+j)*8);
+                            list.add(starPage+(precount+j)*8);
                         }
                     }
                 }
             }
-            gamcounter++;
         }
         return list;
     }
