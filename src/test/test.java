@@ -211,7 +211,10 @@ public class test {
             System.out.println(bigDecimal);
         }
         @Test
-        public void testOutSql(){
+        public void testCorrupt() throws IOException {
+            for (int i = 0; i <10 ; i++) {
+                CorruptUtils.destoryedPageIDs("C:\\Users\\s6560\\Documents\\sqlsample\\corrupt.mdf",0.1,i);
+            }
 
         }
 
