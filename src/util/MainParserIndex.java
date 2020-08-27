@@ -86,7 +86,7 @@ public class MainParserIndex {
         int temp = 63904;
         for (byte[] iamPage : iamPages) {
             //IAM页掌管区域的开头
-            int starPage = Math.toIntExact(HexUtil.int4(iamPage, 40));
+            int starPage = Math.toIntExact(HexUtil.int4(iamPage, 136));
             for (int i = startOffSet; i <temp/8+startOffSet; i++) {
                 if(iamPage[i]!=0) {
                     int precount = (i-194)*8;

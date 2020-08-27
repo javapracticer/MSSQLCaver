@@ -10,16 +10,17 @@ import java.util.List;
 import java.util.Map;
 
 public class OutPutRecord {
+    public static String tableName = "";
     private  static StringBuilder sb = new StringBuilder();
 
     public static void outPutRecordAsSql(List<Ischema> schemas){
-        sb.append("{\n");
+        sb.append("CREATE TABLE "+tableName);
+        sb.append("(\n");
         for (Ischema schema : schemas) {
             sb.append(schema.name()+" "+schema.getSqlSchema()+",\n");
-            System.out.println(schema.name());
         }
         sb.deleteCharAt(sb.length()-2);
-        sb.append("}");
+        sb.append(")");
         String sql = sb.toString();
         File file = new File("C:\\Users\\s6560\\Documents\\sqlsample\\test.sql");
             try {
@@ -35,5 +36,8 @@ public class OutPutRecord {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+    }
+    public static void outPutRecord(){
+
     }
 }

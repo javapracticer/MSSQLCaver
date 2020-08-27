@@ -2,7 +2,9 @@ package test;
 
 import domain.PageHeader;
 import title.TitlePage;
+import util.MainParserForce;
 import util.MainParserIndex;
+import util.OutPutRecord;
 import util.PageUtils;
 
 import java.io.File;
@@ -59,6 +61,11 @@ public class CompleteTest {
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
             try {
+                for (Map<String, String> title : titles) {
+                    if (title.get("id").equals(tableId)){
+                        OutPutRecord.tableName = title.get("name");
+                    }
+                }
                 //进入主解析类
                 List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
                 for (Map<String, String> map : maps) {
