@@ -85,4 +85,9 @@ public class RawMoney implements Ischema {
     public String getSqlSchema() {
         return "money";
     }
+
+    @Override
+    public int getType() {
+        return 60;
+    }
 }

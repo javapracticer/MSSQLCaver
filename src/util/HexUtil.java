@@ -230,6 +230,25 @@ public class HexUtil {
     }
 
     /**
+     * 获取正着读取的int4数据
+     * @param data
+     * @param offset
+     * @return
+     */
+    public static int normalInt4(byte[] data, int offset){
+        String int4 = "";
+        for (int i = offset; i <= offset+3; i++) {
+            String s = Integer.toHexString(data[i] & 0xff);
+            if ((data[i] & 0xff) < 16) {
+                s = "0" + s;
+            }
+            int4 += s;
+        }
+        System.out.println(Integer.valueOf(int4,16));
+        return Integer.valueOf(int4, 16);
+    }
+
+    /**
      * 获取从左到右读的hex数据
      * @param record
      * @param start
@@ -264,4 +283,23 @@ public class HexUtil {
         return Integer.valueOf(hexx,16);
     }
 
+    /**
+     *  返回小端四字节有符号数
+     * @param data
+     * @param offset
+     * @return
+     */
+    public static int binaryInt4(byte[] data,int offset){
+        int[] nums = new int[4];
+        int k = 0;
+        for (int i = 0; i <4 ; i++) {
+            nums[i] = data[offset+i] & 0xff;
+        }
+        k = nums[3];
+        for (int i = 2; i>=0 ; i--) {
+            k=k<<8;
+            k += nums[i];
+        }
+        return k;
+    }
 }

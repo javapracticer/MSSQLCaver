@@ -71,4 +71,9 @@ public class RawSmallDateTime implements Ischema {
     public String getSqlSchema() {
         return "smalldatetime";
     }
+
+    @Override
+    public int getType() {
+        return 58;
+    }
 }

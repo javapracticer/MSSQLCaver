@@ -64,4 +64,6 @@ public interface Ischema {
      * @return
      */
     String getSqlSchema();
+
+    int getType();
 }

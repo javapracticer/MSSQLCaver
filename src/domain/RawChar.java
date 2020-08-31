@@ -55,4 +55,9 @@ public class RawChar implements Ischema {
     public String getSqlSchema() {
         return "char("+length+")";
     }
+
+    @Override
+    public int getType() {
+        return 175;
+    }
 }

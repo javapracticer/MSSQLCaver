@@ -64,6 +64,7 @@ public class MainParserIndex {
         //将schema按物理顺序排序
         PageUtils.schemaSorter(schemaList,colmap);
         result = RawColumnParser.parserRecord(records, schemaList);
+
         return result;
     }
 

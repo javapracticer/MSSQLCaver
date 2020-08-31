@@ -69,4 +69,9 @@ public class RawInt implements Ischema {
     public String getSqlSchema() {
         return "int";
     }
+
+    @Override
+    public int getType() {
+        return 56;
+    }
 }

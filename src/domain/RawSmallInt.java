@@ -46,4 +46,9 @@ public class RawSmallInt implements Ischema {
     public String getSqlSchema() {
         return "smallint";
     }
+
+    @Override
+    public int getType() {
+        return 52;
+    }
 }

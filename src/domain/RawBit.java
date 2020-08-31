@@ -57,4 +57,9 @@ public class RawBit implements Ischema {
     public String getSqlSchema() {
         return "bit";
     }
+
+    @Override
+    public int getType() {
+        return 104;
+    }
 }

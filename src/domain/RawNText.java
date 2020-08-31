@@ -57,4 +57,9 @@ public class RawNText implements Ischema {
     public String getSqlSchema() {
         return "ntext";
     }
+
+    @Override
+    public int getType() {
+        return 99;
+    }
 }

@@ -61,13 +61,14 @@ public class CompleteTest {
             if(tableId.equals("quit")) {break;}
             long startTime = System.currentTimeMillis();
             try {
-                for (Map<String, String> title : titles) {
-                    if (title.get("id").equals(tableId)){
-                        OutPutRecord.tableName = title.get("name");
-                    }
-                }
+//                for (Map<String, String> title : titles) {
+//                    if (title.get("id").equals(tableId)){
+//                        OutPutRecord.tableName = title.get("name");
+//                    }
+//                }
                 //进入主解析类
                 List<Map<String, String>> maps = MainParserForce.parsetTable(tableId);
+//                OutPutRecord.outPutRecord(maps);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);
                 }

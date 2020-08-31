@@ -114,4 +114,9 @@ public class RawDateTime implements Ischema {
     public String getSqlSchema() {
         return "datetime";
     }
+
+    @Override
+    public int getType() {
+        return 61;
+    }
 }

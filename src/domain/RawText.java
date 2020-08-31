@@ -56,4 +56,9 @@ public class RawText implements Ischema {
     public String getSqlSchema() {
         return "text";
     }
+
+    @Override
+    public int getType() {
+        return 35;
+    }
 }

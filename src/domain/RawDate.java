@@ -55,4 +55,9 @@ public class RawDate implements Ischema {
     public String getSqlSchema() {
         return "date";
     }
+
+    @Override
+    public int getType() {
+        return 40;
+    }
 }

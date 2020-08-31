@@ -29,28 +29,25 @@ public class CorruptUtils {
                     + file.getName());
         }
         fi.close();
-        int totalNum = (fileSize/8192);
-        int corruptNum = (int) (totalNum*rate);
+        int totalNum = (int) ((fileSize*rate)/512);
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i <corruptNum ; i++) {
-            list.add(new Random().nextInt(totalNum));
+        for (int i = 0; i <totalNum ; i++) {
+            list.add(new Random().nextInt(fileSize-1000));
         }
         for (Integer integer : list) {
-            int start = integer*8192;
-            for (int i = start; i <start+8192 ; i++) {
+            for (int i = integer; i <integer+512 ; i++) {
                 buffer[i] = 0X00;
             }
         }
-        File file2 = new File("C:\\Users\\s6560\\Documents\\sqlsample\\corruptsample\\"+fileNum+".mdf");
+        File file2 = new File("E:\\courrupt\\"+fileNum+".mdf");
         try {
 
             if (!file.exists()) {
                 file.createNewFile();
             }
-            OutputStream out = new BufferedOutputStream(new FileOutputStream(file2));
+            OutputStream out = new BufferedOutputStream(new FileOutputStream(file2,false));
             out.write(buffer);
             out.close();
-            System.out.println("输出完成");
         } catch (IOException e) {
             e.printStackTrace();
         }

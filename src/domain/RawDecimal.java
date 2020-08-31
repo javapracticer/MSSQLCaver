@@ -101,4 +101,9 @@ public class RawDecimal implements Ischema {
     public String getSqlSchema() {
         return "decimal("+prec+","+scale+")";
     }
+
+    @Override
+    public int getType() {
+        return 106;
+    }
 }

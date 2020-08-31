@@ -1,7 +1,9 @@
 package test;
 
 import domain.*;
+
 import java.io.*;
+
 import org.junit.jupiter.api.Test;
 import schema.SchemeaPage;
 import schema.SchemaRecord;
@@ -18,6 +20,7 @@ import java.util.Map;
 public class test {
     /**
      * 测试读取header
+     *
      * @throws IOException
      */
     @Test
@@ -26,7 +29,7 @@ public class test {
         List<TitlePage> list = new ArrayList<>();
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
-            if (header.getIdObj()==7){
+            if (header.getIdObj() == 7) {
                 System.out.println(header);
             }
         }
@@ -35,6 +38,7 @@ public class test {
 
     /**
      * 测试解析特定表的schema
+     *
      * @throws IOException
      */
     @Test
@@ -43,7 +47,7 @@ public class test {
         List<SchemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             PageHeader header = new PageHeader(page);
-            if (header.getType()==1&&header.getIdObj()==7){
+            if (header.getType() == 1 && header.getIdObj() == 7) {
                 System.out.println(header);
             }
         }
@@ -60,6 +64,7 @@ public class test {
 
     /**
      * 测试解析idobj为7的页
+     *
      * @throws IOException
      */
     @Test
@@ -71,8 +76,8 @@ public class test {
         list.add(new RawBigInt("ownerid"));
         list.add(new RawInt("status"));
         list.add(new RawSmallInt("fgid"));
-        list.add(new RawBinary("pgfirst",6));
-        list.add(new RawBinary("pgroot",6));
+        list.add(new RawBinary("pgfirst", 6));
+        list.add(new RawBinary("pgroot", 6));
         list.add(new RawInt("firstIAMpage"));
         list.add(new RawSmallInt("firstIAMFileId"));
         list.add(new RawBigInt("pcused"));
@@ -81,11 +86,11 @@ public class test {
         list.add(new RawInt("dbfragid"));
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
-            if (header.getIdObj()==7&&header.getType()==1){
+            if (header.getIdObj() == 7 && header.getType() == 1) {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("ownerid").equals("72057594044743680")){
+                    if (map.get("ownerid").equals("72057594044743680")) {
                         System.out.println(map);
                     }
                 }
@@ -95,6 +100,7 @@ public class test {
 
     /**
      * 测试解析idobj为5的页
+     *
      * @throws IOException
      */
     @Test
@@ -116,107 +122,117 @@ public class test {
         list.add(new RawSmallInt("maxint"));
         list.add(new RawSmallInt("minleaf"));
         list.add(new RawSmallInt("minint"));
-        list.add(new RawVarBinary("rsguid",0));
-        list.add(new RawVarBinary("lockres",0));
+        list.add(new RawVarBinary("rsguid", 0));
+        list.add(new RawVarBinary("lockres", 0));
         list.add(new RawInt("dbfragid"));
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
-            if (header.getIdObj()==5&&header.getType()==1){
+            if (header.getIdObj() == 5 && header.getType() == 1) {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
                 List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
                 for (Map<String, String> map : maps) {
-                    if (map.get("idmajor").equals("2105058535")){
-                        System.out.println("Rowsetid:"+map.get("rowsetid")+"|"+"ObjectID:"+map.get("idmajor")+"|"+"IndexID:"+map.get("idminor"));
-                    }
+                    if (map.get("idmajor").equals("2105058535")) {
+                        System.out.println("Rowsetid:" + map.get("rowsetid") + "|" + "ObjectID:" + map.get("idmajor") + "|" + "IndexID:" + map.get("idminor"));
                     }
                 }
             }
         }
-        @Test
-        public void testBinaryShift(){
+    }
+
+    @Test
+    public void testBinaryShift() {
         Long allocationUnitID = 72057594043170816L;
-        Long indexID= allocationUnitID>>48;
+        Long indexID = allocationUnitID >> 48;
         Long idObj = (allocationUnitID - (indexID << 48)) >> 16;
-            System.out.println("indxeID="+indexID);
-            System.out.println("idObj="+idObj);
-        }
-        @Test
-        public void testBinary(){
-            String hex = "01312d00";
-            Long aLong = Long.parseLong(hex,16);
-            double v = Double.longBitsToDouble(aLong);
-            System.out.println(v);
-        }
-        @Test
-        public void deletedRecordCut(){
-            byte[][] pages = PageUtils.getPages();
-            for (byte[] page : pages) {
-                PageHeader header = new PageHeader(page);
-                if (header.getPageId()==464){
-                    List<byte[]> list = DeletedRecordCuter.cutRrcord(page, header.getFreeData());
-                    for (byte[] bytes : list) {
-                        System.out.println(bytes);
-                    }
+        System.out.println("indxeID=" + indexID);
+        System.out.println("idObj=" + idObj);
+    }
+
+    @Test
+    public void testBinary() {
+        String hex = "01312d00";
+        Long aLong = Long.parseLong(hex, 16);
+        double v = Double.longBitsToDouble(aLong);
+        System.out.println(v);
+    }
+
+    @Test
+    public void deletedRecordCut() {
+        byte[][] pages = PageUtils.getPages();
+        for (byte[] page : pages) {
+            PageHeader header = new PageHeader(page);
+            if (header.getPageId() == 464) {
+                List<byte[]> list = DeletedRecordCuter.cutRrcord(page, header.getFreeData());
+                for (byte[] bytes : list) {
+                    System.out.println(bytes);
                 }
             }
         }
-        @Test
-        public void testmainPaarserForce() throws IOException {
-            long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = MainParserForce.parsetTable(String.valueOf(1298103665));
+    }
+
+    @Test
+    public void testmainPaarserForce() throws IOException {
+        long startTime = System.currentTimeMillis();
+        List<Map<String, String>> maps = MainParserForce.parsetTable(String.valueOf(1298103665));
+        for (Map<String, String> map : maps) {
+            System.out.println(map);
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
+    }
+
+    @Test
+    public void testMainParserIndex() throws IOException {
+        long startTime = System.currentTimeMillis();
+        List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(1710629137));
+        if (maps != null) {
             for (Map<String, String> map : maps) {
                 System.out.println(map);
             }
-            long endTime = System.currentTimeMillis();
-            System.out.println(endTime-startTime);
         }
-        @Test
-        public void testMainParserIndex() throws IOException {
-            long startTime = System.currentTimeMillis();
-            List<Map<String, String>> maps = MainParserIndex.parserTable(String.valueOf(1710629137));
-             if (maps!=null){
-                 for (Map<String, String> map : maps) {
-                     System.out.println(map);
-                 }
-             }
 
-            long endTime = System.currentTimeMillis();
-            System.out.println("总共耗时:"+(endTime-startTime));
-        }
-        @Test
-        public void testLarge() throws IOException {
-            long startTime = System.currentTimeMillis();
-            File file = new File("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
-            FileInputStream fileInputStream = new FileInputStream(file);
-            long length = file.length();
-            System.out.println(length);
-            long test = 262488L*8192L;
-            fileInputStream.skip(test);
-            byte[] bs = new byte[8192];
-            fileInputStream.read(bs);
-            fileInputStream.close();
-            PageHeader header = new PageHeader(bs);
-            System.out.println(header);
-            long endTime = System.currentTimeMillis();
-            System.out.println("总共耗时:"+(endTime-startTime)/1000);
-        }
-        @Test
-        public void getLow4() {
-            String s = "110";
-            System.out.println(Long.valueOf(s,2));
-        }
-        @Test
-        public void testCompressRowRecordCuter() {
-            BigDecimal bigDecimal = BigDecimal.valueOf(12345L,2);
-            System.out.println(bigDecimal);
-        }
-        @Test
-        public void testCorrupt() throws IOException {
-            for (int i = 0; i <10 ; i++) {
-                CorruptUtils.destoryedPageIDs("C:\\Users\\s6560\\Documents\\sqlsample\\corrupt.mdf",0.1,i);
-            }
+        long endTime = System.currentTimeMillis();
+        System.out.println("总共耗时:" + (endTime - startTime));
+    }
+
+    @Test
+    public void testLarge() throws IOException {
+        long startTime = System.currentTimeMillis();
+        File file = new File("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+        FileInputStream fileInputStream = new FileInputStream(file);
+        long length = file.length();
+        System.out.println(length);
+        long test = 262488L * 8192L;
+        fileInputStream.skip(test);
+        byte[] bs = new byte[8192];
+        fileInputStream.read(bs);
+        fileInputStream.close();
+        PageHeader header = new PageHeader(bs);
+        System.out.println(header);
+        long endTime = System.currentTimeMillis();
+        System.out.println("总共耗时:" + (endTime - startTime) / 1000);
+    }
+
+    @Test
+    public void getLow4() {
+        String s = "110";
+        System.out.println(Long.valueOf(s, 2));
+    }
+
+    @Test
+    public void testCompressRowRecordCuter() {
+        BigDecimal bigDecimal = BigDecimal.valueOf(12345L, 2);
+        System.out.println(bigDecimal);
+    }
+
+    @Test
+    public void testCorrupt() throws IOException {
+        for (int i = 0; i < 100; i++) {
+            CorruptUtils.destoryedPageIDs("C:\\Users\\s6560\\Documents\\sqlsample\\experence.mdf", 0.1, i);
+            System.out.println("文件" + i + "腐蚀完成");
 
         }
+    }
 
 }
 

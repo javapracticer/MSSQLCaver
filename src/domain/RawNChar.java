@@ -54,4 +54,9 @@ public class RawNChar implements Ischema {
     public String getSqlSchema() {
         return "nchar("+length/2+")";
     }
+
+    @Override
+    public int getType() {
+        return 239;
+    }
 }

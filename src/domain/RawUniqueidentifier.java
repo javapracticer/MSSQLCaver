@@ -61,4 +61,9 @@ public class RawUniqueidentifier implements Ischema {
     public String getSqlSchema() {
         return "uniqueidentifier";
     }
+
+    @Override
+    public int getType() {
+        return 36;
+    }
 }

@@ -3,7 +3,7 @@ package util;
 import domain.*;
 import schema.SchemaRecord;
 import schema.SchemeaPage;
-import test.CompleteTest;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,11 +21,15 @@ public class PageUtils {
     private static List<SchemeaPage> schemaPages = new ArrayList<>();
     private static List<byte[]> idobj3Pages = new ArrayList<>();
     private static int versionNum = 0;
-    static {
+    public  static void setfile(String file) {
+        idobj7Pages.clear();
+        idobj5Pages.clear();
+        schemaPages.clear();
+        idobj3Pages.clear();
         long startTime = System.currentTimeMillis();
         System.out.println("文件载入初始化...");
         try {
-            read = PageCuter.read(CompleteTest.mkdir);
+            read = PageCuter.read(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,9 +47,9 @@ public class PageUtils {
             }
         }
         //获取读取了的最后一页,查看是否还有后续页，如果有就读取。
-        byte[] tempPage = idobj7Pages.get(idobj7Pages.size() - 1);
-        PageHeader header = new PageHeader(tempPage);
         try {
+            byte[] tempPage = idobj7Pages.get(idobj7Pages.size() - 1);
+            PageHeader header = new PageHeader(tempPage);
             while (header.getNextPage() != 0) {
                 byte[] pagebyPageNum = getPagebyPageNum((int) header.getNextPage());
                 idobj7Pages.add(pagebyPageNum);
@@ -75,7 +79,7 @@ public class PageUtils {
                 header = tempSchemaPage.getHeader();
             }
         }catch (Exception e){
-            throw new RuntimeException("初始化失败");
+            throw e;
         }
         versionNum = HexUtil.int2(read[9],100);
         System.out.println("内部版本号为"+versionNum);
@@ -191,7 +195,7 @@ public class PageUtils {
     }
     public static  Map<Long, SchemaRecord> getTableSchema(String tableId){
         Map<Long, SchemaRecord> schemaMap = new HashMap<>(16);
-        for (SchemeaPage SchemeaPage : schemaPages) {
+        for (schema.SchemeaPage SchemeaPage : schemaPages) {
             List<SchemaRecord> records = SchemeaPage.getRecords();
             for (SchemaRecord record : records) {
                 long tableid = Long.parseLong(tableId);
@@ -238,7 +242,7 @@ public class PageUtils {
      * @param schemaRecord
      * @return
      */
-    public static Ischema schemaBuilder(int code,SchemaRecord schemaRecord){
+    public static Ischema schemaBuilder(int code, SchemaRecord schemaRecord){
         switch (code){
             case 56:
                 return new RawInt(schemaRecord.getSchemaName());

@@ -48,6 +48,11 @@ public class RawVarchar implements Ischema {
     }
 
     @Override
+    public int getType() {
+        return 167;
+    }
+
+    @Override
     public String name() {
         return name;
     }

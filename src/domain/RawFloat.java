@@ -62,4 +62,9 @@ public class RawFloat implements Ischema {
     public String getSqlSchema() {
         return "float";
     }
+
+    @Override
+    public int getType() {
+        return 62;
+    }
 }

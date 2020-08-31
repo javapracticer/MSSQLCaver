@@ -81,6 +81,11 @@ public class RawVarBinary implements Ischema {
         return "varbinary("+length+")";
     }
 
+    @Override
+    public int getType() {
+        return 165;
+    }
+
     public Object parserChangeLob(byte[] bytes, int offset, int endoffset) throws IOException {
         int preoffset = offset+16;
         StringBuilder lobrecord = new StringBuilder("");

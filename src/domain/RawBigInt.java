@@ -80,5 +80,10 @@ public class RawBigInt implements Ischema {
         return "bigint";
     }
 
+    @Override
+    public int getType() {
+        return 127;
+    }
+
 
 }

@@ -51,4 +51,9 @@ public class RawBinary implements Ischema{
         return "binary("+length+")";
     }
 
+    @Override
+    public int getType() {
+        return 173;
+    }
+
 }

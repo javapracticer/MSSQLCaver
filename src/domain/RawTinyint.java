@@ -46,4 +46,9 @@ public class RawTinyint implements Ischema {
     public String getSqlSchema() {
         return "tinyint";
     }
+
+    @Override
+    public int getType() {
+        return 48;
+    }
 }
