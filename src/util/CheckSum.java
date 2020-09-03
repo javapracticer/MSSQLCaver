@@ -1,8 +1,9 @@
 package util;
 
-public class checkSum {
+public class CheckSum {
     /**
-     * 计算页面校验和
+     * 计算页面校验和，并返回布尔类型，true为无错
+     * false为页面有错误
      * @return
      */
     static int seed = 15;
@@ -12,6 +13,7 @@ public class checkSum {
         int overall = 0;
         int checkSum = 0;
         int point = 0;
+        //将页面分为16份，每份128段，每段四个字节（小端）
         for (int i = 0 ;i<16;i++) {
             for (int j=0;j<128;j++) {
                 pagebuf[i][j]  = HexUtil.binaryInt4(page,point);

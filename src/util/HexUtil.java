@@ -13,15 +13,15 @@ public class HexUtil {
      * 处理两个字节的数据，将其转为int，由于数据有大小端的问题
      * 所以需要倒着拼接
      *
-     * @param head
+     * @param bytes
      * @param offset
      * @return
      */
-    public static int int2(byte[] head, int offset) {
+    public static int int2(byte[] bytes, int offset) {
         String int2 = "";
         for (int i = offset + 1; i >= offset; i--) {
-            String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) < 16) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) < 16) {
                 s = "0" + s;
             }
             int2 += s;
@@ -33,15 +33,15 @@ public class HexUtil {
      * 处理四个字节的数据，将其转为int，由于数据有大小端的问题
      * 所以需要倒着拼接
      *
-     * @param head
+     * @param bytes
      * @param offset
      * @return
      */
-    public static long int4(byte[] head, int offset) {
+    public static long int4(byte[] bytes, int offset) {
         String int4 = "";
         for (int i = offset + 3; i >= offset; i--) {
-            String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) < 16) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) < 16) {
                 s = "0" + s;
             }
             int4 += s;
@@ -53,15 +53,15 @@ public class HexUtil {
      * 处理六个字节的数据，将其转为int，由于数据有大小端的问题
      * 所以需要倒着拼接，且由于其是6字节，要用long类型储存
      *
-     * @param head
+     * @param bytes
      * @param offset
      * @return
      */
-    public static long int6(byte[] head, int offset) {
+    public static long int6(byte[] bytes, int offset) {
         String int6 = "";
         for (int i = offset + 5; i >= offset; i--) {
-            String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) <= 16) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) <= 16) {
                 s = "0" + s;
             }
             int6 += s;
@@ -72,15 +72,15 @@ public class HexUtil {
     /**
      * 处理8字节的数据，转为int
      *
-     * @param head
+     * @param bytes
      * @param offset
      * @return
      */
-    public static BigInteger int8(byte[] head, int offset) {
+    public static BigInteger int8(byte[] bytes, int offset) {
         String int8 = "";
         for (int i = offset + 7; i >= offset; i--) {
-            String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) < 16) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) < 16) {
                 s = "0" + s;
             }
             int8 += s;
@@ -92,15 +92,15 @@ public class HexUtil {
     /**
      * 读取两个字节的内容，将其转为16进制，并且补齐0
      *
-     * @param head
+     * @param bytes
      * @param offset
      * @return
      */
-    public static String hex2(byte[] head, int offset) {
+    public static String hex2(byte[] bytes, int offset) {
         String hex2 = "";
         for (int i = offset + 1; i >= offset; i--) {
-            String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) <= 16) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) <= 16) {
                 s = "0" + s;
             }
             hex2 += s;
@@ -108,11 +108,11 @@ public class HexUtil {
         return hex2;
     }
 
-    public static String recordHex2(byte[] head, int offset) {
+    public static String recordHex2(byte[] bytes, int offset) {
         String hex2 = "";
         for (int i = offset; i <= offset + 1; i++) {
-            String s = Integer.toHexString(head[i] & 0xff);
-            if ((head[i] & 0xff) <= 16) {
+            String s = Integer.toHexString(bytes[i] & 0xff);
+            if ((bytes[i] & 0xff) <= 16) {
                 s = "0" + s;
             }
             hex2 += s;
@@ -200,14 +200,26 @@ public class HexUtil {
         }
         return hex.toString();
     }
-    public static int getLow4Bit(byte data){
+
+    /**
+     * 获取一个字节低位四位的数
+     * @param aByte
+     * @return
+     */
+    public static int getLow4Bit(byte aByte){
         int low;
-        low = (data & 0x0f);
+        low = (aByte & 0x0f);
         return low;
     }
-    public static int getHeight4Bit(byte data){//获取高四位
+
+    /**
+     * 获取一个字节高四位的数
+     * @param aByte
+     * @return
+     */
+    public static int getHeight4Bit(byte aByte){//获取高四位
         int height;
-        height = ((data & 0xf0) >> 4);
+        height = ((aByte & 0xf0) >> 4);
         return height;
     }
 
@@ -284,7 +296,7 @@ public class HexUtil {
     }
 
     /**
-     *  返回小端四字节有符号数
+     *  返回小端四字节的二进制
      * @param data
      * @param offset
      * @return

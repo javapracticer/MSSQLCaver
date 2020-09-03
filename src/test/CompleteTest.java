@@ -35,6 +35,7 @@ public class CompleteTest {
                 System.out.println(e);
             }
         }
+        PageUtils.setfile(mkdir);
         byte[][] read = PageUtils.getPages();
         List<Map<String, String>> list = new ArrayList<>();
         for (byte[] bytes : read) {

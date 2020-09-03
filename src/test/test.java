@@ -43,11 +43,11 @@ public class test {
      */
     @Test
     public void testTableSchema() throws IOException {
-        byte[][] pages = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample2.mdf");
+        byte[][] pages = PageCuter.read("C:\\Users\\s6560\\Documents\\sqlsample\\sample.mdf");
         List<SchemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             PageHeader header = new PageHeader(page);
-            if (header.getType() == 1 && header.getIdObj() == 7) {
+            if (header.getType() == 1 && header.getIdObj() == 41) {
                 System.out.println(header);
             }
         }
@@ -227,10 +227,9 @@ public class test {
 
     @Test
     public void testCorrupt() throws IOException {
-        for (int i = 0; i < 100; i++) {
-            CorruptUtils.destoryedPageIDs("C:\\Users\\s6560\\Documents\\sqlsample\\experence.mdf", 0.1, i);
+        for (int i = 0; i <1 ; i++) {
+            CorruptUtils.destoryedPageIDs("F:\\bigdate\\testSSBM.mdf", 0.15, i);
             System.out.println("文件" + i + "腐蚀完成");
-
         }
     }
 

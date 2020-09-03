@@ -33,6 +33,7 @@ public class PageUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //此处为了图方便采取了遍历整个文件，效率较慢
         for (byte[] page : read) {
             PageHeader header = new PageHeader(page);
             if (header.getIdObj()==7&&header.getType()==1){

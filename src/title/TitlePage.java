@@ -29,6 +29,7 @@ public  class TitlePage {
         list.add(new RawInt("intprop"));
         list.add(new RawDateTime("created"));
         list.add(new RawDateTime("modified"));
+        //根据版本判断是否需要加入status2，在2008R2之后不需要再添加
         if (PageUtils.getVersionNum()<=665){
             list.add(new RawInt("status2"));
         }

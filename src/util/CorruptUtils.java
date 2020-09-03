@@ -31,10 +31,12 @@ public class CorruptUtils {
         fi.close();
         int totalNum = (int) ((fileSize*rate)/512);
         List<Integer> list = new ArrayList<>();
+        //生成数个偏移
         for (int i = 0; i <totalNum ; i++) {
             list.add(new Random().nextInt(fileSize-1000));
         }
         for (Integer integer : list) {
+            //腐蚀512字节
             for (int i = integer; i <integer+512 ; i++) {
                 buffer[i] = 0X00;
             }
