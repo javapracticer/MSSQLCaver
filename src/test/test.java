@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 这个类中是开发时的一些零散的工具类
+ */
 public class test {
     /**
      * 测试读取header
@@ -47,7 +50,7 @@ public class test {
         List<SchemeaPage> list = new ArrayList<>();
         for (byte[] page : pages) {
             PageHeader header = new PageHeader(page);
-            if (header.getType() == 1 && header.getIdObj() == 41) {
+            if (header.getType() == 1 && header.getIdObj() == 7) {
                 System.out.println(header);
             }
         }
