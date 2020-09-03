@@ -38,7 +38,7 @@ public class PageUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //高效链表式遍历
+        //高效链表式遍历,
         for (byte[] page : read) {
             PageHeader header = new PageHeader(page);
             if (header.getIdObj() == 7 && header.getType() == 1 && !idobjget7) {
