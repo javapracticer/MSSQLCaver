@@ -1,13 +1,13 @@
 package schema;
 import util.HexUtil;
 public class SchemaRecord {
-    String type;
-    Long tableId;
-    String schemaName;
-    Long columnid;
-    int length;
-    short prec;
-    short scale;
+    private String type;
+    private Long tableId;
+    private String schemaName;
+    private Long columnid;
+    private int length;
+    private short prec;
+    private short scale;
     public SchemaRecord(byte[] page, int preRecord, int size){
         this.columnid = HexUtil.int4(page,preRecord+10);
         this.tableId = HexUtil.int4(page,preRecord+4);

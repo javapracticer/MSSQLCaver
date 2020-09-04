@@ -139,16 +139,12 @@ public class PageUtils {
         list.add(new RawVarBinary("rsguid", 0));
         list.add(new RawVarBinary("lockres", 0));
         list.add(new RawInt("dbfragid"));
-        for (byte[] idobj5Page : idobj5Pages) {
-            PageHeader header = new PageHeader(idobj5Page);
-            List<byte[]> records = RecordCuter.cutRrcord(idobj5Page, header.getSlotCnt());
-            List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
+            List<Map<String, String>> maps = RawColumnParser.parserRecord(idobj5Pages, list);
             for (Map<String, String> map : maps) {
                 if (map.get("idmajor").equals(tableId)) {
                     return maps;
                 }
             }
-        }
         return null;
     }
 
@@ -167,18 +163,12 @@ public class PageUtils {
         list.add(new RawBigInt("pcdata"));
         list.add(new RawBigInt("pcreserved"));
         list.add(new RawInt("dbfragid"));
-        for (byte[] idobj7Page : idobj7Pages) {
-            PageHeader header = new PageHeader(idobj7Page);
-            if (header.getIdObj() == 7 && header.getType() == 1) {
-                List<byte[]> records = RecordCuter.cutRrcord(idobj7Page, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
+                List<Map<String, String>> maps = RawColumnParser.parserRecord(idobj7Pages, list);
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals(rowsetId) && map.get("type").equals("1")) {
                         return map;
                     }
                 }
-            }
-        }
         throw new RuntimeException("并未在OBJ7页里找到相关的记录");
     }
 
@@ -212,17 +202,14 @@ public class PageUtils {
         list.add(new RawInt("nullbit"));
         list.add(new RawSmallInt("bitpos"));
         list.add(new RawVarBinary("colguid", 16));
-        for (byte[] idobj3Page : idobj3Pages) {
-            PageHeader header = new PageHeader(idobj3Page);
-            List<byte[]> records = RecordCuter.cutRrcord(idobj3Page, header.getSlotCnt());
-            List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
+
+            List<Map<String, String>> maps = RawColumnParser.parserRecord(idobj3Pages, list);
             for (Map<String, String> map : maps) {
                 if (map.get("rsid").equals(rowsetid)) {
                     //key是逻辑顺序，value是物理顺序
                     colMap.put(Integer.valueOf(map.get("resolid")), Integer.valueOf(map.get("hbcolid")));
                 }
             }
-        }
         return colMap;
     }
 
@@ -318,7 +305,10 @@ public class PageUtils {
         return versionNum;
     }
 
-
+    /**
+     * 顺着链式结构寻找所有页面
+     * @param header
+     */
     public static void getAllObjectNPage(PageHeader header) {
         PageHeader temp = header;
         byte[] pagebyPageNum;

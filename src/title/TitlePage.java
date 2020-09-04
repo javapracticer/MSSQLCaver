@@ -16,7 +16,7 @@ import util.RecordCuter;
  * 数据表头名页
  */
 public  class TitlePage {
-    public static List<Map<String,String>> parserTitle(byte[] bytes) throws IOException {
+    public static List<Map<String,String>> parserTitle(List<byte[]> titlePages) throws IOException {
         List<Ischema> list = new ArrayList<>();
         list.add(new RawInt("id"));
         list.add(new RawNVarchar("name",0));
@@ -33,8 +33,6 @@ public  class TitlePage {
         if (PageUtils.getVersionNum()<=665){
             list.add(new RawInt("status2"));
         }
-        PageHeader header = new PageHeader(bytes);
-        List<byte[]> record = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-        return RawColumnParser.parserRecord(record,list);
+        return RawColumnParser.parserRecord(titlePages,list);
     }
 }

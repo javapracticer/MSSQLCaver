@@ -2,6 +2,7 @@ package util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class RecordCuter {
@@ -11,8 +12,9 @@ public class RecordCuter {
      * @param recordCounter 当前页面里有几条记录
      * @return 返回值为一条一条的单个记录
      */
-    public static List<byte[]> cutRrcord(byte[] page,int recordCounter){
+    public static List<byte[]> cutRrcord(byte[] page, int recordCounter){
         List<byte[]> records = new ArrayList<>();
+
         //依次读取每个slot槽
         for (int i = 8190; i>=8192-recordCounter*2 ; i=i-2){
             //这是每行的开始位置

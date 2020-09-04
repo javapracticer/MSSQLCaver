@@ -50,20 +50,20 @@ public class MainParserIndex {
         List<byte[]> allIamPage = PageUtils.findAllIamPage(firstIamPage);
         //获取表记录所在区的list
         List<Integer> indexUnitAreaList = recordUnitArea(allIamPage);
-        List<byte[]> records;
+        List<byte[]> recordsPage;
         //获取混合区的指针
         List<Integer> mixPointer = recordMixPointer(firstIamPage);
-        //遍历统一区的开始节点
-        records = addRecords(mixPointer, indexUnitAreaList);
+        //遍历获取所有数据页面
+        recordsPage = addRecordsPage(mixPointer, indexUnitAreaList);
         //将schema按逻辑顺序实例化
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
             SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
             schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(schemaRecord.getType()),schemaRecord));
         }
-        OutPutRecord.outPutRecordAsSql(schemaList);
+//        OutPutRecord.outPutRecordAsSql(schemaList);
         //将schema按物理顺序排序
         PageUtils.schemaSorter(schemaList,colmap);
-        result = RawColumnParser.parserRecord(records, schemaList);
+        result = RawColumnParser.parserRecord(recordsPage, schemaList);
 
         return result;
     }
@@ -117,13 +117,13 @@ public class MainParserIndex {
         }
         return result;
     }
-    public static List<byte[]> addRecords(List<Integer> mixs,List<Integer> units) throws IOException {
-        List<byte[]> records = new ArrayList<>();
+    public static List<byte[]> addRecordsPage(List<Integer> mixs, List<Integer> units) throws IOException {
+        List<byte[]> recordsPage = new ArrayList<>();
         for (Integer mix : mixs) {
             byte[] pagebyPageNum = PageUtils.getPagebyPageNum(mix);
             PageHeader header = new PageHeader(pagebyPageNum);
             if (header.getType()==1){
-                records.addAll(RecordCuter.cutRrcord(pagebyPageNum,header.getSlotCnt()));
+                recordsPage.add(pagebyPageNum);
             }
 
         }
@@ -138,13 +138,13 @@ public class MainParserIndex {
                     break;
                 }
                 if (header.getType()==1){
-                    records.addAll(RecordCuter.cutRrcord(PageUtils.getPagebyPageNum(i),header.getSlotCnt()));
+                    recordsPage.add(pagebyPageNum);
                 }
             }
-            if (records.size()>10000){
+            if (recordsPage.size()>10000){
                 break;
             }
         }
-        return records;
+        return recordsPage;
     }
 }

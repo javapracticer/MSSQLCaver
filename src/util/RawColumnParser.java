@@ -1,6 +1,7 @@
 package util;
 
 import domain.Ischema;
+import domain.PageHeader;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -12,25 +13,31 @@ import java.util.Map;
 public class RawColumnParser {
     /**
      * 这个方法专门负责解析记录
-     * @param records 这是切割好了的列表
+     * @param recordsPage 这是切割好了的列表
      * @param list 这是已经解析好了的类的shcema
      * @return 返回值是用map记录好了记录的list集合
      * @throws IOException
      */
-    public static List<Map<String,String>> parserRecord(List<byte[]> records, List<Ischema> list) throws IOException {
+    private static boolean unbroken;
+    public static List<Map<String,String>> parserRecord(List<byte[]> recordsPage, List<Ischema> list) throws IOException {
         List<Map<String,String>> recordList = new ArrayList<>();
-        int j = 0;
-
-        for (byte[] record : records) {
-            if (j==records.size()||record==null){
-                break;
+        PageHeader header;
+        for (byte[] page : recordsPage) {
+            header = new PageHeader(page);
+            List<byte[]> records = RecordCuter.cutRrcord(page, header.getSlotCnt());
+            int j = 0;
+            unbroken = CheckSum.pageCheckSum(page);
+            for (byte[] record : records) {
+                if (j==records.size()||record==null){
+                    break;
+                }
+                if (((record[0] >> 0) & 0x1)==0){
+                    recordList.add(parserNormalRecord(record,list,unbroken));
+                }else {
+                    recordList.add(parserRowCompressRecord(record,list,unbroken));
+                }
+                j++;
             }
-            if (((record[0] >> 0) & 0x1)==0){
-                recordList.add(parserNormalRecord(record,list));
-            }else {
-                recordList.add(parserRowCompressRecord(record,list));
-            }
-            j++;
         }
         return recordList;
     }
@@ -42,7 +49,7 @@ public class RawColumnParser {
      * @return 返回一个键值对map
      * @throws IOException
      */
-    private static Map<String,String> parserNormalRecord(byte[] record, List<Ischema> list) throws IOException {
+    private static Map<String,String> parserNormalRecord(byte[] record, List<Ischema> list,boolean flag) throws IOException {
         //固定长段的开始点
         int fixdOffset = 4;
         //记录总共有几列记录的offset
@@ -145,6 +152,7 @@ public class RawColumnParser {
                 }
             }
         }
+        recordmap.put("unbroken", String.valueOf(flag));
         return recordmap;
     }
 
@@ -155,7 +163,7 @@ public class RawColumnParser {
      * @return 返回一个键值对map
      *
      */
-    private static Map<String,String> parserRowCompressRecord(byte[] record, List<Ischema> list) throws IOException {
+    private static Map<String,String> parserRowCompressRecord(byte[] record, List<Ischema> list,boolean flag) throws IOException {
         //此变量用来记录短记录的offset
         int shortRecordOffset = 0;
         //此变量用来记录全局长度offset
@@ -259,6 +267,7 @@ public class RawColumnParser {
                 recordmap.put(ischema.name(), String.valueOf(ischema.getRowCompressValue(record,shortRecordOffset,length,false)));
             }
         }
+        recordmap.put("unbroken", String.valueOf(flag));
         return recordmap;
     }
 }

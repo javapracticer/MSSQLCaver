@@ -37,16 +37,17 @@ public class CompleteTest {
         }
         PageUtils.setfile(mkdir);
         byte[][] read = PageUtils.getPages();
-        List<Map<String, String>> list = new ArrayList<>();
+        List<byte[]> titlePages = new ArrayList<>();
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
             if (header.getType()==1&&header.getIdObj()==34){
-                list.addAll(TitlePage.parserTitle(bytes));
+                titlePages.add(bytes);
             }
         }
+        List<Map<String, String>> titleRecoreds = TitlePage.parserTitle(titlePages);
         int i = 0;
         List<Map<String,String>> titles = new ArrayList<>();
-        for (Map<String, String> map : list) {
+        for (Map<String, String> map : titleRecoreds) {
             //将type为U的表打印出来
             if (map.get("type").equals("U ")){
                 titles.add(map);
@@ -68,7 +69,7 @@ public class CompleteTest {
 //                    }
 //                }
                 //进入主解析类
-                List<Map<String, String>> maps = MainParserForce.parsetTable(tableId);
+                List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
 //                OutPutRecord.outPutRecord(maps);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);
