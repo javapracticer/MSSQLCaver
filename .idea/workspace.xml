@@ -12,19 +12,19 @@
     <bookmark url="file://$PROJECT_DIR$/src/domain/RawDateTime.java" line="68" />
     <bookmark url="file://$PROJECT_DIR$/src/domain/RawVarBinary.java" line="80" />
     <bookmark url="file://$PROJECT_DIR$/src/util/CorruptUtils.java" line="2" />
-    <bookmark url="file://$PROJECT_DIR$/src/util/RawColumnParser.java" line="40" />
+    <bookmark url="file://$PROJECT_DIR$/src/util/RawColumnParser.java" line="41" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/schema/schemaRecord.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/schema/schemaRecord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/title/titlePage.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/title/titlePage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/rawColumnParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" afterPath="$PROJECT_DIR$/out/production/mdfreader/util/recordCuter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/schema/SchemaRecord.java" afterPath="$PROJECT_DIR$/src/schema/SchemaRecord.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/CompleteTest.java" afterPath="$PROJECT_DIR$/src/test/CompleteTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/test.java" afterPath="$PROJECT_DIR$/src/test/test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/title/TitlePage.java" afterPath="$PROJECT_DIR$/src/title/TitlePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserIndex.java" afterPath="$PROJECT_DIR$/src/util/MainParserIndex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/PageUtils.java" afterPath="$PROJECT_DIR$/src/util/PageUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/MainParserForce.java" afterPath="$PROJECT_DIR$/src/util/MainParserForce.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/RawColumnParser.java" afterPath="$PROJECT_DIR$/src/util/RawColumnParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/RecordCuter.java" afterPath="$PROJECT_DIR$/src/util/RecordCuter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +50,34 @@
       <file leaf-file-name="CompleteTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/CompleteTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="284">
               <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RawUniqueidentifier.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/RawUniqueidentifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+              <folding>
+                <element signature="e#1691#1692#0" expanded="true" />
+                <element signature="e#1716#1717#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OverFlowRecordParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/OverFlowRecordParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,47 +102,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckSum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/CheckSum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainParserForce.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="43" column="65" lean-forward="false" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+            <state relative-caret-position="356">
+              <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/PageUtils.java">
+      <file leaf-file-name="PageHeader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+              <folding>
+                <element signature="e#3117#3118#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordCuter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/RecordCuter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutPutRecord.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OutPutRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/OutPutRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
@@ -129,11 +134,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RawColumnParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RawColumnParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="154" column="56" lean-forward="false" selection-start-line="154" selection-start-column="56" selection-end-line="154" selection-end-column="56" />
+            <state relative-caret-position="181">
+              <caret line="27" column="90" lean-forward="false" selection-start-line="27" selection-start-column="90" selection-end-line="27" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeletedRecordCuter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/DeletedRecordCuter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="67" lean-forward="false" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -176,14 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/util/mainParserForce.java" />
-        <option value="$PROJECT_DIR$/src/util/PageSelecter.java" />
-        <option value="$PROJECT_DIR$/src/MDFReader.form" />
-        <option value="$PROJECT_DIR$/src/MDFReader.java" />
-        <option value="$PROJECT_DIR$/src/test.java" />
-        <option value="$PROJECT_DIR$/src/CompleteTest.java" />
-        <option value="$PROJECT_DIR$/src/util/PageCuter.java" />
-        <option value="$PROJECT_DIR$/src/domain/SchemaType.java" />
         <option value="$PROJECT_DIR$/src/domain/CompressLength.java" />
         <option value="$PROJECT_DIR$/src/util/LobRecordParser.java" />
         <option value="$PROJECT_DIR$/src/util/OverFlowRecordParser.java" />
@@ -213,19 +220,27 @@
         <option value="$PROJECT_DIR$/src/domain/RawVarBinary.java" />
         <option value="$PROJECT_DIR$/src/domain/RawVarchar.java" />
         <option value="$PROJECT_DIR$/src/util/OutPutRecord.java" />
-        <option value="$PROJECT_DIR$/src/util/MainParserForce.java" />
         <option value="$PROJECT_DIR$/src/util/checkSum.java" />
         <option value="$PROJECT_DIR$/src/test/check.java" />
         <option value="$PROJECT_DIR$/src/util/CheckSum.java" />
         <option value="$PROJECT_DIR$/src/util/HexUtil.java" />
         <option value="$PROJECT_DIR$/src/util/CorruptUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/test.java" />
         <option value="$PROJECT_DIR$/src/schema/SchemaRecord.java" />
         <option value="$PROJECT_DIR$/src/util/RecordCuter.java" />
         <option value="$PROJECT_DIR$/src/util/MainParserIndex.java" />
         <option value="$PROJECT_DIR$/src/util/PageUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/CompleteTest.java" />
         <option value="$PROJECT_DIR$/src/title/TitlePage.java" />
+        <option value="$PROJECT_DIR$/src/test/gui.form" />
+        <option value="$PROJECT_DIR$/src/test/gui.java" />
+        <option value="$PROJECT_DIR$/src/test/GUITest.java" />
+        <option value="$PROJECT_DIR$/src/test/guitest.java" />
+        <option value="$PROJECT_DIR$/src/test/guitest.form" />
+        <option value="$PROJECT_DIR$/src/test/test.java" />
+        <option value="$PROJECT_DIR$/src/test/testGUI.java" />
+        <option value="$PROJECT_DIR$/src/test/GuiTest.form" />
+        <option value="$PROJECT_DIR$/src/test/GuiTest.java" />
+        <option value="$PROJECT_DIR$/src/util/MainParserForce.java" />
+        <option value="$PROJECT_DIR$/src/test/CompleteTest.java" />
         <option value="$PROJECT_DIR$/src/util/RawColumnParser.java" />
       </list>
     </option>
@@ -315,6 +330,12 @@
               <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
               <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="schema" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -383,6 +404,32 @@
       <module name="mdfreader" />
       <envs />
     </configuration>
+    <configuration name="GUITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.GUITest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mdfreader" />
+      <envs />
+    </configuration>
+    <configuration name="GuiTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.GuiTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mdfreader" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -441,45 +488,13 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
     </configuration>
-    <configuration name="check" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.check" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="mdfreader" />
-      <envs />
-    </configuration>
-    <configuration name="test.testCorrupt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test.testGui" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdfreader" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.test" />
-      <option name="METHOD_NAME" value="testCorrupt" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="test.testOutSql" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mdfreader" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.test" />
-      <option name="METHOD_NAME" value="testOutSql" />
+      <option name="METHOD_NAME" value="testGui" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -514,17 +529,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.CompleteTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.test.testOutSql" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testCorrupt" />
-      <item index="4" class="java.lang.String" itemvalue="Application.check" />
+      <item index="2" class="java.lang.String" itemvalue="Application.GUITest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.test.testGui" />
+      <item index="4" class="java.lang.String" itemvalue="Application.GuiTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.CompleteTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testCorrupt" />
-        <item index="3" class="java.lang.String" itemvalue="Application.check" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testOutSql" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GuiTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.test.testGui" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GUITest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.test.testTableSchema" />
       </list>
     </recent_temporary>
   </component>
@@ -535,9 +550,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_testCorrupt - 2020.09.03 at 10h 02m 57s.xml">
-      <configuration name="test.testCorrupt" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="test_testCorrupt - 2020.09.03 at 10h 18m 06s.xml">
       <configuration name="test.testCorrupt" configurationId="JUnit" />
     </history-entry>
@@ -552,6 +564,9 @@
     </history-entry>
     <history-entry file="test_testCorrupt - 2020.09.03 at 10h 50m 34s.xml">
       <configuration name="test.testCorrupt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_testGui - 2020.09.04 at 16h 06m 31s.xml">
+      <configuration name="test.testGui" configurationId="JUnit" />
     </history-entry>
     <history-entry file="test_testTableSchema - 2020.09.03 at 11h 53m 32s.xml">
       <configuration name="test.testTableSchema" configurationId="JUnit" />
@@ -577,7 +592,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-513" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31760645" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -585,7 +599,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29919448" sideWeight="0.5064795" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41311854" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5834292" sideWeight="0.49676025" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29919448" sideWeight="0.49352053" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28077754" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -674,7 +688,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加了date数据类型" />
     <MESSAGE value="增加了smalldatetime数据类型" />
     <MESSAGE value="增加了Bit数据类型" />
     <MESSAGE value="加强了对行溢出列的支持，现在可以支持行溢出转变的LOB类型数据了（暂时支持）" />
@@ -699,7 +712,8 @@
     <MESSAGE value="新增了校验类，可以校验页面是否出错" />
     <MESSAGE value="修改了CheckSum类名字，并添加了些注释" />
     <MESSAGE value="提高系统页解析效率" />
-    <option name="LAST_COMMIT_MESSAGE" value="提高系统页解析效率" />
+    <MESSAGE value="将校验和类添加进了进程，现在可以通过打印结果中的unbroken来判断是否有受损风险" />
+    <option name="LAST_COMMIT_MESSAGE" value="将校验和类添加进了进程，现在可以通过打印结果中的unbroken来判断是否有受损风险" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -776,35 +790,18 @@
           <properties />
           <option name="timeStamp" value="396" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/util/RawColumnParser.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="406" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="403" />
+      <option name="time" value="407" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/title/TitleRecord.java" />
-    <entry file="file://$PROJECT_DIR$/src/title/TitleRecordUtil.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/AbstractStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="928" column="18" lean-forward="false" selection-start-line="928" selection-start-column="18" selection-end-line="928" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBinary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawBit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RawChar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -938,13 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/RawUniqueidentifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/RawVarBinary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
@@ -971,20 +961,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/DeletedRecordCuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/OverFlowRecordParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1021,6 +997,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,14 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/schema/SchemeaPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1064,17 +1033,6 @@
         <state relative-caret-position="189">
           <caret line="8" column="48" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="8" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1599184003265" expanded="true" signature="1283:1806" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,14 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="43" column="65" lean-forward="false" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/PageUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -1142,13 +1092,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/CompleteTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="311">
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/gui.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/testGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="237" column="5" lean-forward="false" selection-start-line="237" selection-start-column="5" selection-end-line="237" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1599209300616" expanded="true" signature="1305:1828" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/GuiTest.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/GuiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/OverFlowRecordParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/OutPutRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="50" column="50" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,6 +1157,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="65" column="41" lean-forward="false" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/RawUniqueidentifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+          <folding>
+            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#1716#1717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/MainParserForce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1168,18 +1188,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
+    <entry file="file://$PROJECT_DIR$/src/test/CompleteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="154" column="56" lean-forward="false" selection-start-line="154" selection-start-column="56" selection-end-line="154" selection-end-column="56" />
+        <state relative-caret-position="284">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/PageHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding>
+            <element signature="e#3117#3118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/DeletedRecordCuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="67" lean-forward="false" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/OutPutRecord.java">
+    <entry file="file://$PROJECT_DIR$/src/util/RawColumnParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="50" column="50" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+        <state relative-caret-position="181">
+          <caret line="27" column="90" lean-forward="false" selection-start-line="27" selection-start-column="90" selection-end-line="27" selection-end-column="90" />
           <folding />
         </state>
       </provider>

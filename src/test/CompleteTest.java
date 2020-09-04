@@ -69,7 +69,7 @@ public class CompleteTest {
 //                    }
 //                }
                 //进入主解析类
-                List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
+                List<Map<String, String>> maps = MainParserForce.parsetTable(tableId);
 //                OutPutRecord.outPutRecord(maps);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);

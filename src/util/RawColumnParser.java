@@ -24,7 +24,8 @@ public class RawColumnParser {
         PageHeader header;
         for (byte[] page : recordsPage) {
             header = new PageHeader(page);
-            List<byte[]> records = RecordCuter.cutRrcord(page, header.getSlotCnt());
+//            List<byte[]> records = RecordCuter.cutRrcord(page, header.getSlotCnt());
+            List<byte[]> records = DeletedRecordCuter.cutRrcord(page, header.getFreeData());
             int j = 0;
             unbroken = CheckSum.pageCheckSum(page);
             for (byte[] record : records) {

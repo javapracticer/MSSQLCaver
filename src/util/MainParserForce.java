@@ -35,17 +35,15 @@ public class MainParserForce {
             schemaList.add(PageUtils.schemaBuilder(Integer.valueOf(SchemaRecord.getType()), SchemaRecord));
         }
         PageUtils.schemaSorter(schemaList,colmap);
-        List<Map<String,String>> result = new ArrayList<Map<String, String>>();
+        List<Map<String,String>> result = new ArrayList<>();
+        List<byte[]> recordPages = new ArrayList<>();
         for (byte[] bytes : read) {
             PageHeader header = new PageHeader(bytes);
             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
-                List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-//                List<byte[]> records = DeletedRecordCuter.cutRrcord(bytes, header.getFreeData());
-                result.addAll(RawColumnParser.parserRecord(records, schemaList));
-
+                recordPages.add(bytes);
             }
-
         }
+        result.addAll(RawColumnParser.parserRecord(recordPages, schemaList));
         return result;
     }
 
