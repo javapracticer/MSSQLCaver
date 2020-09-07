@@ -65,5 +65,9 @@ public interface Ischema {
      */
     String getSqlSchema();
 
+    /**
+     * 表表示其是否是一个字符串类型
+     * @return
+     */
     int getType();
 }

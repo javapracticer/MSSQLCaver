@@ -100,6 +100,14 @@ public class RawVarBinary implements Ischema {
         }
         return lobrecord.toString();
     }
+
+    /**
+     * 因为编码问题，此处单独实现了Binary的LOB数据解析方法
+     * @param page
+     * @param slot
+     * @return
+     * @throws IOException
+     */
     private String parserBinaryLob(byte[] page,int slot) throws IOException {
         //找到记录地址的初始偏移量
         String result = null;

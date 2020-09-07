@@ -59,7 +59,7 @@ public class RawColumnParser {
         int numOfColumns = HexUtil.int2(record, columnsOffset);
         int endOffsetPointer =0;
         //记录可变长列结尾的offset
-        int variableEndOffsetPointer = 0;
+        int variableEndLocation = 0;
         //可变长列的数量
         int variableColumns = 0;
         //可变长列的开始位置
@@ -73,7 +73,7 @@ public class RawColumnParser {
             // 指向可变长结尾的偏移量的偏移量
             endOffsetPointer = columnsOffset +5+(numOfColumns-1)/8;
             //可变长结束的点
-            variableEndOffsetPointer = HexUtil.int2(record,endOffsetPointer);
+            variableEndLocation = HexUtil.int2(record,endOffsetPointer);
             //可变长度的开始节点
             startOffsetOfVariableColumn = endOffsetPointer + variableColumns * 2;
         }
@@ -120,32 +120,34 @@ public class RawColumnParser {
                 //如果还没有到可变长度的头
                 if (variableHasParase<variableColumns){
                     //去除地址的大端
-                    if (variableEndOffsetPointer>8192){
-                        variableEndOffsetPointer -= 32768;
+                    if (variableEndLocation>8192){
+                        variableEndLocation -= 32768;
                         overFlowOrLob = true;
                     }
                     if (ischema.isLOB()){
                         //如果是LOB
-                        value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndLocation-1);
                     }else if (overFlowOrLob){
                         //如果不是LOB但是是overFlow
-                        value  = ischema.getOverFlowValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        value  = ischema.getOverFlowValue(record, startOffsetOfVariableColumn, variableEndLocation-1);
                     }else {
                         //既不是LOB也不是overFlow
-                        value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndOffsetPointer-1);
+                        value = ischema.getValue(record, startOffsetOfVariableColumn, variableEndLocation-1);
                     }
 
-                    if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)==1){
+                    if (startOffsetOfVariableColumn==variableEndLocation&&(byte) ((b >> bit) & 0x1)==1){
                         value = "NULL";
-                    }else if (startOffsetOfVariableColumn==variableEndOffsetPointer&&(byte) ((b >> bit) & 0x1)!=1){
+                    }else if (startOffsetOfVariableColumn==variableEndLocation&&(byte) ((b >> bit) & 0x1)!=1){
                         value = "NULL";
                     }
                     recordmap.put(ischema.name(), String.valueOf(value));
                     //开始下一轮的解析2
-                    startOffsetOfVariableColumn = variableEndOffsetPointer;
-                    variableEndOffsetPointer = HexUtil.int2(record,endOffsetPointer+2);
-                    endOffsetPointer+=2;
+                    startOffsetOfVariableColumn = variableEndLocation;
                     variableHasParase++;
+                    endOffsetPointer+=2;
+                    if (variableHasParase<variableColumns){
+                        variableEndLocation = HexUtil.int2(record,endOffsetPointer);
+                    }
                     i++;
                 }else {
                     recordmap.put(ischema.name(), "NULL");
