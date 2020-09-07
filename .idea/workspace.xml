@@ -16,7 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ce9c6c-a460-4577-9c4c-2c356f4fea11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/documentPDF/document.pdf" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/documentPDF/document.pdf" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/documentPDF/document.pdf" afterPath="$PROJECT_DIR$/documentPDF/document.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -124,8 +125,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <first_editor relative-caret-position="54">
+                <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -193,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/domain/CompressLength.java" />
         <option value="$PROJECT_DIR$/src/util/LobRecordParser.java" />
         <option value="$PROJECT_DIR$/src/util/OverFlowRecordParser.java" />
         <option value="$PROJECT_DIR$/src/title/TitleRecord.java" />
@@ -244,6 +244,7 @@
         <option value="$PROJECT_DIR$/src/test/CompleteTest.java" />
         <option value="$PROJECT_DIR$/src/domain/Ischema.java" />
         <option value="$PROJECT_DIR$/src/domain/RawVarBinary.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -327,6 +328,12 @@
               <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mdfreader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mdfreader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="documentPDF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -345,6 +352,9 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="SQL Server (Microsoft)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\s6560\IdeaProjects\mdfreader" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="util" />
       <recent name="test" />
@@ -663,7 +673,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="加强了对行溢出列的支持，现在可以支持行溢出转变的LOB类型数据了（暂时支持）" />
     <MESSAGE value="增加了对行压缩数据的切割功能，并开始写行压缩数据解析的方法" />
     <MESSAGE value="增加了对行压缩数据的解析（char类型和int类型）" />
     <MESSAGE value="增加了对行压缩数据的解析（text类型和varchar类型）" />
@@ -688,7 +697,8 @@
     <MESSAGE value="将校验和类添加进了进程，现在可以通过打印结果中的unbroken来判断是否有受损风险" />
     <MESSAGE value="修改了强制解析类的bug" />
     <MESSAGE value="修复了until类BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了until类BUG" />
+    <MESSAGE value="增加了PDF文档数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了PDF文档数据" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1147,8 +1157,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <first_editor relative-caret-position="54">
+            <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
