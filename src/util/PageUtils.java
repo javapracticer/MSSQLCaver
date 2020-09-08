@@ -22,6 +22,10 @@ public class PageUtils {
     private static List<byte[]> idobj3Pages = new ArrayList<>();
     private static int versionNum = 0;
 
+    /**
+     * 设置文件路径,并对文件进行初始化操作
+     * @param file
+     */
     public static void setfile(String file) {
         idobj7Pages.clear();
         idobj5Pages.clear();
@@ -73,6 +77,12 @@ public class PageUtils {
         return read;
     }
 
+    /**
+     * 通过objectID获取所需页面，十分低效
+     * @param pageid
+     * @return
+     * @throws IOException
+     */
     public static byte[] pageSelecterByObjid(long pageid) throws IOException {
         for (byte[] page : read) {
             PageHeader header = new PageHeader(page);
@@ -84,7 +94,8 @@ public class PageUtils {
     }
 
     /**
-     * 返回指定页码的页面
+     * 返回指定页码的页面，当页面在读入内存的部分时就直接读取，否则就通过
+     * 文件偏移读取
      *
      * @param num 指定的页码
      * @return
@@ -119,6 +130,12 @@ public class PageUtils {
         return pagenumber;
     }
 
+    /**
+     * 通过Tableid获取rowsetid
+     * @param tableId
+     * @return
+     * @throws IOException
+     */
     public static List<Map<String, String>> getRowSetIdByTableId(String tableId) throws IOException {
         List<Ischema> list = new ArrayList<>();
         list.add(new RawBigInt("rowsetid"));
@@ -148,6 +165,12 @@ public class PageUtils {
         return null;
     }
 
+    /**
+     * 通过ownerid（也就是rowsetid）查找auid
+     * @param rowsetId
+     * @return
+     * @throws IOException
+     */
     public static Map<String, String> getId7ObjPage(String rowsetId) throws IOException {
         List<Ischema> list = new ArrayList<>();
         list.add(new RawBigInt("auid"));
@@ -172,6 +195,11 @@ public class PageUtils {
         throw new RuntimeException("并未在OBJ7页里找到相关的记录");
     }
 
+    /**
+     * 通过tableID查找到对应的schema
+     * @param tableId
+     * @return
+     */
     public static Map<Long, SchemaRecord> getTableSchema(String tableId) {
         Map<Long, SchemaRecord> schemaMap = new HashMap<>(16);
         for (schema.SchemeaPage SchemeaPage : schemaPages) {
@@ -186,6 +214,12 @@ public class PageUtils {
         return schemaMap;
     }
 
+    /**
+     * 通过rowsetid查找到对应每个字段的相关信息
+     * @param rowsetid
+     * @return
+     * @throws IOException
+     */
     public static Map<Integer, Integer> id3objPageRecords(String rowsetid) throws IOException {
         Map<Integer, Integer> colMap = new HashMap<>();
         List<Ischema> list = new ArrayList<>();
@@ -289,6 +323,12 @@ public class PageUtils {
         }
     }
 
+    /**
+     * 通过IAM页的第一页获取之后的所有页面
+     * @param iamPage
+     * @return
+     * @throws IOException
+     */
     public static List<byte[]> findAllIamPage(byte[] iamPage) throws IOException {
         List<byte[]> allIamPage = new ArrayList<>();
         PageHeader header = new PageHeader(iamPage);
@@ -301,6 +341,10 @@ public class PageUtils {
         return allIamPage;
     }
 
+    /**
+     * 获取内部版本号
+     * @return
+     */
     public static int getVersionNum() {
         return versionNum;
     }
