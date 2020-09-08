@@ -7,10 +7,7 @@ import java.util.Map;
 
 import com.sun.prism.impl.Disposer;
 import domain.*;
-import util.HexUtil;
-import util.PageUtils;
-import util.RawColumnParser;
-import util.RecordCuter;
+import util.*;
 
 /**
  * 数据表头名页
@@ -33,6 +30,14 @@ public  class TitlePage {
         if (PageUtils.getVersionNum()<=665){
             list.add(new RawInt("status2"));
         }
-        return RawColumnParser.parserRecord(titlePages,list);
+        PageHeader header;
+        List<byte[]> records;
+        List<Map<String,String>> result = new ArrayList<>();
+        for (byte[] titlePage : titlePages) {
+            header = new PageHeader(titlePage);
+            records = RecordCuter.cutRrcord(titlePage, header.getSlotCnt());
+            result.addAll(RawColumnParser.parserRecord(records,list, CheckSum.pageCheckSum(titlePage)));
+        }
+        return result;
     }
 }

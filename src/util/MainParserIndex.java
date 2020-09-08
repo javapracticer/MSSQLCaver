@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public class MainParserIndex {
     public static List<Map<String,String>> parserTable(String tableId) throws IOException {
-        List<Map<String,String>> result;
+        List<Map<String,String>> result = new ArrayList<>();
         //通过tableId获取shcema列表
         Map<Long, SchemaRecord> schemaRecordMap = PageUtils.getTableSchema(tableId);
         List<Ischema> schemaList = new ArrayList<>();
@@ -50,11 +50,11 @@ public class MainParserIndex {
         List<byte[]> allIamPage = PageUtils.findAllIamPage(firstIamPage);
         //获取表记录所在区的list
         List<Integer> indexUnitAreaList = recordUnitArea(allIamPage);
-        List<byte[]> recordsPage;
+        List<byte[]> recordsPages;
         //获取混合区的指针
         List<Integer> mixPointer = recordMixPointer(firstIamPage);
         //遍历获取所有数据页面
-        recordsPage = addRecordsPage(mixPointer, indexUnitAreaList);
+        recordsPages = addRecordsPage(mixPointer, indexUnitAreaList);
         //将schema按逻辑顺序实例化
         for (int i = 1; i <= schemaRecordMap.size(); i++) {
             SchemaRecord schemaRecord = schemaRecordMap.get((long)i);
@@ -63,8 +63,12 @@ public class MainParserIndex {
 //        OutPutRecord.outPutRecordAsSql(schemaList);
         //将schema按物理顺序排序
         PageUtils.schemaSorter(schemaList,colmap);
-        result = RawColumnParser.parserRecord(recordsPage, schemaList);
-
+        PageHeader header = null;
+        for (byte[] page : recordsPages) {
+            header = new PageHeader(page);
+            List<byte[]> records = RecordCuter.cutRrcord(page, header.getSlotCnt());
+            result.addAll(RawColumnParser.parserRecord(records,schemaList,CheckSum.pageCheckSum(page)));
+        }
         return result;
     }
 

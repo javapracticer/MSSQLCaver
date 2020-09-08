@@ -11,37 +11,23 @@ import java.util.List;
 import java.util.Map;
 
 public class RawColumnParser {
-    /**
-     * 这个方法专门负责解析记录
-     * @param recordsPage 这是切割好了的列表
-     * @param list 这是已经解析好了的类的shcema
-     * @return 返回值是用map记录好了记录的list集合
-     * @throws IOException
-     */
-    private static boolean unbroken;
-    public static List<Map<String,String>> parserRecord(List<byte[]> recordsPage, List<Ischema> list) throws IOException {
+
+    public static List<Map<String,String>> parserRecord(List<byte[]> records, List<Ischema> list,boolean unbroken) throws IOException {
         List<Map<String,String>> recordList = new ArrayList<>();
-        PageHeader header;
-        for (byte[] page : recordsPage) {
-            header = new PageHeader(page);
-//            List<byte[]> records = RecordCuter.cutRrcord(page, header.getSlotCnt());
-            List<byte[]> records = DeletedRecordCuter.cutRrcord(page, header.getFreeData());
-            int j = 0;
-            unbroken = CheckSum.pageCheckSum(page);
-            for (byte[] record : records) {
-                if (j==records.size()||record==null){
-                    break;
-                }
-                if (((record[0] >> 0) & 0x1)==0){
-                    recordList.add(parserNormalRecord(record,list,unbroken));
-                }else {
-                    recordList.add(parserRowCompressRecord(record,list,unbroken));
-                }
-                j++;
+        int j = 0;
+        for (byte[] record : records) {
+            if (j == records.size() || record == null) {
+                break;
             }
+            if (((record[0] >> 0) & 0x1) == 0) {
+                recordList.add(parserNormalRecord(record, list, unbroken));
+            } else {
+                recordList.add(parserRowCompressRecord(record, list, unbroken));
+            }
+            j++;
         }
         return recordList;
-    }
+}
 
     /**
      * 解析普通的数据

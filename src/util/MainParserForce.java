@@ -37,13 +37,14 @@ public class MainParserForce {
         PageUtils.schemaSorter(schemaList,colmap);
         List<Map<String,String>> result = new ArrayList<>();
         List<byte[]> recordPages = new ArrayList<>();
-        for (byte[] bytes : read) {
-            PageHeader header = new PageHeader(bytes);
+        List<byte[]> records;
+        for (byte[] page : read) {
+            PageHeader header = new PageHeader(page);
             if (header.getIndexId() == indexID.intValue() && header.getIdObj() == idObj.intValue() && header.getType() == 1) {
-                recordPages.add(bytes);
+                records = DeletedRecordCuter.cutRrcord(page, header.getFreeData());
+                result.addAll(RawColumnParser.parserRecord(records, schemaList,CheckSum.pageCheckSum(page)));
             }
         }
-        result.addAll(RawColumnParser.parserRecord(recordPages, schemaList));
         return result;
     }
 

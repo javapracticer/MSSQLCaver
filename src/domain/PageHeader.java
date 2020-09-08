@@ -13,7 +13,7 @@ public class PageHeader {
     private int pminlen;
     private long nextPage;
     private int slotCnt;
-    private Long idObj;
+    private long idObj;
     private int freeCnt;
     private int freeData;
     private long pageId;

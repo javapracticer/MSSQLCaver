@@ -156,12 +156,20 @@ public class PageUtils {
         list.add(new RawVarBinary("rsguid", 0));
         list.add(new RawVarBinary("lockres", 0));
         list.add(new RawInt("dbfragid"));
-            List<Map<String, String>> maps = RawColumnParser.parserRecord(idobj5Pages, list);
-            for (Map<String, String> map : maps) {
-                if (map.get("idmajor").equals(tableId)) {
-                    return maps;
-                }
+        List<Map<String, String>> maps = new ArrayList<>();
+        PageHeader header;
+        List<byte[]> records;
+        for (byte[] idobj5Page : idobj5Pages) {
+            header = new PageHeader(idobj5Page);
+            records = RecordCuter.cutRrcord(idobj5Page,header.getSlotCnt());
+            maps = RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(idobj5Page));
+        }
+
+        for (Map<String, String> map : maps) {
+            if (map.get("idmajor").equals(tableId)) {
+                return maps;
             }
+        }
         return null;
     }
 
@@ -186,7 +194,14 @@ public class PageUtils {
         list.add(new RawBigInt("pcdata"));
         list.add(new RawBigInt("pcreserved"));
         list.add(new RawInt("dbfragid"));
-                List<Map<String, String>> maps = RawColumnParser.parserRecord(idobj7Pages, list);
+        List<Map<String, String>> maps = new ArrayList<>();
+        PageHeader header;
+        List<byte[]> records;
+        for (byte[] idobj7Page : idobj7Pages) {
+            header = new PageHeader(idobj7Page);
+            records = RecordCuter.cutRrcord(idobj7Page,header.getSlotCnt());
+            maps = RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(idobj7Page));
+        }
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals(rowsetId) && map.get("type").equals("1")) {
                         return map;
@@ -236,8 +251,14 @@ public class PageUtils {
         list.add(new RawInt("nullbit"));
         list.add(new RawSmallInt("bitpos"));
         list.add(new RawVarBinary("colguid", 16));
-
-            List<Map<String, String>> maps = RawColumnParser.parserRecord(idobj3Pages, list);
+        List<Map<String, String>> maps = new ArrayList<>();
+        PageHeader header;
+        List<byte[]> records;
+        for (byte[] idobj3Page : idobj3Pages) {
+            header = new PageHeader(idobj3Page);
+            records = RecordCuter.cutRrcord(idobj3Page,header.getSlotCnt());
+            maps = RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(idobj3Page));
+        }
             for (Map<String, String> map : maps) {
                 if (map.get("rsid").equals(rowsetid)) {
                     //key是逻辑顺序，value是物理顺序

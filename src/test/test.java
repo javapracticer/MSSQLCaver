@@ -92,7 +92,7 @@ public class test {
             PageHeader header = new PageHeader(bytes);
             if (header.getIdObj() == 7 && header.getType() == 1) {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
+                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(bytes));
                 for (Map<String, String> map : maps) {
                     if (map.get("ownerid").equals("72057594044743680")) {
                         System.out.println(map);
@@ -133,7 +133,7 @@ public class test {
             PageHeader header = new PageHeader(bytes);
             if (header.getIdObj() == 5 && header.getType() == 1) {
                 List<byte[]> records = RecordCuter.cutRrcord(bytes, header.getSlotCnt());
-                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list);
+                List<Map<String, String>> maps = RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(bytes));
                 for (Map<String, String> map : maps) {
                     if (map.get("idmajor").equals("2105058535")) {
                         System.out.println("Rowsetid:" + map.get("rowsetid") + "|" + "ObjectID:" + map.get("idmajor") + "|" + "IndexID:" + map.get("idminor"));
