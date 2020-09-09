@@ -317,6 +317,8 @@ public class PageUtils {
                 return new RawUniqueidentifier(schemaRecord.getSchemaName());
             case 106:
                 return new RawDecimal(schemaRecord.getSchemaName(), schemaRecord.getLength(), schemaRecord.getPrec(), schemaRecord.getScale());
+            case 241:
+                return new RawXml(schemaRecord.getSchemaName());
             default:
                 throw new RuntimeException("类型" + code + "暂时不被支持");
         }
