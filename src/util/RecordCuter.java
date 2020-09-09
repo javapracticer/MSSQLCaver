@@ -52,7 +52,7 @@ public class RecordCuter {
         int numOfVariable = 0;
         int length = 0;
         if (((status >> 5) & 0x1)==0){
-            length = offsetNumOfColum+(numOfColumn/8)+3;
+            length = offsetNumOfColum+((numOfColumn-1)/8)+3;
             byte[] record = new byte[length];
             //将record的字节数组拷贝出来
             System.arraycopy(page, startOffSet, record, 0, length);
