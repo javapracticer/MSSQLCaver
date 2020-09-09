@@ -169,8 +169,10 @@ public class RawColumnParser {
         int allLengthOffset = 0;
         //此变量用来记录长记录的长度offset
         int longLengthOffset = 0;
-        //此变量用来记录长记录的offset
+        //此变量用来记录长记录的开始offset
         int longRecordOffset = 0;
+        //长记录开始位置的相对位置
+        int longRecordRelativeOffset=0;
         //总共有多少列数据
         int numOfAllRecord = 0;
         //有多少列长数据
@@ -245,18 +247,21 @@ public class RawColumnParser {
                 recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
                 shortRecordOffset+=length;
             }else if (length==9){
-                //长数据实际的长度
-                int longRecordLength = HexUtil.int2(record,longLengthOffset);
+                //长数据从长数据开始部位开始的相对结束偏移
+                int longRecordRelativeEndOffset = HexUtil.int2(record,longLengthOffset);
+                longLengthOffset+=2;
                 //如果长度大于这个数，说明其primary位为1，应该去掉,且这是个复杂列
-                if (longRecordLength>32768){
-                    longRecordLength-=32768;
-                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength,true);
+                if (longRecordRelativeEndOffset>32768){
+                    longRecordRelativeEndOffset-=32768;
+                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordRelativeEndOffset-longRecordRelativeOffset,true);
                     recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
-                    longRecordOffset+=longRecordLength;
+                    longRecordOffset+=longRecordRelativeEndOffset-longRecordRelativeOffset;
+                    longRecordRelativeOffset+=longRecordRelativeEndOffset-longRecordRelativeOffset;
                 }else{
-                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordLength, false);
+                    Object rowCompressValue = ischema.getRowCompressValue(record, longRecordOffset, longRecordRelativeEndOffset-longRecordRelativeOffset, false);
                     recordmap.put(ischema.name(), String.valueOf(rowCompressValue));
-                    longRecordOffset+=longRecordLength;
+                    longRecordOffset+=longRecordRelativeEndOffset-longRecordRelativeOffset;
+                    longRecordRelativeOffset+=longRecordRelativeEndOffset-longRecordRelativeOffset;
                 }
             }else if (length==0){
                 recordmap.put(ischema.name(),String.valueOf(ischema.getRowCompressValue(record,shortRecordOffset,length,false)));

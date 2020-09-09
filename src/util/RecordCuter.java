@@ -148,11 +148,11 @@ public class RecordCuter {
         //当长字节为0的时候，有时候长字段可能会为65535
         int noLongRecord = 65535;
         if (((page[endOffset+1] >> 7) & 0x1)==0){
-            lengthOffset = endOffset+2;
+            lengthOffset = endOffset+3;
              numOfLongRecord = page[endOffset+1];
             endOffset+=2;
         }else {
-            lengthOffset = endOffset+3;
+            lengthOffset = endOffset+4;
             numOfLongRecord = HexUtil.int2(page,endOffset+1);
             if (numOfLongRecord==noLongRecord){
                 //此处明明应该置0，但是为了能把记录剪切完，所以置为1
