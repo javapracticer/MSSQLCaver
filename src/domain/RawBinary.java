@@ -42,7 +42,7 @@ public class RawBinary implements Ischema{
         return getValue(bytes,startOffset,startOffset+length-1);
     }
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int endOffset) {
         return null;
     }
 

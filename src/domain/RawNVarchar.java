@@ -58,7 +58,7 @@ public class RawNVarchar implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
+    public Object getOverFlowValue(byte[] bytes, int offset, int endOffset) throws IOException {
         long pageid = HexUtil.int4(bytes, offset + 16);
         int slot = HexUtil.int2(bytes,offset+22);
         byte[] aimpage = PageUtils.getPagebyPageNum((int) pageid);

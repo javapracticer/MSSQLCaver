@@ -26,9 +26,9 @@ public class RawVarchar implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] bytes, int offset, int endoffset) throws IOException {
+    public Object getOverFlowValue(byte[] bytes, int offset, int endOffset) throws IOException {
         if (changeToLob){
-            return parserChangeLob(bytes,offset,endoffset);
+            return parserChangeLob(bytes,offset, endOffset);
         }else {
             long pageid = HexUtil.int4(bytes, offset + 16);
             int slot = HexUtil.int2(bytes,offset+22);

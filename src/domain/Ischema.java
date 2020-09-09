@@ -53,11 +53,11 @@ public interface Ischema {
      * 获取行溢出列
      * @param record
      * @param startOffsetOfVariableColumn
-     * @param i
+     * @param endOffset
      * @return
      * @throws IOException
      */
-    Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException;
+    Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int endOffset) throws IOException;
 
     /**
      * 获取其schema的sql形式

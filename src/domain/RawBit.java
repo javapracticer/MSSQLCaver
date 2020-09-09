@@ -49,7 +49,7 @@ public class RawBit implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int length) throws IOException {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int endOffset) throws IOException {
         return null;
     }
 

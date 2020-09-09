@@ -47,7 +47,7 @@ public class RawDate implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) throws IOException {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int endOffset) throws IOException {
         return null;
     }
 

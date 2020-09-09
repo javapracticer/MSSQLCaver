@@ -47,7 +47,7 @@ public class RawChar implements Ischema {
     }
 
     @Override
-    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int i) {
+    public Object getOverFlowValue(byte[] record, int startOffsetOfVariableColumn, int endOffset) {
         return null;
     }
 
