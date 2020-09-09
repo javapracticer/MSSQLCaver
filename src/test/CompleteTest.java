@@ -3,10 +3,7 @@ package test;
 import domain.PageHeader;
 import title.TitlePage;
 import util.MainParserForce;
-import util.MainParserIndex;
-import util.OutPutRecord;
 import util.PageUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +12,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class CompleteTest {
-    public static String mkdir;
+    private static String mkdir;
     public static void main(String[] args) throws IOException {
         boolean flage = true;
         while (flage){
@@ -26,13 +23,13 @@ public class CompleteTest {
                 File file = new File(mkdir);
                 String name = file.getName();
                 String[] split = name.split("\\.");
-                if (split[1].equals("mdf")||split[1].equals("ndf")){
+                if ("mdf".equals(split[1])||"ndf".equals(split[1])){
                     flage = false;
                 }else {
                     System.out.println("请输入正确的MDF文件的路径！");
                 }
             }catch (Exception e){
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
         PageUtils.setfile(mkdir);
@@ -45,11 +42,10 @@ public class CompleteTest {
             }
         }
         List<Map<String, String>> titleRecoreds = TitlePage.parserTitle(titlePages);
-        int i = 0;
         List<Map<String,String>> titles = new ArrayList<>();
         for (Map<String, String> map : titleRecoreds) {
             //将type为U的表打印出来
-            if (map.get("type").equals("U ")){
+            if ("U ".equals(map.get("type"))){
                 titles.add(map);
             }
         }
@@ -60,7 +56,7 @@ public class CompleteTest {
             Scanner sc = new Scanner(System.in);
             System.out.println("请输入要查找的表id:                              (退出请输入quit)");
             String tableId = sc.nextLine();
-            if(tableId.equals("quit")) {break;}
+            if("quit".equals(tableId)) {break;}
             long startTime = System.currentTimeMillis();
             try {
 //                for (Map<String, String> title : titles) {
@@ -83,7 +79,7 @@ public class CompleteTest {
             System.out.println("继续查询请按回车，结束请输入quit");
             Scanner sc2 = new Scanner(System.in);
             String s = sc2.nextLine();
-            if (s.equals("quit")){
+            if ("quit".equals(s)){
                 break;
             }
         }

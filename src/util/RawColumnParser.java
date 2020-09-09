@@ -10,8 +10,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 这是一个按行解析数据的类
+ */
 public class RawColumnParser {
-
+    /**
+     * 这是解析数据的主方法，其主要判断数据是否行压缩，并将其传入相应的解析方法内
+     * @param records 传入的切割好的数据数组
+     * @param list schema的列表
+     * @param unbroken 页面是否错误的的布尔值
+     * @return 将解析结果作为map并存入list中返回
+     * @throws IOException 遇到错误直接向上抛出
+     */
     public static List<Map<String,String>> parserRecord(List<byte[]> records, List<Ischema> list,boolean unbroken) throws IOException {
         List<Map<String,String>> recordList = new ArrayList<>();
         int j = 0;

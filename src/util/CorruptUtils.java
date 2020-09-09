@@ -10,9 +10,9 @@ import java.util.Random;
  * 请勿在生产数据库中使用此类
  */
 public class CorruptUtils {
-    public static void destoryedPageIDs(String filePath,double rate,int fileNum) throws IOException {
+    public static void destroyPageIds(String filePath, double rate, int fileNum) throws IOException {
         File file = new File(filePath);
-        int fileSize = 0;
+        int fileSize;
         fileSize = (int) file.length();
 
         FileInputStream fi = new FileInputStream(file);

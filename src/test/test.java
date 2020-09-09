@@ -10,7 +10,6 @@ import schema.SchemeaPage;
 import title.TitlePage;
 import util.*;
 
-import javax.swing.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -232,7 +231,7 @@ public class test {
     @Test
     public void testCorrupt() throws IOException {
         for (int i = 0; i <1 ; i++) {
-            CorruptUtils.destoryedPageIDs("F:\\bigdate\\testSSBM.mdf", 0.15, i);
+            CorruptUtils.destroyPageIds("F:\\bigdate\\testSSBM.mdf", 0.15, i);
             System.out.println("文件" + i + "腐蚀完成");
         }
     }

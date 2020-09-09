@@ -2,15 +2,14 @@ package util;
 
 public class CheckSum {
     /**
-     * 计算页面校验和，并返回布尔类型，true为无错
-     * false为页面有错误
-     * @return
+     * 检查页面是否受损
+     * @param page 需要检查的页面
+     * @return 检查无错误返回true否则返回false
      */
-    static int seed = 15;
-    static int charBit = 8;
     public static boolean pageCheckSum(byte[] page){
+        int seed = 15;
         int[][] pagebuf = new int[16][128];
-        int overall = 0;
+        int overall;
         int checkSum = 0;
         int point = 0;
         //将页面分为16份，每份128段，每段四个字节（小端）
@@ -33,7 +32,8 @@ public class CheckSum {
 
         return checkSum==tronBit;
     }
-    public static int rol(int value,int rotation){
+    private static int rol(int value,int rotation){
+        int charBit = 8;
         return (value) << (rotation) | (value) >> (4 * charBit - rotation) & ( (1 << rotation) -1);
 
     }
