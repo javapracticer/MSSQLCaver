@@ -1,7 +1,11 @@
 package util;
 
+import domain.PageHeader;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class DeletedRecordCuter {
         public static List<byte[]> cutRrcord(byte[] page,int freeData){
@@ -9,17 +13,46 @@ public class DeletedRecordCuter {
             int startOffset = 96;
             int length = 0;
             byte[] record ;
+            Set<Integer> startOffsetSet = new HashSet<>();
             while (startOffset < freeData) {
-               if (((page[startOffset] >> 0) & 0x1)==0) {
-                   length = cutNormalDeleteRecord(page, startOffset);
-               }else{
-                   length = cutRowCompressDeleteRecord(page,startOffset);
-               }
-                    record = new byte[length];
-                   //将record的字节数组拷贝出来
-                   System.arraycopy(page, startOffset, record, 0, length);
-                   records.add(record);
-                   startOffset+=length;
+                try {
+                    if (((page[startOffset] >> 0) & 0x1)==0) {
+                        length = cutNormalDeleteRecord(page, startOffset);
+                    }else{
+                        length = cutRowCompressDeleteRecord(page,startOffset);
+                    }
+                }catch (Exception e){
+                    PageHeader header = new PageHeader(page);
+                    for (int i = 8190; i>=8192-header.getSlotCnt()*2 ; i=i-2){
+                        if (startOffsetSet.contains(HexUtil.int2(page,i))){
+                            break;
+                        }
+                        //这是每行的开始位置
+                        int tempstartOffset = HexUtil.int2(page,i);
+                        if (startOffset>8192){
+                            continue;
+                        }
+                        if (startOffset==0){
+                            continue;
+                        }
+                        if (((page[startOffset] >> 0) & 0x1)==0){
+                            length = cutNormalDeleteRecord(page,tempstartOffset);
+                        }else {
+                            length = cutRowCompressDeleteRecord(page,startOffset);
+                        }
+                        record = new byte[length];
+                        //将record的字节数组拷贝出来
+                        System.arraycopy(page, tempstartOffset, record, 0, length);
+                        records.add(record);
+                    }
+                    return records;
+                }
+               startOffsetSet.add(startOffset);
+                record = new byte[length];
+                //将record的字节数组拷贝出来
+                System.arraycopy(page, startOffset, record, 0, length);
+                records.add(record);
+                startOffset += length;
             }
             return records;
         }

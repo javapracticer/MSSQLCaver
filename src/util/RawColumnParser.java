@@ -29,10 +29,14 @@ public class RawColumnParser {
             if (j == records.size() || record == null) {
                 break;
             }
-            if (((record[0] >> 0) & 0x1) == 0) {
-                recordList.add(parserNormalRecord(record, list, unbroken));
-            } else {
-                recordList.add(parserRowCompressRecord(record, list, unbroken));
+            try {
+                if (((record[0] >> 0) & 0x1) == 0) {
+                    recordList.add(parserNormalRecord(record, list, unbroken));
+                } else {
+                    recordList.add(parserRowCompressRecord(record, list, unbroken));
+                }
+            }catch (Exception e){
+                break;
             }
             j++;
         }
