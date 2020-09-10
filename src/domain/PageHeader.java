@@ -43,7 +43,7 @@ public class PageHeader {
         this.freeCnt = HexUtil.int2(page,28);
         this.freeData = HexUtil.int2(page,30);
         this.pageId = HexUtil.int4(page,32);
-        this.fileId = HexUtil.int2(page,34);
+        this.fileId = HexUtil.int2(page,36);
         this.reservedCnt = HexUtil.int2(page,38);
         this.lsn = HexUtil.int4(page,40)+":"+ HexUtil.int4(page,44)+":"+ HexUtil.int2(page,48);
         this.xactReserved = HexUtil.int2(page,50);

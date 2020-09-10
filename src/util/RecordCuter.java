@@ -131,7 +131,7 @@ public class RecordCuter {
         //此时endOffset来到了变长列的开端
         endOffset+=shortLength;
         if (page[endOffset]!=1){
-            int length = endOffset+2-startOffSet;
+            int length = 9;
             byte[] record = new byte[length];
             System.arraycopy(page, startOffSet, record, 0, length);
             return record;

@@ -25,20 +25,20 @@ public class DeletedRecordCuter {
                     PageHeader header = new PageHeader(page);
                     for (int i = 8190; i>=8192-header.getSlotCnt()*2 ; i=i-2){
                         if (startOffsetSet.contains(HexUtil.int2(page,i))){
-                            break;
+                            continue;
                         }
                         //这是每行的开始位置
                         int tempstartOffset = HexUtil.int2(page,i);
-                        if (startOffset>8192){
+                        if (tempstartOffset>8192){
                             continue;
                         }
-                        if (startOffset==0){
+                        if (tempstartOffset==0){
                             continue;
                         }
-                        if (((page[startOffset] >> 0) & 0x1)==0){
+                        if (((page[tempstartOffset] >> 0) & 0x1)==0){
                             length = cutNormalDeleteRecord(page,tempstartOffset);
                         }else {
-                            length = cutRowCompressDeleteRecord(page,startOffset);
+                            length = cutRowCompressDeleteRecord(page,tempstartOffset);
                         }
                         record = new byte[length];
                         //将record的字节数组拷贝出来
@@ -133,7 +133,7 @@ public class DeletedRecordCuter {
         //此时endOffset来到了变长列的开端
         endOffset+=shortLength;
         if (page[endOffset]!=1){
-            int length = endOffset+2-startOffSet;
+            int length = 9;
             return length;
         }
         if (page[endOffset]!=1&&shortLength==0){
