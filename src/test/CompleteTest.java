@@ -3,6 +3,7 @@ package test;
 import domain.PageHeader;
 import title.TitlePage;
 import util.MainParserForce;
+import util.MainParserIndex;
 import util.PageUtils;
 import java.io.File;
 import java.io.IOException;
@@ -65,7 +66,7 @@ public class CompleteTest {
 //                    }
 //                }
                 //进入主解析类
-                List<Map<String, String>> maps = MainParserForce.parsetTable(tableId);
+                List<Map<String, String>> maps = MainParserIndex.parserTable(tableId);
 //                OutPutRecord.outPutRecord(maps);
                 for (Map<String, String> map : maps) {
                     System.out.println(map);

@@ -36,7 +36,7 @@ public class RawColumnParser {
                     recordList.add(parserRowCompressRecord(record, list, unbroken));
                 }
             }catch (Exception e){
-                break;
+                continue;
             }
             j++;
         }
@@ -225,7 +225,7 @@ public class RawColumnParser {
         //此时temp到达了长数据的列数位置
         temp+=shortLength+1;
         //判断是否有长数据
-        if (record[temp-1]==1){
+        if (temp<record.length-1&&record[temp-1]==1){
             if(((record[temp] >> 7) & 0x1)==0){
                 numOfLongRecord=record[temp] & 0xff;
                 longLengthOffset = temp+2;

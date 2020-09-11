@@ -131,7 +131,10 @@ public class RecordCuter {
         //此时endOffset来到了变长列的开端
         endOffset+=shortLength;
         if (page[endOffset]!=1){
-            int length = 9;
+            int length = endOffset-startOffSet;
+            if (length<9){
+                length=9;
+            }
             byte[] record = new byte[length];
             System.arraycopy(page, startOffSet, record, 0, length);
             return record;
@@ -150,7 +153,7 @@ public class RecordCuter {
         if (((page[endOffset+1] >> 7) & 0x1)==0){
             lengthOffset = endOffset+3;
              numOfLongRecord = page[endOffset+1];
-            endOffset+=2;
+            endOffset+=3;
         }else {
             lengthOffset = endOffset+4;
             numOfLongRecord = HexUtil.int2(page,endOffset+1);
@@ -158,12 +161,12 @@ public class RecordCuter {
                 //此处明明应该置0，但是为了能把记录剪切完，所以置为1
                 numOfLongRecord=1;
             }
-            endOffset+=3;
+            endOffset+=4;
 
         }
         int longLength = 0;
         for (int i = lengthOffset; i <lengthOffset+numOfLongRecord*2 ; i=i+2) {
-            int templength = HexUtil.normalInt2(page, i);
+            int templength = HexUtil.int2(page, i);
             //如果长度大于32768，那么肯定是因为primary位为1，所以应该减去
             templength = ((templength << 17) >>> 17);
             //如果大于8192说明其为空
@@ -171,7 +174,9 @@ public class RecordCuter {
                 templength=-1;
             }
             endOffset+=2;
-            longLength+=templength;
+            if (templength>longLength){
+                longLength = templength;
+            }
         }
         endOffset+=longLength+1;
         int length = endOffset-startOffSet;
