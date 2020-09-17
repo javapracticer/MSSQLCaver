@@ -164,9 +164,6 @@ public class PageHeader {
         this.pageId = pageId;
     }
 
-    public short getPageFileId() {
-        return pageFileId;
-    }
 
     public void setPageFileId(short pageFileId) {
         this.pageFileId = pageFileId;
@@ -269,7 +266,6 @@ public class PageHeader {
                 ", freeCnt=" + freeCnt +
                 ", freeData=" + freeData +
                 ", pageId=" + pageId +
-                ", pageFileId=" + pageFileId +
                 ", reservedCnt=" + reservedCnt +
                 ", lsn1=" + lsn1 +
                 ", lsn2=" + lsn2 +

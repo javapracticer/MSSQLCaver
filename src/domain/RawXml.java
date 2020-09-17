@@ -15,6 +15,7 @@ public class RawXml implements Ischema {
     private String name;
     int length = 0;
     private int fixed = 0;
+
     private boolean isLOB = false;
     private boolean changeToLob = false;
     public RawXml(String name1){

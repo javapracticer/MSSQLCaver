@@ -257,7 +257,7 @@ public class PageUtils {
         for (byte[] idobj3Page : idobj3Pages) {
             header = new PageHeader(idobj3Page);
             records = RecordCuter.cutRrcord(idobj3Page,header.getSlotCnt());
-            maps = RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(idobj3Page));
+            maps.addAll(RawColumnParser.parserRecord(records, list,CheckSum.pageCheckSum(idobj3Page)));
         }
             for (Map<String, String> map : maps) {
                 if (map.get("rsid").equals(rowsetid)) {
